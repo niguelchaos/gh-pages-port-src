@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Resume from './views/Resume.vue'
 
 Vue.use(Router)
 
@@ -89,12 +88,11 @@ const routes = [
     name: 'Cybercar',
     component: () => import('./views/projViews/Cybercar.vue')
   },
-  
   {
     path: '/index.html',
     redirect: '/'
   },
-  { 
+  {
     path: '*',
     name: 'catchAll',
     component: Home
