@@ -4,27 +4,11 @@
 
     <b-container class="details">
       <b-container class="details-item">
-        <h4>Academic & Research Reports</h4>
+        <h2>Academic & Research Reports</h2>
         <p>
           Click on the titles to read each report.
         </p>
         <hr id="dark-divider" class="divider my-4" />
-
-        <!-- <b-row>
-          <b-col class="link-col">
-            <a class="link-item float-left">
-              <b-button class="link-button" href="./AcademicReports/DecisiveFinishers.pdf" target="_blank">Gameplay Style: Decisive Finishers</b-button>
-            </a>
-
-            <a class="link-item float-left">
-              <b-button class="link-button" href="./AcademicReports/KaraokeAsGame.pdf" target="_blank">Karaoke as a Game</b-button>
-            </a>
-
-            <a class="link-item float-left">
-              <b-button class="link-button" href="https://gupea.ub.gu.se/bitstream/2077/67100/1/gupea_2077_67100_1.pdf" target="_blank">Evaluating the Trade-offs of Diversity-Based Test Prioritization: An Experiment</b-button>
-            </a>
-          </b-col>
-        </b-row> -->
 
         <b-container class="reportcards-container" fluid>
           <b-row>

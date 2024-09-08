@@ -4,20 +4,15 @@
 
     <b-container class="details">
       <b-container class="section-heading">
-      <h1>About Me</h1>
+      <h2>About Me</h2>
       <hr id="about-divider" class="divider my-3" />
-      </b-container>
 
-      <b-container class="details-item">
         <p class="text-left">
-          Born in Macau, my formative years were spent navigating an international environment, crossing borders between Macau and China, and spending quite a bit of time playing games.
-          From this, I have developed an open mind and an appreciation of various subjects, ranging from combat systems to visual storytelling.
+          My experience in academia has provided me with a diverse set of skills within software engineering and game design.  
+          My international experiences have provided me a sense of cultural fluency and a global mindset.
         </p>
         <!-- <hr id=about-divider class="divider my-3" /> -->
-        <p class="text-left">
-          My experience in academia has provided me with a diverse set of skills ranging from software engineering to game development. 
-          Rather than taking the most obvious route, I find myself often making decisions that sound more interesting or entertaining. 
-          My life experience has given me a unique place to draw inspiration from whether it be daily life or in projects.
+        <p class="text-left"> 
         </p>
         <hr id=about-divider class="divider my-3" />
       </b-container>

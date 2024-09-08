@@ -29,13 +29,7 @@ export default {
     return {
       about: {
         text1: 'I am a Master\'s student in Game Design and Technology at Gothenburg University, with a Bachelor\'s in Software Engineering and Management. I am currently looking for opportunities to deepen my knowledge of Game Development.',
-        text2: 'Oh, and rhythm games. Those are nice.'
       },
-      education: [
-        { location: 'University of Gothenburg', degree: 'Master\'s Programme in Game Design and Technology', date: '2020 - now', text: '' },
-        { location: 'University of Gothenburg', degree: 'Bachelor\'s Programme in Software Engineering and Management', date: '2017 - 2020', text: '' },
-        { location: 'Hvitfeldtska Gymnasiet', degree: 'International Baccalaureate', date: '2014 - 2017', text: '' }
-      ]
     }
   }
 }
