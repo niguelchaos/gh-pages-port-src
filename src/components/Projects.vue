@@ -30,6 +30,20 @@
               </b-col>
             </b-row>
           </b-container>
+
+          <b-container class="proj-main-col">
+            <b-button v-b-toggle.collapse-1 variant="primary">Show Older Projects</b-button>
+            <b-collapse id="collapse-1" class="mt-2">
+              <b-row>
+                <b-col class="proj-main-col" v-for="gamedevproj in gamedevProjectsOld" :key="gamedevproj.id" xl="12"
+                  no-gutters>
+                  <project-card :project="gamedevproj"></project-card>
+                </b-col>
+              </b-row>
+            </b-collapse>
+          </b-container>
+
+
         </b-tab>
 
         <b-tab title="Miscellaneous">
@@ -101,14 +115,7 @@ export default {
           num: 2, course: 'Product Service System Design', title: 'Feel The Disaster', text: 'A VR game made to teach the player the intricacies of recycling, requiring the player to recycle a milk carton correctly. My first Unity project, I had to learn Unity alongside the limitations of the Oculus Quest. Many mistakes were made.',
           highlightTitle: "Highlights", tech: 'VR Best Practices, Oculus Quest Limitations, Learning Unity', roles: 'Game & Level Design, Programming, Sound', link: 'https://github.com/niguelchaos/FeelTheDisaster', imgsrc: 'feelthedisaster.png', detailslink: "/feelthedisaster"
         },
-        // {
-        //   num: 1, course: 'Gameplay Design', title: 'Touching Hearts (Board Game)', text: 'Group project with a focus on prototyping and reflecting on design decisions. The 4 player card game had a dark but humourous theme, involving harvesting and trading organs to achieve their individual goals.',
-        //   highlightTitle: "Highlights", tech: 'Prototyping, Iteration', roles: 'Design, Prototyping', link: '', imgsrc: 'touchinghearts.png', detailslink: "/touchinghearts"
-        // },
-        // {
-        //   num: 0, course: 'Product Service System Design', title: 'The Biggest Brain', text: 'A simple 2-player button masher. Created using the frustratingly buggy Gameblox editor. My first game ever made. Surprisingly fun for the first 30 seconds.',
-        //   highlightTitle: "Inspiration", tech: 'Galaxy Brain meme', roles: 'Design, Programming, Art', link: 'https://gameblox.org/play/23256/', imgsrc: 'biggestbrain/biggestbrainp2.png', detailslink: ""
-        // }
+
       ],
       gamedevProjectsOld: [
         {
