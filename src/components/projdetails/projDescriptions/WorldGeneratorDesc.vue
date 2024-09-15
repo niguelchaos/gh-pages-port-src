@@ -93,8 +93,8 @@
 
     <h3>Additional Responsibilities</h3>
     <ul>
-      <li><b>Scrum Master:</b> Led agile development processes, improving team efficiency by ~20%</li>
-      <li><b>UI Facilitator:</b> Collaborated with UX designers to enhance user satisfaction by ~30%.</li>
+      <li><b>Scrum Master:</b> Led agile development processes, improving team efficiency.</li>
+      <li><b>UI Facilitator:</b> Collaborated with UX designers to enhance user satisfaction.</li>
     </ul>
 
     <h3>Technical Skills</h3>
