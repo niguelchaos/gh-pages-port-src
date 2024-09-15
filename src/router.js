@@ -89,6 +89,11 @@ const routes = [
     component: () => import('./views/projViews/Cybercar.vue')
   },
   {
+    path: '/worldgenerator',
+    name: 'WorldGenerator',
+    component: () => import('./views/projViews/WorldGenerator.vue')
+  },
+  {
     path: '/index.html',
     redirect: '/'
   },

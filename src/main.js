@@ -4,7 +4,7 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import AOS from 'aos'
 import VueLazyload from 'vue-lazyload'
-import VueGtag from "vue-gtag";
+import VueGtag from 'vue-gtag'
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // import CoolLightBox from 'vue-cool-lightbox'
 // import LightBox from 'vue-image-lightbox'
@@ -22,10 +22,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // import 'vue-image-lightbox/dist/vue-image-lightbox.min.css'
 
 Vue.use(VueGtag, {
-  config: { id: "UA-224744140-1" },
+  config: { id: 'UA-224744140-1' },
   appName: 'Portfolio',
   pageTrackerScreenviewEnabled: true
-}, router);
+}, router)
 // UA-224744140-1
 
 Vue.use(BootstrapVue)
@@ -35,7 +35,6 @@ Vue.use(VueLazyload)
 // Vue.use(LightBox)
 
 Vue.config.productionTip = false
-
 
 new Vue({
   router,

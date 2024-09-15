@@ -51,6 +51,7 @@ import JengaFortressPcDesc from './projDescriptions/JengaFortressPCDesc.vue';
 import RaphlAnimDesc from './projDescriptions/RaphlAnimDesc.vue';
 import DummyParkDesc from './projDescriptions/DummyParkDesc.vue';
 import CybercarDesc from './projDescriptions/CybercarDesc.vue';
+import WorldGeneratorDesc from './projDescriptions/WorldGeneratorDesc.vue';
 
 export default {
 	props: ['projectDetails'],
@@ -65,7 +66,8 @@ export default {
     JengaFortressPcDesc,
     RaphlAnimDesc,
     DummyParkDesc,
-    CybercarDesc
+    CybercarDesc,
+    WorldGeneratorDesc
   },
 
   methods: {

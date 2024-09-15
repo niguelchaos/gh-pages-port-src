@@ -10,7 +10,7 @@
       <!-- <b-card no-body> -->
       <b-tabs class="projects-tabs" pills align="center">
 
-        <b-tab title="Software Engineering">
+        <b-tab title="Software" active>
           <b-container class="projectcards-container" fluid>
             <b-row>
               <b-col class="proj-main-col" v-for="softengproj in softengProjects" :key="softengproj.id" xl="12"
@@ -21,7 +21,7 @@
           </b-container>
         </b-tab>
 
-        <b-tab title="Game Development" active>
+        <b-tab title="Games">
           <b-container class="projectcards-container" fluid>
             <b-row>
               <b-col class="proj-main-col" v-for="gamedevproj in gamedevProjects" :key="gamedevproj.id" xl="12"
@@ -70,23 +70,27 @@ export default {
     return {
       softengProjects: [
         {
-          num: 4, course: 'Agile Development Processes', title: 'Dummy Park: Visitor Web Application', text: 'This project consisted of developing a visitor web app of a fictional amusement park in a self organizing team. The main focus of this project was to follow agile methodologies and principles, mainly a scrumban process. ',
+          num: 5, course: 'Repli5, 3D Editor Development', title: 'WorldGenerator', text: 'A Blender addon to design and create 3D scenes interactively, built to train and test autonomous solutions faster.',
+          highlightTitle: "Highlights", tech: 'Blender Plugin Development, 3D Editor Tools, UI/UX, Agile', link: 'https://repli5.com/worldgenerator/', imgsrc: 'wg/wg_cover.png', detailslink: "/worldgenerator"
+        },
+        {
+          num: 4, course: 'Agile Development Processes (Group Project)', title: 'Dummy Park: Visitor Web Application', text: 'This project consisted of developing a visitor web app of a fictional amusement park in a self organizing team. The main focus of this project was to follow agile methodologies and principles, mainly a scrumban process. ',
           highlightTitle: "Highlights", tech: 'Agile Methodologies, Scrumban, Role Rotations', link: 'https://github.com/niguelchaos/dit192-team-4-visitor-app-fork', imgsrc: 'dummypark/overview.png', detailslink: "/dummypark"
         },
         {
-          num: 3, course: 'Cyberphysical Systems: Systems of Systems', title: 'Autonomous Vehicles: Intersection Handling', text: 'Microservices developed and delivered for miniature vehicles, built on Raspberry Pi and Beagle Bone boards, to handle various traffic situations of an intersection. I created a PID controller for Adaptive Cruise Control.',
+          num: 3, course: 'Cyberphysical Systems: Systems of Systems (Group Project)', title: 'Autonomous Vehicles: Intersection Handling', text: 'Microservices developed and delivered for miniature vehicles, built on Raspberry Pi and Beagle Bone boards, to handle various traffic situations of an intersection. I created a PID controller for Adaptive Cruise Control.',
           highlightTitle: "Highlights", tech: 'C++, Docker, OpenCV, Git', link: 'https://github.com/niguelchaos/Cybercar-G5-copy', imgsrc: 'kiwicaractual.jpg', detailslink: "/cybercar"
         },
         {
-          num: 2, course: 'Distributed Systems', title: 'Java Project Dependency Visualizer', text: 'Visualizer which illustrates the dependencies of a public Github Java Project. The backend was developed to be run on 5 separate physical systems across a WLAN network.',
+          num: 2, course: 'Distributed Systems (Group Project)', title: 'Java Project Dependency Visualizer', text: 'Visualizer which illustrates the dependencies of a public Github Java Project. The backend was developed to be run on 5 separate physical systems across a WLAN network.',
           highlightTitle: "Highlights", tech: 'MongoDB, Vue.js, Node.js, D3.js, Git', link: 'https://github.com/TiEkl/GrOneContinued', imgsrc: 'gronecropped.gif', detailslink: ""
         },
         {
-          num: 1, course: 'Systems Development', title: 'Autonomous Vehicles: Parallel Parking', text: 'Arduino project of using a miniature vehicle to parallel park itself. Software was implemented and deployed on the self-driving Arduino minicar. We had to build the car ourselves with the provided parts. Best part of the project.',
+          num: 1, course: 'Systems Development (Group Project)', title: 'Autonomous Vehicles: Parallel Parking', text: 'Arduino project of using a miniature vehicle to parallel park itself. Software was implemented and deployed on the self-driving Arduino minicar. We had to build the car ourselves with the provided parts. Best part of the project.',
           highlightTitle: "Highlights", tech: 'Arduino(C/C++), OpenCV', link: 'https://github.com/Mokkants/group3car', imgsrc: 'personalityparapark.png', detailslink: ""
         },
         {
-          num: 0, course: 'Team Programming', title: 'Java Library Manager', text: 'A library management system tasked with book keeping, customer handling, and book lending.',
+          num: 0, course: 'Team Programming (Group Project)', title: 'Java Library Manager', text: 'A library management system tasked with book keeping, customer handling, and book lending.',
           highlightTitle: "Highlights", tech: 'Java, JavaFX, PostgreSQL, Git', link: 'https://gitlab.com/TeamTen/DIT092-LibSys', imgsrc: 'librarymanager.png', detailslink: ""
         }
       ],
@@ -111,13 +115,13 @@ export default {
           num: 3, course: 'Group Project', title: 'Timeloop Metroidvania', text: 'A metroidvania inspired by The Legend of Zelda: Majora\'s Mask and Hollow Knight involving a 3-day system. A joint collaboration with Fabian Fröding, whose portfolio is linked below.',
           highlightTitle: "Highlights", tech: 'Unity, Camera Controls, State Machines', roles: 'Design, Programming', link: 'https://fabianfroding.github.io/', imgsrc: 'timeloop.png', detailslink: "/timeloopmetroid"
         },
+
+      ],
+      gamedevProjectsOld: [
         {
           num: 2, course: 'Product Service System Design', title: 'Feel The Disaster', text: 'A VR game made to teach the player the intricacies of recycling, requiring the player to recycle a milk carton correctly. My first Unity project, I had to learn Unity alongside the limitations of the Oculus Quest. Many mistakes were made.',
           highlightTitle: "Highlights", tech: 'VR Best Practices, Oculus Quest Limitations, Learning Unity', roles: 'Game & Level Design, Programming, Sound', link: 'https://github.com/niguelchaos/FeelTheDisaster', imgsrc: 'feelthedisaster.png', detailslink: "/feelthedisaster"
         },
-
-      ],
-      gamedevProjectsOld: [
         {
           num: 1, course: 'Gameplay Design', title: 'Touching Hearts (Board Game)', text: 'Group project with a focus on prototyping and reflecting on design decisions. The 4 player card game had a dark but humourous theme, involving harvesting and trading organs to achieve their individual goals.',
           highlightTitle: "Highlights", tech: 'Prototyping, Iteration', roles: 'Design, Prototyping', link: '', imgsrc: 'touchinghearts.png', detailslink: "/touchinghearts"

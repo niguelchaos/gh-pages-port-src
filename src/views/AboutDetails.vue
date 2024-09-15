@@ -4,15 +4,16 @@
 
     <b-container class="details">
       <b-container class="section-heading">
-      <h2>About Me</h2>
-      <hr id="about-divider" class="divider my-3" />
+        <h2>About Me</h2>
+        <hr id="about-divider" class="divider my-3" />
 
         <p class="text-left">
-          My experience in academia has provided me with a diverse set of skills within software engineering and game design.  
+          My experience in academia has provided me with a diverse set of skills within software engineering and game
+          design.
           My international experiences have provided me a sense of cultural fluency and a global mindset.
         </p>
         <!-- <hr id=about-divider class="divider my-3" /> -->
-        <p class="text-left"> 
+        <p class="text-left">
         </p>
         <hr id=about-divider class="divider my-3" />
       </b-container>
@@ -46,13 +47,18 @@
                 <li><strong>Need for Speed Carbon</strong></li>
                 <li><strong>Advance Wars</strong></li>
                 <li><strong>Fire Emblem</strong></li>
-                <li><a :href="'https://www.newgrounds.com/portal/view/459232'" target="_blank"><strong>The Battalion Trilogy</strong></a></li>
-                <li><a :href="'https://www.newgrounds.com/portal/view/561860'" target="_blank"><strong>Sierra 7(Flash)</strong></a>, <strong>Tactical Assassin(Flash)</strong> series</li>
-                <li><strong>Xiao Xiao Collection(<a :href="'https://www.newgrounds.com/portal/view/257184'" target="_blank">4</a>, <a :href="'https://www.newgrounds.com/portal/view/65694'" target="_blank">9</a>)</strong></li>
-                <li><a :href="'https://www.shockwave.com/gamelanding/cyborglivestock.jsp'" target="_blank"><strong>Super Cyborg Livestock from Outer Space</strong></a></li>
+                <li><a :href="'https://www.newgrounds.com/portal/view/459232'" target="_blank"><strong>The Battalion
+                      Trilogy</strong></a></li>
+                <li><a :href="'https://www.newgrounds.com/portal/view/561860'" target="_blank"><strong>Sierra
+                      7(Flash)</strong></a>, <strong>Tactical Assassin(Flash)</strong> series</li>
+                <li><strong>Xiao Xiao Collection(<a :href="'https://www.newgrounds.com/portal/view/257184'"
+                      target="_blank">4</a>, <a :href="'https://www.newgrounds.com/portal/view/65694'"
+                      target="_blank">9</a>)</strong></li>
+                <li><a :href="'https://www.shockwave.com/gamelanding/cyborglivestock.jsp'" target="_blank"><strong>Super
+                      Cyborg Livestock from Outer Space</strong></a></li>
               </ul>
             </b-container>
-            
+
           </b-col>
         </b-row>
       </b-container>
@@ -85,7 +91,7 @@
 
     </b-container>
 
-   </b-container>
+  </b-container>
 </template>
 
 <script>
@@ -93,44 +99,44 @@ import NameHeader from '@/components/NameHeader.vue';
 import Skills from '@/components/Skills.vue';
 
 export default {
-  components: {  NameHeader, Skills },
+  components: { NameHeader, Skills },
   mounted() {
     this.scrollToTop()
   },
   methods: {
     scrollToTop() {
-      window.scrollTo(0,0)
+      window.scrollTo(0, 0)
     }
   }
 }
 </script>
 
 <style scoped>
-
-
 .section-heading {
   padding-bottom: 2rem;
 }
 
 #about-divider {
-  background:  rgba(223, 226, 255, 0.548)
+  background: rgba(223, 226, 255, 0.548)
 }
 
 .details {
   display: flex;
   flex-direction: column;
 
-  color:  #dfe2ff;
+  color: #dfe2ff;
   padding-bottom: 7rem;
   align-content: center;
   align-items: center;
   align-self: center;
   justify-items: center;
 }
+
 .description {
   align-items: left;
   text-align: left;
 }
+
 .games-list {
   align-items: left;
   text-align: left;

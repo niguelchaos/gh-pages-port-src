@@ -10,9 +10,9 @@
       </b-row> -->
     <b-row id="contact-row" class="row justify-content-center">
       <b-col class="mx-2">
-        <!-- <a type="button" class="contactbtn btn btn-outline-light" v-bind:href="contacts.linkedin" target="_blank">
-                <em class="bi bi-linkedin" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"></em>
-                </a> -->
+        <a type="button" class="contactbtn btn btn-outline-light" v-bind:href="contacts.linkedin" target="_blank">
+          <em class="bi bi-linkedin" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"></em>
+        </a>
 
         <a type="button" class="contactbtn btn btn-outline-light" v-bind:href="'mailto:' + contacts.email">
           <em class="bi bi-envelope-open-fill" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"></em>
@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       contacts: {
-        // linkedin: 'https://www.linkedin.com/in/nigel-chao/',
+        linkedin: 'https://www.linkedin.com/in/nigel-chao/',
         email: 'niguelchaos@gmail.com',
         github: 'https://github.com/niguelchaos?tab=repositories',
         itch: 'https://niguelchaos.itch.io/'
