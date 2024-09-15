@@ -16,7 +16,7 @@ export default {
         mainImage: { name: "https://repli5.com/worldgenerator/", index: 0 },
         images: [],
         links: [
-
+          {title:"WorldGenerator Product Details", url: 'https://repli5.com/worldgenerator/'},
         ],
         descriptionComponent: "world-generator-desc"
       }
