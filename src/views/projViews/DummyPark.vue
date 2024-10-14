@@ -12,7 +12,7 @@ export default {
     return {
       projectDetails: {
           title: "Dummy Park: Visitor Web Application",
-          subtitle: "This was the largest team I ever worked with",
+          subtitle: "A web application built using an agile process",
           mainImage: {name: "", index: 0},
           images: [],
           links: [

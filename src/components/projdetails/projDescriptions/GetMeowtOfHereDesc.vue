@@ -47,7 +47,8 @@
       <p>
         <a :href="'https://miro.com/about/'" target="_blank">Miro</a> was used extensively to collaborate on the design of the game. 
         Activities included selecting assets to assess the feasibility of features, affinity mapping to establish the themes of the game, discussing playtesting results, and discussing puzzle and narrative ideas. 
-        The design of the game was very much a group effort, and much discussion was needed to make compromises, establish a clearer direction, and reducing scope.
+        The design of the game was a group effort. There was much discussion needed to make compromises, establish a clearer direction, and reducing scope.
+        In the end, we were satisfied with the direction that was taken.
         We wanted players to cooperate and feel empathetic towards one another, and I felt that we needed to tell a story in the game for that to happen.
         Shown below are some of the sketches used to promote discussions of the general narrative and level design.
       </p>
@@ -81,7 +82,6 @@
       <h5>Level Designer</h5>
       <ul>
         <li>Collaborated with others to sketch out level ideas and designs.</li>
-        <li>Made the loading screen. Yes I am very proud of it.</li>
       </ul>
       <p>
         There was much discussion surrounding how the different puzzles could help evoke empathy, taking the narrative into consideration.
@@ -135,7 +135,6 @@
         gameimages: [
           { url: require('@/assets/empathuzzler.png')  },
           { url: require('@/assets/getmeowtofhere/finallevel.png')  },
-          { url: require('@/assets/getmeowtofhere/loadingscreen.png')  },
         ],
         processimages: [
           { url: require('@/assets/getmeowtofhere/levelsketches.png')  },
