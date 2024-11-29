@@ -94,6 +94,11 @@ const routes = [
     component: () => import('./views/projViews/WorldGenerator.vue')
   },
   {
+    path: '/scarabdescent',
+    name: 'Scarab Descent',
+    component: () => import('./views/projViews/ScarabDescent.vue')
+  },
+  {
     path: '/index.html',
     redirect: '/'
   },

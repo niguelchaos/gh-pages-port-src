@@ -52,6 +52,7 @@ import RaphlAnimDesc from './projDescriptions/RaphlAnimDesc.vue';
 import DummyParkDesc from './projDescriptions/DummyParkDesc.vue';
 import CybercarDesc from './projDescriptions/CybercarDesc.vue';
 import WorldGeneratorDesc from './projDescriptions/WorldGeneratorDesc.vue';
+import ScarabDescentDesc from './projDescriptions/ScarabDescentDesc.vue';
 
 export default {
 	props: ['projectDetails'],
@@ -67,7 +68,8 @@ export default {
     RaphlAnimDesc,
     DummyParkDesc,
     CybercarDesc,
-    WorldGeneratorDesc
+    WorldGeneratorDesc,
+    ScarabDescentDesc
   },
 
   methods: {

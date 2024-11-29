@@ -96,6 +96,10 @@ export default {
       ],
       gamedevProjects: [
         {
+          num: 8, course: 'Personal Project', title: 'Scarab Descent', text: '',
+          highlightTitle: "Roles & Responsibilities", tech: 'Concept, Blockout, Pacing, Lighting, Player Abilities Implementation, Chaos Destruction', roles: 'Level Design, Mechanics Implementation', link: '', imgsrc: 'scarabdescent/HighresScreenshot00064.png', detailslink: "/scarabdescent"
+        },
+        {
           num: 7, course: 'Personal Project', title: 'Jenga Fortress PC', text: 'Main attempt to learn about multiplayer aspects as well as FPS-esque elements. Main achievements include basic authentication, a lobby system, syncing players within a game session, and general FPS character feel.',
           highlightTitle: "Highlights", tech: 'Multiplayer, Lobby System, Unity Netcode', roles: '', link: 'https://github.com/niguelchaos/JengaFortress_PC', imgsrc: 'jengfortpc_multi.gif', detailslink: "/jengafortresspc"
         },
