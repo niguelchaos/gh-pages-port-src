@@ -3,8 +3,15 @@
 
     <b-container class="description-container">
       <b-row>
+        <b-col lg="12">
+          <p class="font-italic text-center">
+            This page is a work in progress. It will be updated in due time.
+          </p>
+        </b-col>
+      </b-row>
+
+      <b-row>
         <b-col lg="6">
-          <!-- <h3>Summary</h3> -->
           <h4>Metroidvania Mechanics</h4>
           <p>
             Ability Gating, Optional Levels, Boss Battles, and Exploration were all considered during multiple stages of
@@ -58,7 +65,8 @@
     <h2>Blockout Timelapse</h2>
     <b-col lg="12">
       <div>
-        <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators :interval="0.01">
+        <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
+          :interval="0.01">
           <b-carousel-slide v-for="image in this.blockouts" :key="image.url" caption=""
             :img-src="image.url"></b-carousel-slide>
         </b-carousel>
@@ -73,11 +81,11 @@
     <p><b>Tools Used</b></p>
     <p><b>Team Size</b></p>
     <p><b>Role</b></p>
-    
+
     <h2>Goals & Restrictions</h2>
     <p><b>Goals</b></p>
     <p><b>Restrictions</b></p>
-    
+
     <h2>Initial Brief</h2>
     <b-col lg="12">
       <div>
@@ -90,8 +98,8 @@
 
     <h2>Layout</h2>
     <p>Here is the initial layout and the sections.</p>
-    
-    
+
+
     <h2>Process</h2>
     <h3>Step 1: Research</h3>
     <h3>Step 2: Design Document</h3>
@@ -99,13 +107,14 @@
     <h3>Step 4: 2D Map</h3>
     <h3>Step 5: Blockout, Iteration and Feedback</h3>
     <h4>Scoping Down</h4>
-    
-    <p>After several iterations and feedback, I realized that I had bitten off too much - I was essentially trying to create an entire world map. the final layout was smaller, puzzles were removed, and implemented mechanics were fewer. 
-      The general scope was reduced to maintain the self imposed time limit. Instead, I decided to focus and iterate more on several rooms.
-    </p>
-    
 
-    
+    <p>After several iterations and feedback, I realized that I had bitten off too much - I was essentially trying to
+      create an entire world map. the final layout was smaller, puzzles were removed, and implemented mechanics were
+      fewer.
+      The general scope was reduced to maintain the self imposed time limit. Instead, I decided to focus and iterate
+      more on several rooms.
+    </p>
+
     <h2>Thought Processes & Design Decisions</h2>
 
     <h2>Gallery</h2>
@@ -125,7 +134,7 @@ export default {
 
       ],
       blockouts: [
-      { url: require('@/assets/scarabdescent/HighresScreenshot00005.png') },
+        { url: require('@/assets/scarabdescent/HighresScreenshot00005.png') },
         { url: require('@/assets/scarabdescent/HighresScreenshot00011.png') },
         { url: require('@/assets/scarabdescent/HighresScreenshot00012.png') },
         { url: require('@/assets/scarabdescent/HighresScreenshot00016.png') },
@@ -142,13 +151,13 @@ export default {
       layout: [
       ],
       brief: [
-      { url: require('@/assets/scarabdescent/brief/1.png') },
-      { url: require('@/assets/scarabdescent/brief/2.png') },
-      { url: require('@/assets/scarabdescent/brief/3.png') },
-      { url: require('@/assets/scarabdescent/brief/4.png') },
-      { url: require('@/assets/scarabdescent/brief/5.png') },
-      { url: require('@/assets/scarabdescent/brief/6.png') },
-      { url: require('@/assets/scarabdescent/brief/8.png') },
+        { url: require('@/assets/scarabdescent/brief/1.png') },
+        { url: require('@/assets/scarabdescent/brief/2.png') },
+        { url: require('@/assets/scarabdescent/brief/3.png') },
+        { url: require('@/assets/scarabdescent/brief/4.png') },
+        { url: require('@/assets/scarabdescent/brief/5.png') },
+        { url: require('@/assets/scarabdescent/brief/6.png') },
+        { url: require('@/assets/scarabdescent/brief/8.png') },
       ]
 
     }
