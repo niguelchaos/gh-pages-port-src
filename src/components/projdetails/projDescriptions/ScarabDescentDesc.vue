@@ -159,6 +159,57 @@
 
     <h2>Process</h2>
     <h3>Step 1: Research</h3>
+    <p>
+    After establishing the requirements and the general goals of the game, I began by looking at how other metroidvanias structured their game world. 
+    I tried focusing on FPS metroidvanias, but there were not many. In the end, I decided to take a deeper look at Metroid Prime: Remastered and Hollow Knight. 
+    This was because Prime was a clear standard in First Person Metroidvanias, while our game was initially inspired by Hollow Knight.
+    I examined how the player moved through the world maps from point to point to understand how the maps were built. 
+  </p>
+
+  <p>
+    When looking through the maps, I had the questions below in mind:
+    <ul>
+      <li> What common elements exist between Prime and HK's maps, despite one being 2D and another being 3D?</li>
+    </ul>
+  </p>
+
+
+      <!-- Observations
+  Nodes and Edges
+  Rooms can be categorized into nodes and edges
+  Metroid Prime is clearer in this sense - Edges are often long corridors, Nodes are larger, open space used for large fights or set pieces.
+  Prime often lets the player see most of, if not all, the “gates” upon entering the room.  
+  Central Hub
+  Large rooms are often “crossroads”
+  Generally expands in verticality too
+  Organic vs synthetic is also reflected in the layout
+  Pirate Ship and constructed areas is angular, longer corridors, square-er, symmetrical
+  Organic areas like forests have more curves, jagged edges
+  Mines are rockier despite organic
+  Final Boss can be reached in early game, generally locked by a certain skill/item.
+  This item can be retrieved close
+  Whether you can defeat it is up to skill.
+  Placing the final boss early gives the player a goal throughout the game.
+  Prime uses gate shooting mechanic to hard gate players from entering areas
+  Hollow knight uses soft lock mechanics in some areas, such as the “fog of darkness”
+
+  FP 3D vs 2D
+  From a top down perspective, Metroid Prime is much more linear
+  Prime has puzzles that takes advantage of 3D
+  Shooting broken bricks that drop platforms down
+  Different perspectives needed to reveal a puzzle
+  Immersiveness comes from not only 3D itself, but the helmet and diegetic UI
+  When explosions and effects happen, they light up the helmet
+
+  Questions
+  We know the flow should be nonlinear, and players can take multiple paths(or all of them) to reach the final boss. How?
+  What common elements are there in metroidvanias in general that we should (or shouldnt) replicate?
+  On the same path of thinking, what makes Prime and Hollow Knight different other than their perspectives?
+  How are enemies placed?
+  Since Prime doesnt have melee, how do they handle enemies getting too close?
+  Similarly, how will we handle enemies in terms of behaviour and positioning since we arent too sure if we have melee?
+  Platforming isn’t required to be a metroidvania, but how much of it should we have? -->
+
     <h3>Step 2: Design Document</h3>
     <h3>Step 3: References</h3>
     <h3>Step 4: 2D Map</h3>
@@ -188,7 +239,7 @@
       <div>
         <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
           :interval="5000">
-          <b-carousel-slide v-for="image in this.layouts" :key="image.url" caption=""
+          <b-carousel-slide v-for="image in this.layouts" :key="image.url" :caption="image.caption"
             :img-src="image.url"></b-carousel-slide>
         </b-carousel>
       </div>
@@ -224,12 +275,13 @@ export default {
       processimages: [
       ],
       layouts: [
-      { url: require('@/assets/scarabdescent/layouts/draft.png') },
-      { url: require('@/assets/scarabdescent/layouts/v1.png') },
-      { url: require('@/assets/scarabdescent/layouts/v2.png') },
-      { url: require('@/assets/scarabdescent/layouts/v3.png') },
-      { url: require('@/assets/scarabdescent/layouts/v4.png') },
-      { url: require('@/assets/scarabdescent/layouts/v5.png') },
+      { url: require('@/assets/scarabdescent/layouts/draft.png'), caption: "Draft"},
+      { url: require('@/assets/scarabdescent/layouts/v1.png'), caption: "V1" },
+      { url: require('@/assets/scarabdescent/layouts/v2.png'), caption: "V2" },
+      { url: require('@/assets/scarabdescent/layouts/v3.png'), caption: "V3" },
+      { url: require('@/assets/scarabdescent/layouts/v4.png'), caption: "V4" },
+      { url: require('@/assets/scarabdescent/layouts/v5.png'), caption: "V5" },
+      { url: require('@/assets/scarabdescent/layouts/FinalLayout.png'), caption: "Final" },
       ],
       finallayout: require('@/assets/scarabdescent/layouts/FinalLayout.png'),
       topdownblockout: require('@/assets/scarabdescent/screenshots/topdown.png'),
