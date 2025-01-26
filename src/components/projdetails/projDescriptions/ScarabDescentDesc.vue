@@ -64,8 +64,13 @@
 
     <h2>Blockout Timelapse</h2>
     <b-col lg="12">
-      <p>Work in progress...I don't know to make timelapses yet.
-    </p>
+      <div>
+        <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
+          :interval="700">
+          <b-carousel-slide v-for="image in this.timelapse" :key="image.url" :caption="image.caption"
+            :img-src="image.url"></b-carousel-slide>
+        </b-carousel>
+      </div>
       <!-- <div>
         <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
           :interval="0.01">
@@ -170,8 +175,16 @@
     When looking through the maps, I had the questions below in mind:
     <ul>
       <li> What common elements exist between Prime and HK's maps, despite one being 2D and another being 3D?</li>
+      <li> How does the different themes affect the level design in their areas?</li>
+      <li> How does the level design assist the feeling of progression, and how does it support different methods of traversal?</li>
+      <li> How does the level design assist the feeling of ability progression and mastery?</li>
+      <li> What techniques are used to maintain engagement when backtracking?</li>
     </ul>
   </p>
+
+  <b-img :src="this.hkpathing" fluid-grow alt="Fluid image"></b-img>
+
+
 
 
       <!-- Observations
@@ -272,6 +285,20 @@ export default {
         { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00036.png') },
         { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00064.png') },
       ],
+      timelapse: [
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t1.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t2.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t3.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t4.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t5.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t6.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t7.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t8.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t9.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t10.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t11.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t12.png') },
+      ],
       processimages: [
       ],
       layouts: [
@@ -293,7 +320,8 @@ export default {
         { url: require('@/assets/scarabdescent/brief/5.png') },
         { url: require('@/assets/scarabdescent/brief/6.png') },
         { url: require('@/assets/scarabdescent/brief/8.png') },
-      ]
+      ],
+      hkpathing: require('@/assets/scarabdescent/research/hkpathing.png'),
 
     }
   },
