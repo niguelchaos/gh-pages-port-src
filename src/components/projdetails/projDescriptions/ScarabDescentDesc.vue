@@ -80,6 +80,8 @@
       </div> -->
     </b-col>
 
+    <div class="my-4"></div> <!-- Spacer with margin -->
+
     <h2>Overview</h2>
     <p>"Scarab Descent" is a 3D first-person shooter set in a vast desert ruin, heavily inspired by the aesthetics of
       Egyptian mythology with a touch of sci-fi. The game merges FPS mechanics with Metroidvania-style exploration,
@@ -94,6 +96,8 @@
       <b>Team Size</b>: 2 <br>
       <b>Role</b>: Blockout, Lighting, Pacing, Player Scripting <br>
     </p>
+
+    <div class="my-4"></div> <!-- Spacer with margin -->
 
     <h2>Goals & Restrictions</h2>
     <p><b>Goals</b></p>
@@ -146,8 +150,83 @@
       </ul>
     </ul>
 
-    <h2>Initial Brief</h2>
+    <div class="my-4"></div> <!-- Spacer with margin -->
+
+    <h2>Objective</h2>
+    <p>Defeat the Final Boss.</p>
+
+    <h2>Layout</h2>
+    <p>Here is the final layout and the sections.</p>
+    <b-col lg="6">
+      <b-img :src="this.annotatedlayout" fluid-grow alt="Fluid image"></b-img>
+    </b-col>
+
+    <div class="my-4"></div> <!-- Spacer with margin -->
+
+
+    <h2>Process</h2>
+    <h3>Step 1: Research</h3>
+    <p>
+      After establishing the requirements and the general goals of the game, I began by looking at how other
+      metroidvanias structured their game world.
+      I tried focusing on FPS metroidvanias, but there were not many. In the end, I decided to take a deeper look at
+      Metroid Prime: Remastered and Hollow Knight.
+      This was because Prime was a clear standard in First Person Metroidvanias, while our game was initially inspired
+      by Hollow Knight.
+      I examined how the player moved through the world maps from point to point to understand how the maps were built.
+    </p>
+
+    <p>
+      When looking through the maps, I had the questions below in mind:
+    <ul>
+      <li> What common elements exist between Prime and HK's maps, despite one being 2D and another being 3D?</li>
+      <li> How does the different themes affect the level design in their areas?</li>
+      <li> How does the level design assist the feeling of progression, and how does it support different methods of
+        traversal?</li>
+      <li> How does the level design assist the feeling of ability progression and mastery?</li>
+      <li> What techniques are used to maintain engagement when backtracking?</li>
+    </ul>
+    </p>
+
+    <p>
+      I also analyzed the path players took from start to end of Hollow Knight and Metroid Prime.
+      More specifically, I traced the path a speedrun took for Hollow Knight, and traced the path the IGN Walkthrough of
+      Metroid Prime took to 100% the game.
+      Although it is not exactly a fair comparison, I specifically did this to compare the differences between
+      speedrunning and a more extensive playthrough to gain insight into both in a limited amount of time.
+    </p>
+    <p> Notes:</p>
+    <ul>
+      <li> Speedruns clearly have much less backtracking, and the paths which do tend to be in the hub area.</li>
+      <li> There are generally smaller hubs which let the player backtrack less before encountering a save
+        point/resting area, especially during early game.
+        Late game backtracking tends to become longer and longer, not just because of area, but also because gated
+        areas are intentionally placed in previous areas.
+      </li>
+      <li> Players are generally better rewarded for exploring more, which is correlated to more backtracking.</li>
+    </ul>
+    <b-row>
+      <b-col lg="6">
+        <b-img :src="this.hkpathing" fluid-grow alt="Fluid image"></b-img>
+      </b-col>
+      <b-col lg="6">
+
+        <b-img :src="this.primepathing" fluid-grow alt="prime path"></b-img>
+      </b-col>
+    </b-row>
+
+    <div class="my-4"></div> <!-- Spacer with margin -->
+
+    <h3>Step 2: Initial Design Document</h3>
     <b-col lg="12">
+      <p>
+        With the general goals set and a general understanding of what kind of metroidvania experience I wanted
+        clarified, I created a level design document to organize my thoughts.
+        Although I was aware that things could change through iterations, creating the document was surprisingly helpful
+        in establishing a "baseline" I could refer back to later on.
+        In the document, I establish the the main objectives, the core gameplay, the main pillars, player mechanics,
+        pacing and various metrics.
+      </p>
       <div>
         <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" fade controls indicators :interval="3000">
           <b-carousel-slide v-for="image in this.brief" :key="image.url" caption=""
@@ -155,77 +234,64 @@
         </b-carousel>
       </div>
     </b-col>
+    <div class="my-4"></div> <!-- Spacer with margin -->
 
-    <h2>Layout</h2>
-    <p>Here is the final layout and the sections.</p>
-    <b-img :src="this.finallayout" fluid-grow alt="Fluid image"></b-img>
-    <b-img :src="this.topdownblockout" fluid-grow alt="Fluid image"></b-img>
-
-
-    <h2>Process</h2>
-    <h3>Step 1: Research</h3>
-    <p>
-    After establishing the requirements and the general goals of the game, I began by looking at how other metroidvanias structured their game world. 
-    I tried focusing on FPS metroidvanias, but there were not many. In the end, I decided to take a deeper look at Metroid Prime: Remastered and Hollow Knight. 
-    This was because Prime was a clear standard in First Person Metroidvanias, while our game was initially inspired by Hollow Knight.
-    I examined how the player moved through the world maps from point to point to understand how the maps were built. 
-  </p>
-
-  <p>
-    When looking through the maps, I had the questions below in mind:
-    <ul>
-      <li> What common elements exist between Prime and HK's maps, despite one being 2D and another being 3D?</li>
-      <li> How does the different themes affect the level design in their areas?</li>
-      <li> How does the level design assist the feeling of progression, and how does it support different methods of traversal?</li>
-      <li> How does the level design assist the feeling of ability progression and mastery?</li>
-      <li> What techniques are used to maintain engagement when backtracking?</li>
-    </ul>
-  </p>
-
-  <b-img :src="this.hkpathing" fluid-grow alt="Fluid image"></b-img>
-
-
-
-
-      <!-- Observations
-  Nodes and Edges
-  Rooms can be categorized into nodes and edges
-  Metroid Prime is clearer in this sense - Edges are often long corridors, Nodes are larger, open space used for large fights or set pieces.
-  Prime often lets the player see most of, if not all, the “gates” upon entering the room.  
-  Central Hub
-  Large rooms are often “crossroads”
-  Generally expands in verticality too
-  Organic vs synthetic is also reflected in the layout
-  Pirate Ship and constructed areas is angular, longer corridors, square-er, symmetrical
-  Organic areas like forests have more curves, jagged edges
-  Mines are rockier despite organic
-  Final Boss can be reached in early game, generally locked by a certain skill/item.
-  This item can be retrieved close
-  Whether you can defeat it is up to skill.
-  Placing the final boss early gives the player a goal throughout the game.
-  Prime uses gate shooting mechanic to hard gate players from entering areas
-  Hollow knight uses soft lock mechanics in some areas, such as the “fog of darkness”
-
-  FP 3D vs 2D
-  From a top down perspective, Metroid Prime is much more linear
-  Prime has puzzles that takes advantage of 3D
-  Shooting broken bricks that drop platforms down
-  Different perspectives needed to reveal a puzzle
-  Immersiveness comes from not only 3D itself, but the helmet and diegetic UI
-  When explosions and effects happen, they light up the helmet
-
-  Questions
-  We know the flow should be nonlinear, and players can take multiple paths(or all of them) to reach the final boss. How?
-  What common elements are there in metroidvanias in general that we should (or shouldnt) replicate?
-  On the same path of thinking, what makes Prime and Hollow Knight different other than their perspectives?
-  How are enemies placed?
-  Since Prime doesnt have melee, how do they handle enemies getting too close?
-  Similarly, how will we handle enemies in terms of behaviour and positioning since we arent too sure if we have melee?
-  Platforming isn’t required to be a metroidvania, but how much of it should we have? -->
-
-    <h3>Step 2: Design Document</h3>
     <h3>Step 3: References</h3>
+    <b-row>
+      <b-col lg="6">
+        <p>Along with the analyses of the paths taken in Metroid Prime and Hollow Knight, I also took other notes regarding gameplay and general level design.
+          There was a clear focus on Metroid Prime as it was an 3D FPS Metroidvania, making it closer to what I was aiming for. 
+        </p>
+      </b-col>
+
+      <b-col lg="6">
+        <b-img :src="this.observations" fluid-grow alt="Fluid image"></b-img>
+      </b-col>
+    </b-row>
+
+    <div class="my-4"></div> <!-- Spacer with margin -->
     <h3>Step 4: 2D Map</h3>
+    <p>
+      When creating the 2D map, I kept fundamental considerations from the requirements, observations, genre, and
+      narrative in mind:
+    </p>
+
+    <ul>
+      <li> There should be at least 2 distinct areas, following the research I did for metroidvanias.
+        Distinct areas provide the player with a mental map of where they generally are, creates interesting themes,
+        encourages different playstyles,
+        and gives a more believable narrative experience depending on the theme.</li>
+      <li> Exploration needs to be non-linear. This means that there should be more than 2 paths to reach the final boss
+        and different areas.
+        The usage of a hub room is a common technique to do this, and thus promote backtracking. </li>
+      <li> There should be ability gating to maintain player agency, but still prevent the player from going everywhere.
+      </li>
+      <li> New abilities should be usable in both exploration and combat.</li>
+    </ul>
+
+    <div class="my-4"></div> <!-- Spacer with margin -->
+
+    <b-row>
+      <b-col lg="6">
+        <h5>Draft Layout</h5>
+        <p>I began with a draft, settling on a hub-and-spoke topology, with a distinct area for each "spoke".</p>
+        <b-img :src="this.draftlayout" fluid alt="Draft"></b-img>
+      </b-col>
+
+      <b-col lg="6">
+        <h5>Initial Layout</h5>
+        <p>I then began populating each area with rooms, reaching the initial layout.</p>
+        <b-img :src="this.initiallayout" fluid alt="Initial"></b-img>
+      </b-col>
+    </b-row>
+
+    <h5>Final Layout</h5>
+    <p>
+      After several iterations, I simplified the map to:
+    </p>
+    <b-img :src="this.finallayout" fluid alt="Final"></b-img>
+
+    <div class="my-4"></div> <!-- Spacer with margin -->
     <h3>Step 5: Blockout, Iteration and Feedback</h3>
     <h4>Scoping Down</h4>
 
@@ -238,6 +304,9 @@
 
     <h2>Thought Processes & Design Decisions</h2>
 
+
+    <div class="my-4"></div> <!-- Spacer with margin -->
+
     <h2>Gallery</h2>
     <b-col lg="12">
       <div>
@@ -248,7 +317,9 @@
         </b-carousel>
       </div>
     </b-col>
+    <br>
     <b-col lg="12">
+      <h5>Map</h5>
       <div>
         <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
           :interval="5000">
@@ -258,6 +329,7 @@
       </div>
     </b-col>
 
+    <div class="my-4"></div> <!-- Spacer with margin -->
   </b-container>
 </template>
 
@@ -302,16 +374,19 @@ export default {
       processimages: [
       ],
       layouts: [
-      { url: require('@/assets/scarabdescent/layouts/draft.png'), caption: "Draft"},
-      { url: require('@/assets/scarabdescent/layouts/v1.png'), caption: "V1" },
-      { url: require('@/assets/scarabdescent/layouts/v2.png'), caption: "V2" },
-      { url: require('@/assets/scarabdescent/layouts/v3.png'), caption: "V3" },
-      { url: require('@/assets/scarabdescent/layouts/v4.png'), caption: "V4" },
-      { url: require('@/assets/scarabdescent/layouts/v5.png'), caption: "V5" },
-      { url: require('@/assets/scarabdescent/layouts/FinalLayout.png'), caption: "Final" },
+        { url: require('@/assets/scarabdescent/layouts/draft.png'), caption: 'Draft' },
+        { url: require('@/assets/scarabdescent/layouts/v1.png'), caption: 'V1' },
+        { url: require('@/assets/scarabdescent/layouts/v2.png'), caption: 'V2' },
+        { url: require('@/assets/scarabdescent/layouts/v3.png'), caption: 'V3' },
+        { url: require('@/assets/scarabdescent/layouts/v4.png'), caption: 'V4' },
+        { url: require('@/assets/scarabdescent/layouts/v5.png'), caption: 'V5' },
+        { url: require('@/assets/scarabdescent/layouts/FinalLayout.png'), caption: 'Final' },
+        { url: require('@/assets/scarabdescent/layouts/annotatedlayout.png'), caption: 'Annotated Map' },
       ],
+      draftlayout: require('@/assets/scarabdescent/layouts/draft.png'),
+      initiallayout: require('@/assets/scarabdescent/layouts/v1.png'),
       finallayout: require('@/assets/scarabdescent/layouts/FinalLayout.png'),
-      topdownblockout: require('@/assets/scarabdescent/screenshots/topdown.png'),
+      annotatedlayout: require('@/assets/scarabdescent/layouts/annotatedlayout.png'),
       brief: [
         { url: require('@/assets/scarabdescent/brief/1.png') },
         { url: require('@/assets/scarabdescent/brief/2.png') },
@@ -322,6 +397,8 @@ export default {
         { url: require('@/assets/scarabdescent/brief/8.png') },
       ],
       hkpathing: require('@/assets/scarabdescent/research/hkpathing.png'),
+      primepathing: require('@/assets/scarabdescent/research/primepathing.png'),
+      observations: require('@/assets/scarabdescent/reference/observations.png'),
 
     }
   },
