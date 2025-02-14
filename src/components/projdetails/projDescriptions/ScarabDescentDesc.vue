@@ -239,8 +239,10 @@
     <h3>Step 3: References</h3>
     <b-row>
       <b-col lg="6">
-        <p>Along with the analyses of the paths taken in Metroid Prime and Hollow Knight, I also took other notes regarding gameplay and general level design.
-          There was a clear focus on Metroid Prime as it was an 3D FPS Metroidvania, making it closer to what I was aiming for. 
+        <p>Along with the analyses of the paths taken in Metroid Prime and Hollow Knight, I also took other notes
+          regarding gameplay and general level design.
+          There was a clear focus on Metroid Prime as it was an 3D FPS Metroidvania, making it closer to what I was
+          aiming for.
         </p>
       </b-col>
 
@@ -293,16 +295,114 @@
 
     <div class="my-4"></div> <!-- Spacer with margin -->
     <h3>Step 5: Blockout, Iteration and Feedback</h3>
-    <h4>Scoping Down</h4>
+    <h4>Scope</h4>
 
     <p>After several iterations and feedback, I realized that I had bitten off too much - I was essentially trying to
       create an entire world map. the final layout was smaller, puzzles were removed, and implemented mechanics were
       fewer.
-      The general scope was reduced to maintain the self imposed time limit. Instead, I decided to focus and iterate
+      The general scope was reduced to maintain feasibility. Instead, I decided to focus and iterate
       more on several rooms.
     </p>
 
+    <h4>Scale</h4>
+    <div class="my-4"></div> <!-- Spacer with margin -->
+
+
+    <h4>Boss Rooms</h4>
+
+    <div class="my-4"></div> <!-- Spacer with margin -->
+
     <h2>Thought Processes & Design Decisions</h2>
+
+    <h3> Backtracking </h3>
+    
+    <p>Backtracking is focused on the two hubs: The central hub and the canyon hub.
+      Following the progression flow in the initial brief, the player would have to revisit the central hub at least
+      twice no matter which path they take.
+      One future addition I would want to add is to add an ability gate to the central hub so that the player has a
+      larger progression reason to revisit it.
+    </p>
+    <b-img  :src="this.backtrackroutes" fluid alt=""></b-img>
+    <p class="text-center">Main backtracking routes</p>
+
+    <h3>Ability Gates</h3>
+    <p>
+      Although the map was created with ability gates in mind, they were not implemented early on as it was not high on
+      the priority list.
+      <br>
+      Initially, it was decided that ability gates would be similar to metroid prime, where a door would only open by
+      shooting it with the correct type of gun.
+      <br>
+      However, since the vertical slice only had 1 new gun (rocket), there wasn’t enough abilities to “fire” at the
+      gate.
+      <br>
+      I thus decided to integrate the ability gating into the room itself.
+      <br>
+      Following the initial brief flow, I created 2 ability gates: The one to The Bridge (Dash Ability) and the other
+      one to the Boss.
+    </p>
+    <b-row>
+      <b-col lg="6">
+        <h5>Dash Ability Gate</h5>
+        <b-img :src="this.dashabilitygate" fluid alt=""></b-img>
+        <p>This ability gate can be passed with either a double jump OR the rocket.
+          The yellow pillar illustrates what happens when the player fires a rocket at the gray pillar.
+          <br>
+          I also wanted to add a little environmental storytelling to why the pillar is almost falling.
+          To do so, I added a large ring that has crashed onto the left side, as if an old building fell onto the
+          hallway, emphasizing the theme of "ruins".
+        </p>
+      </b-col>
+      <b-col lg="6">
+        <h5>Boss Ability Gate</h5>
+        <b-img :src="this.bossabilitygate" fluid alt=""></b-img>
+        <p>This ability gate can be passed with either a double jump OR rocket AND the dash.
+          <br>
+          I reuse the pillar topple mechanic for the rocket.
+          <br>
+          Since this is the final room before the final boss, I added much denser debris to hint that something
+          important was up ahead.
+        </p>
+      </b-col>
+    </b-row>
+
+    <div class="my-4"></div> <!-- Spacer with margin -->
+
+    <h3> Environmental Storytelling </h3>
+    <p>
+      In order to sell the narrative of a fallen ancient civilization and the resulting theme of "ancient ruins", I
+      tried to integrate environmental storytelling in various ways.
+      When approaching environmental storytelling, the main question I wanted the players to ask was:
+    </p>
+    <p class="text-center">"What happened here?"</p>
+    <p>
+      Since I created a small blockout kit and had to be conservative with what I had to reduce iteration times,
+      <br>
+      most of these pieces are integrated into the gameplay in terms of combat, traversal, or both.
+    </p>
+
+    <b-row>
+      <b-col lg="4">
+        <b-img :src="this.fallentowerring" fluid alt=""></b-img>
+        <p>How did this ring crash down?
+          <br>Why are they still protecting the tower?
+        </p>
+      </b-col>
+      <b-col lg="4">
+        <b-img :src="this.guards" fluid alt=""></b-img>
+        <p>What are they guarding?</p>
+      </b-col>
+      <b-col lg="4">
+        <b-img :src="this.pileddebris" fluid alt=""></b-img>
+        <p>How did so much debris get here?
+          <br>(A large explosion?)
+        </p>
+      </b-col>
+    </b-row>
+    
+    <div class="my-4"></div> <!-- Spacer with margin -->
+
+    <h3> Distinct Areas </h3>
 
 
     <div class="my-4"></div> <!-- Spacer with margin -->
@@ -370,6 +470,7 @@ export default {
         { url: require('@/assets/scarabdescent/screenshots/timelapse/t10.png') },
         { url: require('@/assets/scarabdescent/screenshots/timelapse/t11.png') },
         { url: require('@/assets/scarabdescent/screenshots/timelapse/t12.png') },
+        { url: require('@/assets/scarabdescent/screenshots/timelapse/t13.png') },
       ],
       processimages: [
       ],
@@ -380,12 +481,13 @@ export default {
         { url: require('@/assets/scarabdescent/layouts/v3.png'), caption: 'V3' },
         { url: require('@/assets/scarabdescent/layouts/v4.png'), caption: 'V4' },
         { url: require('@/assets/scarabdescent/layouts/v5.png'), caption: 'V5' },
-        { url: require('@/assets/scarabdescent/layouts/FinalLayout.png'), caption: 'Final' },
+        { url: require('@/assets/scarabdescent/layouts/v6.png'), caption: 'V6' },
+        { url: require('@/assets/scarabdescent/layouts/v7.png'), caption: 'Final' },
         { url: require('@/assets/scarabdescent/layouts/annotatedlayout.png'), caption: 'Annotated Map' },
       ],
       draftlayout: require('@/assets/scarabdescent/layouts/draft.png'),
       initiallayout: require('@/assets/scarabdescent/layouts/v1.png'),
-      finallayout: require('@/assets/scarabdescent/layouts/FinalLayout.png'),
+      finallayout: require('@/assets/scarabdescent/layouts/v7.png'),
       annotatedlayout: require('@/assets/scarabdescent/layouts/annotatedlayout.png'),
       brief: [
         { url: require('@/assets/scarabdescent/brief/1.png') },
@@ -396,6 +498,16 @@ export default {
         { url: require('@/assets/scarabdescent/brief/6.png') },
         { url: require('@/assets/scarabdescent/brief/8.png') },
       ],
+      backtrackroutes: require('@/assets/scarabdescent/backtracking/backtrackroutes.png'),
+      dashabilitygate: require('@/assets/scarabdescent/abilitygates/dashgate.png'),
+      bossabilitygate: require('@/assets/scarabdescent/abilitygates/bossgate.png'),
+      
+      crashedring: require('@/assets/scarabdescent/envstory/crashedring.png'),
+      fallentowerring: require('@/assets/scarabdescent/envstory/tower.png'),
+      pileddebris: require('@/assets/scarabdescent/envstory/pileddebris.png'),
+      guards: require('@/assets/scarabdescent/envstory/guards.png'),
+      stuckdisc: require('@/assets/scarabdescent/envstory/stuckdisc.png'),
+
       hkpathing: require('@/assets/scarabdescent/research/hkpathing.png'),
       primepathing: require('@/assets/scarabdescent/research/primepathing.png'),
       observations: require('@/assets/scarabdescent/reference/observations.png'),
