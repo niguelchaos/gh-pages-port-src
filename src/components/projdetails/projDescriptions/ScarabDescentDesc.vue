@@ -294,35 +294,149 @@
     <b-img :src="this.finallayout" fluid alt="Final"></b-img>
 
     <div class="my-4"></div> <!-- Spacer with margin -->
+
     <h3>Step 5: Blockout, Iteration and Feedback</h3>
-    <h4>Scope</h4>
-
-    <p>After several iterations and feedback, I realized that I had bitten off too much - I was essentially trying to
-      create an entire world map. the final layout was smaller, puzzles were removed, and implemented mechanics were
-      fewer.
-      The general scope was reduced to maintain feasibility. Instead, I decided to focus and iterate
-      more on several rooms.
+    <h4>Initial Feedback</h4>
+    <p>
+      While blocking out the first few rooms, namely the central and canyon hub, in my initial layout, I quickly
+      realized several glaring issues in the initial map I would have to resolve even before completing it:
     </p>
+    <ul>
+      <li><b>Scope was too large.</b> Blocking out 6 areas, each with 5+ corridors and rooms was simply not feasible for
+        an MVP.
+      </li>
+      <li><b>Scale was too large.</b> There was too much verticality.</li>
+      <li>Directly converting Hollow Knight’s map to 3D is not feasible. Adding
+        a new dimension naturally morphs the rooms.</li>
+      <li><b>Each room was too large.</b> It took too long to traverse from room to room, even without enemies.</li>
+      <li><b>Too many rooms</b> between major points of interest (Hub room, boss rooms).As a result, pacing was not
+        representative of the graph.</li>
+      <li>Too much jumping! Too much walking!</li>
+      <li>Puzzles were<b> difficult to implement</b> due to the scripting overhead. </li>
+      <li>It was difficult to understand their surroundings. Important elements to understand were things like entrances
+        to the rooms and where the enemies were before engaging.</li>
+      <li><b>Unclear uniqueness for each area.</b> The idea of canyon and ruins was clear, but it was not clear what
+        distinct elements differentiated “canyon” and “ruins”.</li>
+    </ul>
 
-    <h4>Scale</h4>
+    <h4>Feedback 2</h4>
+    <ul>
+      <li><b>Canyon hub is too large.</b> With the canyon connecting to 2 bosses, the main hub is dwarfed by the sheer
+        contrast in size.
+      </li>
+      <li><b>Hard to playtest without ability gating, enemies and weapons.</b></li>
+      <li><b>Boss ability gate does not exist, cannot test start to end.</b></li>
+      <li><b>Wayfinding Issues: It is too difficult to find my way around the map.</b></li>
+      <li><b>Composition issues: No landmarks, no framing, and no vantage points that let you survey your
+          surroundings.</b></li>
+      <li><b>Unclear Affordances: Since scale was too large, it was always difficult to quickly understand if a rock was
+          a wall
+          or an obstacle that could be jumped over.</b></li>
+    </ul>
+
+
+
+    <!-- In Prime, standing in the middle of a room allows you to see the common exits/entrances, allowing you to find your
+        way towards it (or find it blocked) -->
+
+
+    <!-- I was not too worried about this, however, because I liked the idea that acquiring new abilities made the player
+        realize what was previously impossible is now affordable. -->
+    <h4>Solutions:</h4>
+    <ul>
+      <li><b>Removed puzzle to acquire Dash Ability, replaced with The Bridge.</b></li>
+      <li><b>Fewer mechanics: Removed secondary abilities for each gun, ability gates are part of the level.</b></li>
+      <li><b>Reduced distinct areas to 2: “Canyon” and “Ruins”. The elements I aimed each to have were:</b></li>
+      <ul>
+        <li>Canyon: Larger scale, more nature, rocky, rooms are more functioning machinery from the old civilization
+          because
+          of it being more protected.</li>
+        <li>Ruins: Center of ancient ruins. Higher density of decay and rubble, more man-made rooms(which are smaller).
+        </li>
+      </ul>
+      <li>
+        Revisited scale and verticality: I tried to limit verticality and scale by placing specific rules and using some
+        techniques:
+      </li>
+      <ul>
+        <li>World aligned Prototyping textures: This helped greatly in making sure obstacles could be jumped (or double
+          jumped) over. It made playtesting more comfortable.</li>
+        <li>Modular kit: I began using the same doorway module for all entrances, and that made sure that doorways
+          weren’t too
+          large or small.</li>
+        <li>Define what 1 "floor" is: Using staircases as measurements to roughly measure and standardize how tall
+          things are.
+        </li>
+        <li>Roughly limit how long it takes to get from 1 floor to another: Generally, 2-3 jumps, and it shouldn't take
+          more
+          than a minute of walking.
+        </li>
+      </ul>
+    </ul>
+
+
+
     <div class="my-4"></div> <!-- Spacer with margin -->
 
 
-    <h4>Boss Rooms</h4>
+    <!-- <h4>Rooms</h4>
+    <p>Each room went through a number of iterations themselves (and will continue having more iterations), most if not
+      all suffering from the issues mentioned above.
+      <br>
+      Note that this is still a work in progress.
+    </p> -->
+    <!-- <b-row>
+    <b-col lg="6">
+      <div>
+        <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
+          :interval="5000">
+          <b-carousel-slide v-for="image in this.iter_canyonhub" :key="image.url" caption=""
+            :img-src="image.url"></b-carousel-slide>
+        </b-carousel>
+      </div>
+    </b-col>
+    <b-col lg="6">
+      <div>
+        <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
+          :interval="5000">
+          <b-carousel-slide v-for="image in this.iter_tower" :key="image.url" caption=""
+            :img-src="image.url"></b-carousel-slide>
+        </b-carousel>
+      </div>
+    </b-col>
+    <b-col lg="6">
+      <div>
+        <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
+          :interval="5000">
+          <b-carousel-slide v-for="image in this.iter_bridge" :key="image.url" caption=""
+            :img-src="image.url"></b-carousel-slide>
+        </b-carousel>
+      </div>
+    </b-col>
+    <b-col lg="6">
+      <div>
+        <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
+          :interval="5000">
+          <b-carousel-slide v-for="image in this.iter_arena" :key="image.url" caption=""
+            :img-src="image.url"></b-carousel-slide>
+        </b-carousel>
+      </div>
+    </b-col>
+  </b-row> -->
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
     <h2>Thought Processes & Design Decisions</h2>
 
     <h3> Backtracking </h3>
-    
+
     <p>Backtracking is focused on the two hubs: The central hub and the canyon hub.
       Following the progression flow in the initial brief, the player would have to revisit the central hub at least
       twice no matter which path they take.
       One future addition I would want to add is to add an ability gate to the central hub so that the player has a
       larger progression reason to revisit it.
     </p>
-    <b-img  :src="this.backtrackroutes" fluid alt=""></b-img>
+    <b-img :src="this.backtrackroutes" fluid alt=""></b-img>
     <p class="text-center">Main backtracking routes</p>
 
     <h3>Ability Gates</h3>
@@ -399,7 +513,7 @@
         </p>
       </b-col>
     </b-row>
-    
+
     <div class="my-4"></div> <!-- Spacer with margin -->
 
     <h3> Distinct Areas </h3>
@@ -501,7 +615,7 @@ export default {
       backtrackroutes: require('@/assets/scarabdescent/backtracking/backtrackroutes.png'),
       dashabilitygate: require('@/assets/scarabdescent/abilitygates/dashgate.png'),
       bossabilitygate: require('@/assets/scarabdescent/abilitygates/bossgate.png'),
-      
+
       crashedring: require('@/assets/scarabdescent/envstory/crashedring.png'),
       fallentowerring: require('@/assets/scarabdescent/envstory/tower.png'),
       pileddebris: require('@/assets/scarabdescent/envstory/pileddebris.png'),
@@ -512,6 +626,75 @@ export default {
       primepathing: require('@/assets/scarabdescent/research/primepathing.png'),
       observations: require('@/assets/scarabdescent/reference/observations.png'),
 
+      iter_arena: [
+        { url: require('@/assets/scarabdescent/iterations/arena/1.png') },
+        { url: require('@/assets/scarabdescent/iterations/arena/2.png') },
+        { url: require('@/assets/scarabdescent/iterations/arena/3.png') },
+        { url: require('@/assets/scarabdescent/iterations/arena/4.png') },
+        { url: require('@/assets/scarabdescent/iterations/arena/5.png') },
+        { url: require('@/assets/scarabdescent/iterations/arena/6.png') },
+      ],
+      iter_arenahallway: [
+        { url: require('@/assets/scarabdescent/iterations/arenahallway/1.png') },
+      ],
+      iter_arenahallway2: [
+        { url: require('@/assets/scarabdescent/iterations/arenahallway2/1.png') },
+        { url: require('@/assets/scarabdescent/iterations/arenahallway2/2.png') },
+        { url: require('@/assets/scarabdescent/iterations/arenahallway2/3.png') },
+        { url: require('@/assets/scarabdescent/iterations/arenahallway2/4.png') },
+        { url: require('@/assets/scarabdescent/iterations/arenahallway2/5.png') },
+        { url: require('@/assets/scarabdescent/iterations/arenahallway2/6.png') },
+        { url: require('@/assets/scarabdescent/iterations/arenahallway2/7.png') },
+        { url: require('@/assets/scarabdescent/iterations/arenahallway2/8.png') },
+        { url: require('@/assets/scarabdescent/iterations/arenahallway2/9.png') },
+      ],
+      iter_bridge: [
+        { url: require('@/assets/scarabdescent/iterations/bridge/1.png') },
+        { url: require('@/assets/scarabdescent/iterations/bridge/2.png') },
+        { url: require('@/assets/scarabdescent/iterations/bridge/3.png') },
+        { url: require('@/assets/scarabdescent/iterations/bridge/4.png') },
+        { url: require('@/assets/scarabdescent/iterations/bridge/5.png') },
+        { url: require('@/assets/scarabdescent/iterations/bridge/6.png') },
+        { url: require('@/assets/scarabdescent/iterations/bridge/7.png') },
+        { url: require('@/assets/scarabdescent/iterations/bridge/8.png') },
+        { url: require('@/assets/scarabdescent/iterations/bridge/9.png') },
+        { url: require('@/assets/scarabdescent/iterations/bridge/10.png') },
+        { url: require('@/assets/scarabdescent/iterations/bridge/11.png') },
+      ],
+      iter_canyonhub: [
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/1.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/2.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/3.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/4.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/5.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/6.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/7.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/8.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/9.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/10.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/11.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/12.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/13.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/14.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/15.png') },
+        { url: require('@/assets/scarabdescent/iterations/canyonhub/16.png') },
+      ],
+      iter_centralhub: [
+        { url: require('@/assets/scarabdescent/iterations/centralhub/1.png') },
+        { url: require('@/assets/scarabdescent/iterations/centralhub/2.png') },
+      ],
+      iter_tower: [
+        { url: require('@/assets/scarabdescent/iterations/tower/1.png') },
+        { url: require('@/assets/scarabdescent/iterations/tower/2.png') },
+        { url: require('@/assets/scarabdescent/iterations/tower/3.png') },
+        { url: require('@/assets/scarabdescent/iterations/tower/4.png') },
+        { url: require('@/assets/scarabdescent/iterations/tower/5.png') },
+        { url: require('@/assets/scarabdescent/iterations/tower/6.png') },
+        { url: require('@/assets/scarabdescent/iterations/tower/7.png') },
+        { url: require('@/assets/scarabdescent/iterations/tower/8.png') },
+        { url: require('@/assets/scarabdescent/iterations/tower/9.png') },
+        { url: require('@/assets/scarabdescent/iterations/tower/10.png') },
+      ],
     }
   },
   mounted() {
