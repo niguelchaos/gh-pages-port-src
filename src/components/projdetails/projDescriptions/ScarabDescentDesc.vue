@@ -119,9 +119,15 @@
 
               </div>
             </div>
+
+            <p><b>Personal Goals</b></p>
+            <ul>
+              <li> Learn more about the level design process.</li>
+              <li> Practice iterating and refining the level design pipeline.</li>
+              <li> Focus on the creation of whiteboxing environments.</li>
+            </ul>
             <p class="strong-content lh-lg">
-              My initial goal when starting the project was to learn about Level Design.
-              As such, many of my efforts to implement mechanics and gameplay was to show how the level could work.
+              Many of my efforts to implement mechanics and gameplay was to show how the level could work.
               Eventually, both gameplay and level began influencing each other.
             </p>
           </div>
@@ -193,7 +199,7 @@
             </b-col>
           </b-row>
 
-          <p class="strong-content"> Findings:</p>
+          <p class="strong-content"> Findings and Observations:</p>
           <ul>
             <li> Speedruns clearly have much less backtracking, and the paths which do tend to be in the hub area.</li>
             <li> The topology of both games' world maps is generally hub and spoke, with more sub-hubs the more you go.
@@ -213,13 +219,43 @@
             <li> Players are generally better rewarded for exploring more, which is correlated to more backtracking.
               Rewards include resources obtained by killing enemies or finding secret areas.
             </li>
-            <li> The final boss is placed near the starter area, likely to give players an objective for those who are
-              lost, or for ease of access.
+            <li> The final boss is placed near the starter area, likely to give players an objective throughout the
+              game, or for ease of access. Generally locked by a certain skill/item. This item can be retrieved close,
+              and whether you can defeat it is up to skill.
             </li>
             <li> Many abilities are optional.
             </li>
             <li> Players often need to defeat bosses or challenges to obtain new abilities.
             </li>
+            <li> Rooms can be categorized into nodes and edges
+              Edges are often long corridors, Nodes are larger, open space used for large fights or set pieces.
+            </li>
+            <li> The player can see most of the doors upon entering the room.
+            </li>
+            <li> Large rooms generally expand in verticality too.
+            </li>
+            <li> Organic vs synthetic is also reflected in the layout.
+              Pirate Ship and constructed areas is angular, longer corridors, symmetrical
+              Organic areas like forests have more curves, jagged edges
+            </li>
+            <li> Prime uses gate shooting mechanic to hard gate players from entering areas
+              Hollow knight uses soft lock mechanics in some areas, such as the “fog of darkness”
+            </li>
+            <li> From a top down perspective, Metroid Prime is much more linear.
+            </li>
+            <li> Prime has puzzles that takes advantage of 3D, such as falling bricks, perspective puzzles, and diegetic
+              UI.
+            </li>
+            <li> Prime doesn’t feature a lot of traditional cover. It is mostly dodging.
+            </li>
+            <li> Boss areas are arenas of mostly flat spaces, some with gimmicks such as environmental hazards.
+            </li>
+            <li> Many of the enemies are faster/larger than the player, so its often a waiting game - wait for enemy to
+              attack, and then react.
+            </li>
+            <li> Hollow Knight is slightly different, but also emphasizes dodging despite parrying being possible.
+            </li>
+
           </ul>
           <p class="strong-content"> While many of these are self explanatory, they helped me distill what we needed for
             an experience to be "metroidvania-esque".</p>
@@ -227,17 +263,70 @@
 
         <section class="section-container mb-5 pb-5 border-light">
           <header class="text-center mb-4">
-            <h2 class="section-header display-4">Initial Design Document</h2>
+            <h2 class="section-header display-4">Design Document</h2>
           </header>
 
           <div class="px-lg-5">
-
             <p class="strong-content">
               With the general goals set and a general understanding of what kind of metroidvania experience I wanted
               clarified, I created a level design document to organize my thoughts.In the document, I establish the the
               main objectives, the core gameplay, the main pillars, player
               mechanics, pacing and various metrics.
             </p>
+            <p class="strong-content">
+              Main project goal: A MVP, self contained area encompassing all the pillars of this Metroidvania project.
+            </p>
+
+            <header class="text-center mb-4">
+              <h2 class="fw-bold mb-3 display-5">Design Pillars</h2>
+            </header>
+            <p class="strong-content">
+              The design pillars were of particular importance. They influenced many design decisions, including which
+              ones to prioritize as I continued iteration.
+            </p>
+
+            <div class="row g-4"> <!-- g-4 adds consistent gutter spacing -->
+
+              <!-- Column 1 -->
+              <div class="col-md-4">
+                <div class="h-100 p-3"> <!-- h-100 makes columns equal height -->
+                  <h3 class="fw-bold mb-3">Exploration</h3>
+                  <ul class="">
+                    <li>Create a sense of the unknown.</li>
+                    <li>Find new abilities by exploring new areas.</li>
+                    <li>Players should feel more and more curious about the world as they move through spaces.</li>
+                    <li>Reward curiosity and perseverance</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Column 2 -->
+              <div class="col-md-4">
+                <div class="h-100 p-3">
+                  <h3 class="fw-bold mb-3">Combat</h3>
+                  <ul class="">
+                    <li>Combat should be challenging for the player.</li>
+                    <li>Skilled players should be able to find alternative ways to defeat them.</li>
+                    <li>New abilities should give new methods of defeating enemies.</li>
+                    <li>Tight, responsive mechanics.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Column 3 -->
+              <div class="col-md-4">
+                <div class="h-100 p-3">
+                  <h3 class="fw-bold mb-3">Progression</h3>
+                  <ul class="">
+                    <li>Ability based gating. Players should not be able to explore all areas in the beginning.</li>
+                    <li>Player character should feel stronger through exploration and combat by acquiring abilities.
+                    </li>
+                    <li>Newly acquired skills should facilitate exploring previous areas.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             <div>
               <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" fade controls indicators :interval="3000">
                 <b-carousel-slide v-for="image in this.brief" :key="image.url" caption=""
@@ -264,61 +353,6 @@
 
     </b-col>
 
-
-
-    <div class="my-4"></div> <!-- Spacer with margin -->
-
-    <h2>Goals & Restrictions</h2>
-    <p><b>Goals</b></p>
-    <ul>
-      <li> A MVP, self contained area encompassing all the pillars of this Metroidvania project.</li>
-      <li> Take heavy inspiration from Hollow Knight’s map, and make it 3D.</li>
-    </ul>
-    <p><b>Personal Goals</b></p>
-    <ul>
-      <li> Learn more about Node-based Level Design, and how metroidvania levels can be designed.</li>
-      <li> Practice iterating and refining the level design pipeline.</li>
-      <li> Focus on the creation of whiteboxing environments.</li>
-    </ul>
-
-    <p><b>Requirements</b></p>
-    <ul>
-      <li>Exploration</li>
-      <ul>
-        <li>Non Linear: At least 2 paths to reach different areas.</li>
-        <li>Ability Gated: One or more gated area that requires a skill to be reachable.</li>
-        <li>Metroidvania-esque: The map should encourage backtracking.</li>
-      </ul>
-    </ul>
-
-    <ul>
-      <li>Combat</li>
-      <ul>
-        <li>At least one Boss which is tougher than other enemies.</li>
-        <li>Multiple combat encounters to maintain engagement.</li>
-      </ul>
-    </ul>
-
-    <ul>
-      <li>Progression</li>
-      <ul>
-        <li>Player should be able to acquire an optional upgrade or skill that is rewarded by exploration.</li>
-        <li>New skills should be usable in both exploration and combat.</li>
-      </ul>
-    </ul>
-
-    <ul>
-      <li>Others</li>
-      <ul>
-        <li>The complete map (world) is a large-sized level containing multiple rooms, exploring the world with distinct
-          areas.</li>
-        <li> This is set in a First person POV with mechanics such as running, jumping, shooting, and different
-          abilities such as
-          dashing.</li>
-        <li> Map should take into account the desert theme.</li>
-      </ul>
-    </ul>
-
     <div class="my-4"></div> <!-- Spacer with margin -->
 
     <h2>Objective</h2>
@@ -335,41 +369,6 @@
     <h2>Process</h2>
 
 
-    <div class="my-4"></div> <!-- Spacer with margin -->
-
-    <h3>Step 2: Initial Design Document</h3>
-    <b-col lg="12">
-      <p>
-        With the general goals set and a general understanding of what kind of metroidvania experience I wanted
-        clarified, I created a level design document to organize my thoughts.
-        Although I was aware that things could change through iterations, creating the document was surprisingly helpful
-        in establishing a "baseline" I could refer back to later on.
-        In the document, I establish the the main objectives, the core gameplay, the main pillars, player mechanics,
-        pacing and various metrics.
-      </p>
-      <div>
-        <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" fade controls indicators :interval="3000">
-          <b-carousel-slide v-for="image in this.brief" :key="image.url" caption=""
-            :img-src="image.url"></b-carousel-slide>
-        </b-carousel>
-      </div>
-    </b-col>
-    <div class="my-4"></div> <!-- Spacer with margin -->
-
-    <h3>Step 3: References</h3>
-    <b-row>
-      <b-col lg="6">
-        <p>Along with the analyses of the paths taken in Metroid Prime and Hollow Knight, I also took other notes
-          regarding gameplay and general level design.
-          There was a clear focus on Metroid Prime as it was an 3D FPS Metroidvania, making it closer to what I was
-          aiming for.
-        </p>
-      </b-col>
-
-      <b-col lg="6">
-        <b-img :src="this.observations" fluid-grow alt="Fluid image"></b-img>
-      </b-col>
-    </b-row>
 
     <div class="my-4"></div> <!-- Spacer with margin -->
     <h3>Step 4: 2D Map</h3>
