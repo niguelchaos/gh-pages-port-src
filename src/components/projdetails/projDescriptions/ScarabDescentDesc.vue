@@ -10,56 +10,246 @@
         </b-col>
       </b-row>
 
-      <b-row>
-        <b-col lg="6">
-          <h4>Metroidvania Mechanics</h4>
-          <p>
-            Ability Gating, Optional Levels, Boss Battles, and Exploration were all considered during multiple stages of
-            design.
-          </p>
-        </b-col>
-        <b-col lg="6">
-          <!-- <div>
-            <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 2px #000" fade controls indicators :interval="0">
-              <b-carousel-slide v-for="image in this.images" :key="image.url" caption=""
-                :img-src="image.url"></b-carousel-slide>
-            </b-carousel>
-          </div> -->
-        </b-col>
+      <div class="d-flex justify-content-center ">
+        <div class="overview shaded-box">
+          <b-row class="text-center">
+            <b-col lg="4">
+              <h4>My Role</h4>
+              <p>Game/Level Designer</p>
+            </b-col>
+            <b-col lg="4">
+              <h4>Team Size</h4>
+              <p>
+                2
+              </p>
+            </b-col>
+            <b-col lg="4">
+              <h4>Development Time</h4>
+              <p>
+                4 Months
+              </p>
+            </b-col>
+          </b-row>
 
-        <b-col lg="6">
-          <!-- <div>
-            <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 2px #000" fade controls indicators :interval="0">
-              <b-carousel-slide v-for="image in this.images" :key="image.url" caption=""
-                :img-src="image.url"></b-carousel-slide>
-            </b-carousel>
-          </div> -->
-        </b-col>
-        <b-col lg="6">
-          <h4>Non Linear Levels</h4>
-          <p>
-            To support the freedom of exploration, players can choose to go through different routes.
-            Different routes are gated by abilities to provide a sense of progression.
-          </p>
-        </b-col>
+          <b-row class="text-center">
+            <b-col lg="6">
+              <h4>Genre</h4>
+              <p>
+                FPS Metroidvania
+              </p>
+            </b-col>
+            <b-col lg="6">
+              <h4>Game Engine</h4>
+              <p>
+                Unreal Engine 5
+              </p>
+            </b-col>
+          </b-row>
+        </div>
+      </div>
 
-        <b-col lg="6">
-          <h4>Exploration and Combat</h4>
-          <p>
-            Following classic metroidvania mechanics, mastery of abilities are made to support both player exploration
-            and combat.
-          </p>
-        </b-col>
-        <b-col lg="6">
-          <!-- <div>
-            <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 2px #000" fade controls indicators :interval="0">
-              <b-carousel-slide v-for="image in this.images" :key="image.url" caption=""
-                :img-src="image.url"></b-carousel-slide>
-            </b-carousel>
-          </div> -->
-        </b-col>
 
-      </b-row>
+      <main class="container py-5">
+        <!-- Section 1 -->
+        <section class="section-container mb-5 pb-5 border-light">
+          <header class="text-center mb-4">
+            <h2 class="section-header display-4">CONCEPT</h2>
+          </header>
+          <div class="px-lg-5">
+            <!-- Content -->
+            <p class="strong-content">Scarab Descent is a Metroidvania FPS set in a vast desert ruin with a touch of
+              sci-fi.
+              The game merges FPS mechanics with Metroidvania-style exploration inspired by Metroid Prime and Hollow
+              Knight,
+              where players must find their spaceship to leave an alien world.</p>
+          </div>
+        </section>
+
+        <section class="section-container mb-5 pb-5 border-light">
+          <header class="text-center mb-4">
+            <h2 class="section-header display-4">CONTRIBUTION</h2>
+          </header>
+
+          <div class="row g-4"> <!-- g-4 adds consistent gutter spacing -->
+
+            <!-- Column 1 -->
+            <div class="col-md-4">
+              <div class="h-100 p-3"> <!-- h-100 makes columns equal height -->
+                <h3 class="fw-bold mb-3">Level Design</h3>
+                <p class=" lh-lg">
+                  From ideation to blockout, I worked on all design and scripting.
+                </p>
+              </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="col-md-4">
+              <div class="h-100 p-3">
+                <h3 class="fw-bold mb-3">Combat Design</h3>
+                <p class=" lh-lg">
+                  I designed all final mechanics and behaviours for:
+                </p>
+                <ul class="">
+                  <li>Weapons</li>
+                  <li>Encounters</li>
+                  <li>Enemies</li>
+                  <ul class="">
+                    <li>Behaviour Trees</li>
+                    <li>Navigation</li>
+                  </ul>
+                </ul>
+
+              </div>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="col-md-4">
+              <div class="h-100 p-3">
+                <h3 class="fw-bold mb-3">Mechanics</h3>
+                <p class=" lh-lg">
+                  I designed and implemented the following mechanics:
+                </p>
+                <ul class="">
+                  <li>Pickups</li>
+                  <li>Chaos Destruction</li>
+                  <li>Interactibles</li>
+                  <li>Player Abilities</li>
+                  <li>Healthbar UI</li>
+                </ul>
+
+              </div>
+            </div>
+            <p class="strong-content lh-lg">
+              My initial goal when starting the project was to learn about Level Design.
+              As such, many of my efforts to implement mechanics and gameplay was to show how the level could work.
+              Eventually, both gameplay and level began influencing each other.
+            </p>
+          </div>
+        </section>
+
+        <section class="section-container mb-5 pb-5 border-light">
+          <header class="text-center mb-4">
+            <h2 class="section-header display-4">PROCESS</h2>
+          </header>
+
+          <div class="px-lg-5">
+            <ol class="strong-content">
+              <li>Research</li>
+              <li>Design Document</li>
+              <li>Prototype</li>
+              <li>Blockout</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section-container mb-5 pb-5 border-light">
+          <header class="text-center mb-4">
+            <h2 class="section-header display-4">Research</h2>
+          </header>
+
+          <p class="strong-content lh-lg">
+            Since our game was inspired by Hollow Knight, I decided to study what common elements modern metroidvanias
+            have.
+            I chose to examine:
+          </p>
+          <ul>
+            <li>Hollow Knight - the original inspiration</li>
+            <li>Metroid Prime - The "standard" for FPS Metroidvania, which is similar to what we set out to make.</li>
+          </ul>
+
+          <p>
+            Questions I had when researching:
+          </p>
+          <ul>
+            <li> What common elements exist between Prime and HK's maps, despite one being 2D and another being 3D?</li>
+            <li> How does the different themes affect the level design in their areas?</li>
+            <li> How does the level design support the design pillars of each game?</li>
+            <li> What techniques are used to maintain engagement when backtracking, which we know is a common pattern?
+            </li>
+          </ul>
+
+          <p class="strong-content lh-lg">
+            I analyzed:
+          </p>
+          <ul class="strong-content">
+            <li> A Hollow Knight speedrun.</li>
+            <li> The path IGN walkthrough of Metroid Prime took to 100% the game.</li>
+          </ul>
+          <p class="lh-lg">
+            I traced the path of both, noting specifically how much backtracking each had, placement of enemies,
+            abilities, and how abilities are gated.
+            Although it is not exactly a fair comparison, I specifically did
+            this to compare the differences between the fastest and "slowest" to gain insight into
+            both in a limited amount of time.
+          </p>
+
+          <b-row>
+            <b-col lg="6">
+              <b-img :src="this.hkpathing" fluid-grow alt="Fluid image"></b-img>
+            </b-col>
+            <b-col lg="6">
+
+              <b-img :src="this.primepathing" fluid-grow alt="prime path"></b-img>
+            </b-col>
+          </b-row>
+
+          <p class="strong-content"> Findings:</p>
+          <ul>
+            <li> Speedruns clearly have much less backtracking, and the paths which do tend to be in the hub area.</li>
+            <li> The topology of both games' world maps is generally hub and spoke, with more sub-hubs the more you go.
+            </li>
+            <ul>
+              <li> There are many reasons for this. Development, world building, player frustration, and exploration are
+                a few.</li>
+            </ul>
+            <li> Ability gates are often placed in earlier areas, since it gives you a reason to backtrack.</li>
+            <li> There are generally smaller hubs which let the player backtrack less before encountering a save
+              point/resting area, especially during early game.
+            </li>
+            <li> Late game backtracking tends to become longer and longer, not just because of area, but also because
+              gated
+              areas are intentionally placed in previous areas. This is offset by stronger traversal abilities.
+            </li>
+            <li> Players are generally better rewarded for exploring more, which is correlated to more backtracking.
+              Rewards include resources obtained by killing enemies or finding secret areas.
+            </li>
+            <li> The final boss is placed near the starter area, likely to give players an objective for those who are
+              lost, or for ease of access.
+            </li>
+            <li> Many abilities are optional.
+            </li>
+            <li> Players often need to defeat bosses or challenges to obtain new abilities.
+            </li>
+          </ul>
+          <p class="strong-content"> While many of these are self explanatory, they helped me distill what we needed for
+            an experience to be "metroidvania-esque".</p>
+        </section>
+
+        <section class="section-container mb-5 pb-5 border-light">
+          <header class="text-center mb-4">
+            <h2 class="section-header display-4">Initial Design Document</h2>
+          </header>
+
+          <div class="px-lg-5">
+
+            <p class="strong-content">
+              With the general goals set and a general understanding of what kind of metroidvania experience I wanted
+              clarified, I created a level design document to organize my thoughts.In the document, I establish the the
+              main objectives, the core gameplay, the main pillars, player
+              mechanics, pacing and various metrics.
+            </p>
+            <div>
+              <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" fade controls indicators :interval="3000">
+                <b-carousel-slide v-for="image in this.brief" :key="image.url" caption=""
+                  :img-src="image.url"></b-carousel-slide>
+              </b-carousel>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+
     </b-container>
 
     <h2>Blockout Timelapse</h2>
@@ -71,31 +261,10 @@
             :img-src="image.url"></b-carousel-slide>
         </b-carousel>
       </div>
-      <!-- <div>
-        <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
-          :interval="0.01">
-          <b-carousel-slide v-for="image in this.blockouts" :key="image.url" caption=""
-            :img-src="image.url"></b-carousel-slide>
-        </b-carousel>
-      </div> -->
+
     </b-col>
 
-    <div class="my-4"></div> <!-- Spacer with margin -->
 
-    <h2>Overview</h2>
-    <p>"Scarab Descent" is a 3D first-person shooter set in a vast desert ruin, heavily inspired by the aesthetics of
-      Egyptian mythology with a touch of sci-fi. The game merges FPS mechanics with Metroidvania-style exploration,
-      where players must uncover the mysteries of an ancient, insectoid civilization.
-    </p>
-
-    <p>
-      <b>Genre</b>: Action-Adventure, Metroidvania <br>
-      <b>Platform</b>: Windows PC <br>
-      <b>Engine</b>: Unreal Engine 5<br>
-      <b>Tools Used</b>: UE5, Cubegrid, Chaos Destruction <br>
-      <b>Team Size</b>: 2 <br>
-      <b>Role</b>: Blockout, Lighting, Pacing, Player Scripting <br>
-    </p>
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
@@ -163,57 +332,8 @@
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
-
     <h2>Process</h2>
-    <h3>Step 1: Research</h3>
-    <p>
-      After establishing the requirements and the general goals of the game, I began by looking at how other
-      metroidvanias structured their game world.
-      I tried focusing on FPS metroidvanias, but there were not many. In the end, I decided to take a deeper look at
-      Metroid Prime: Remastered and Hollow Knight.
-      This was because Prime was a clear standard in First Person Metroidvanias, while our game was initially inspired
-      by Hollow Knight.
-      I examined how the player moved through the world maps from point to point to understand how the maps were built.
-    </p>
 
-    <p>
-      When looking through the maps, I had the questions below in mind:
-    <ul>
-      <li> What common elements exist between Prime and HK's maps, despite one being 2D and another being 3D?</li>
-      <li> How does the different themes affect the level design in their areas?</li>
-      <li> How does the level design assist the feeling of progression, and how does it support different methods of
-        traversal?</li>
-      <li> How does the level design assist the feeling of ability progression and mastery?</li>
-      <li> What techniques are used to maintain engagement when backtracking?</li>
-    </ul>
-    </p>
-
-    <p>
-      I also analyzed the path players took from start to end of Hollow Knight and Metroid Prime.
-      More specifically, I traced the path a speedrun took for Hollow Knight, and traced the path the IGN Walkthrough of
-      Metroid Prime took to 100% the game.
-      Although it is not exactly a fair comparison, I specifically did this to compare the differences between
-      speedrunning and a more extensive playthrough to gain insight into both in a limited amount of time.
-    </p>
-    <p> Notes:</p>
-    <ul>
-      <li> Speedruns clearly have much less backtracking, and the paths which do tend to be in the hub area.</li>
-      <li> There are generally smaller hubs which let the player backtrack less before encountering a save
-        point/resting area, especially during early game.
-        Late game backtracking tends to become longer and longer, not just because of area, but also because gated
-        areas are intentionally placed in previous areas.
-      </li>
-      <li> Players are generally better rewarded for exploring more, which is correlated to more backtracking.</li>
-    </ul>
-    <b-row>
-      <b-col lg="6">
-        <b-img :src="this.hkpathing" fluid-grow alt="Fluid image"></b-img>
-      </b-col>
-      <b-col lg="6">
-
-        <b-img :src="this.primepathing" fluid-grow alt="prime path"></b-img>
-      </b-col>
-    </b-row>
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
@@ -334,11 +454,8 @@
           or an obstacle that could be jumped over.</b></li>
     </ul>
 
-
-
     <!-- In Prime, standing in the middle of a room allows you to see the common exits/entrances, allowing you to find your
         way towards it (or find it blocked) -->
-
 
     <!-- I was not too worried about this, however, because I liked the idea that acquiring new abilities made the player
         realize what was previously impossible is now affordable. -->
@@ -374,10 +491,7 @@
       </ul>
     </ul>
 
-
-
     <div class="my-4"></div> <!-- Spacer with margin -->
-
 
     <!-- <h4>Rooms</h4>
     <p>Each room went through a number of iterations themselves (and will continue having more iterations), most if not
@@ -495,29 +609,11 @@
       most of these pieces are integrated into the gameplay in terms of combat, traversal, or both.
     </p>
 
-    <b-row>
-      <b-col lg="4">
-        <b-img :src="this.fallentowerring" fluid alt=""></b-img>
-        <p>How did this ring crash down?
-          <br>Why are they still protecting the tower?
-        </p>
-      </b-col>
-      <b-col lg="4">
-        <b-img :src="this.guards" fluid alt=""></b-img>
-        <p>What are they guarding?</p>
-      </b-col>
-      <b-col lg="4">
-        <b-img :src="this.pileddebris" fluid alt=""></b-img>
-        <p>How did so much debris get here?
-          <br>(A large explosion?)
-        </p>
-      </b-col>
-    </b-row>
+
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
     <h3> Distinct Areas </h3>
-
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
@@ -548,159 +644,352 @@
 </template>
 
 <script>
-
 export default {
-
-  components: {
-  },
+  components: {},
   data() {
     return {
-      images: [
-
-      ],
+      images: [],
       blockouts: [
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00005.png') },
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00011.png') },
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00012.png') },
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00016.png') },
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00019.png') },
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00024.png') },
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00028.png') },
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00030.png') },
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00034.png') },
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00036.png') },
-        { url: require('@/assets/scarabdescent/screenshots/HighresScreenshot00064.png') },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00005.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00011.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00012.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00016.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00019.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00024.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00028.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00030.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00034.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00036.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00064.png"),
+        },
       ],
       timelapse: [
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t1.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t2.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t3.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t4.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t5.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t6.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t7.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t8.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t9.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t10.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t11.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t12.png') },
-        { url: require('@/assets/scarabdescent/screenshots/timelapse/t13.png') },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t1.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t2.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t3.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t4.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t5.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t6.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t7.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t8.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t9.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t10.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t11.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t12.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/t13.png"),
+        },
       ],
-      processimages: [
-      ],
+      processimages: [],
       layouts: [
-        { url: require('@/assets/scarabdescent/layouts/draft.png'), caption: 'Draft' },
-        { url: require('@/assets/scarabdescent/layouts/v1.png'), caption: 'V1' },
-        { url: require('@/assets/scarabdescent/layouts/v2.png'), caption: 'V2' },
-        { url: require('@/assets/scarabdescent/layouts/v3.png'), caption: 'V3' },
-        { url: require('@/assets/scarabdescent/layouts/v4.png'), caption: 'V4' },
-        { url: require('@/assets/scarabdescent/layouts/v5.png'), caption: 'V5' },
-        { url: require('@/assets/scarabdescent/layouts/v6.png'), caption: 'V6' },
-        { url: require('@/assets/scarabdescent/layouts/v7.png'), caption: 'Final' },
-        { url: require('@/assets/scarabdescent/layouts/annotatedlayout.png'), caption: 'Annotated Map' },
+        {
+          url: require("@/assets/scarabdescent/layouts/draft.png"),
+          caption: "Draft",
+        },
+        {
+          url: require("@/assets/scarabdescent/layouts/v1.png"),
+          caption: "V1",
+        },
+        {
+          url: require("@/assets/scarabdescent/layouts/v2.png"),
+          caption: "V2",
+        },
+        {
+          url: require("@/assets/scarabdescent/layouts/v3.png"),
+          caption: "V3",
+        },
+        {
+          url: require("@/assets/scarabdescent/layouts/v4.png"),
+          caption: "V4",
+        },
+        {
+          url: require("@/assets/scarabdescent/layouts/v5.png"),
+          caption: "V5",
+        },
+        {
+          url: require("@/assets/scarabdescent/layouts/v6.png"),
+          caption: "V6",
+        },
+        {
+          url: require("@/assets/scarabdescent/layouts/v7.png"),
+          caption: "Final",
+        },
+        {
+          url: require("@/assets/scarabdescent/layouts/annotatedlayout.png"),
+          caption: "Annotated Map",
+        },
       ],
-      draftlayout: require('@/assets/scarabdescent/layouts/draft.png'),
-      initiallayout: require('@/assets/scarabdescent/layouts/v1.png'),
-      finallayout: require('@/assets/scarabdescent/layouts/v7.png'),
-      annotatedlayout: require('@/assets/scarabdescent/layouts/annotatedlayout.png'),
+      draftlayout: require("@/assets/scarabdescent/layouts/draft.png"),
+      initiallayout: require("@/assets/scarabdescent/layouts/v1.png"),
+      finallayout: require("@/assets/scarabdescent/layouts/v7.png"),
+      annotatedlayout: require("@/assets/scarabdescent/layouts/annotatedlayout.png"),
       brief: [
-        { url: require('@/assets/scarabdescent/brief/1.png') },
-        { url: require('@/assets/scarabdescent/brief/2.png') },
-        { url: require('@/assets/scarabdescent/brief/3.png') },
-        { url: require('@/assets/scarabdescent/brief/4.png') },
-        { url: require('@/assets/scarabdescent/brief/5.png') },
-        { url: require('@/assets/scarabdescent/brief/6.png') },
-        { url: require('@/assets/scarabdescent/brief/8.png') },
+        {
+          url: require("@/assets/scarabdescent/brief/1.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/brief/2.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/brief/3.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/brief/4.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/brief/5.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/brief/6.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/brief/8.png"),
+        },
       ],
-      backtrackroutes: require('@/assets/scarabdescent/backtracking/backtrackroutes.png'),
-      dashabilitygate: require('@/assets/scarabdescent/abilitygates/dashgate.png'),
-      bossabilitygate: require('@/assets/scarabdescent/abilitygates/bossgate.png'),
+      backtrackroutes: require("@/assets/scarabdescent/backtracking/backtrackroutes.png"),
+      dashabilitygate: require("@/assets/scarabdescent/abilitygates/dashgate.png"),
+      bossabilitygate: require("@/assets/scarabdescent/abilitygates/bossgate.png"),
 
-      crashedring: require('@/assets/scarabdescent/envstory/crashedring.png'),
-      fallentowerring: require('@/assets/scarabdescent/envstory/tower.png'),
-      pileddebris: require('@/assets/scarabdescent/envstory/pileddebris.png'),
-      guards: require('@/assets/scarabdescent/envstory/guards.png'),
-      stuckdisc: require('@/assets/scarabdescent/envstory/stuckdisc.png'),
+      crashedring: require("@/assets/scarabdescent/envstory/crashedring.png"),
+      fallentowerring: require("@/assets/scarabdescent/envstory/tower.png"),
+      pileddebris: require("@/assets/scarabdescent/envstory/pileddebris.png"),
+      guards: require("@/assets/scarabdescent/envstory/guards.png"),
+      stuckdisc: require("@/assets/scarabdescent/envstory/stuckdisc.png"),
 
-      hkpathing: require('@/assets/scarabdescent/research/hkpathing.png'),
-      primepathing: require('@/assets/scarabdescent/research/primepathing.png'),
-      observations: require('@/assets/scarabdescent/reference/observations.png'),
+      hkpathing: require("@/assets/scarabdescent/research/hkpathing.png"),
+      primepathing: require("@/assets/scarabdescent/research/primepathing.png"),
+      observations: require("@/assets/scarabdescent/reference/observations.png"),
 
       iter_arena: [
-        { url: require('@/assets/scarabdescent/iterations/arena/1.png') },
-        { url: require('@/assets/scarabdescent/iterations/arena/2.png') },
-        { url: require('@/assets/scarabdescent/iterations/arena/3.png') },
-        { url: require('@/assets/scarabdescent/iterations/arena/4.png') },
-        { url: require('@/assets/scarabdescent/iterations/arena/5.png') },
-        { url: require('@/assets/scarabdescent/iterations/arena/6.png') },
+        {
+          url: require("@/assets/scarabdescent/iterations/arena/1.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arena/2.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arena/3.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arena/4.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arena/5.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arena/6.png"),
+        },
       ],
       iter_arenahallway: [
-        { url: require('@/assets/scarabdescent/iterations/arenahallway/1.png') },
+        {
+          url: require("@/assets/scarabdescent/iterations/arenahallway/1.png"),
+        },
       ],
       iter_arenahallway2: [
-        { url: require('@/assets/scarabdescent/iterations/arenahallway2/1.png') },
-        { url: require('@/assets/scarabdescent/iterations/arenahallway2/2.png') },
-        { url: require('@/assets/scarabdescent/iterations/arenahallway2/3.png') },
-        { url: require('@/assets/scarabdescent/iterations/arenahallway2/4.png') },
-        { url: require('@/assets/scarabdescent/iterations/arenahallway2/5.png') },
-        { url: require('@/assets/scarabdescent/iterations/arenahallway2/6.png') },
-        { url: require('@/assets/scarabdescent/iterations/arenahallway2/7.png') },
-        { url: require('@/assets/scarabdescent/iterations/arenahallway2/8.png') },
-        { url: require('@/assets/scarabdescent/iterations/arenahallway2/9.png') },
+        {
+          url: require("@/assets/scarabdescent/iterations/arenahallway2/1.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arenahallway2/2.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arenahallway2/3.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arenahallway2/4.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arenahallway2/5.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arenahallway2/6.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arenahallway2/7.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arenahallway2/8.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/arenahallway2/9.png"),
+        },
       ],
       iter_bridge: [
-        { url: require('@/assets/scarabdescent/iterations/bridge/1.png') },
-        { url: require('@/assets/scarabdescent/iterations/bridge/2.png') },
-        { url: require('@/assets/scarabdescent/iterations/bridge/3.png') },
-        { url: require('@/assets/scarabdescent/iterations/bridge/4.png') },
-        { url: require('@/assets/scarabdescent/iterations/bridge/5.png') },
-        { url: require('@/assets/scarabdescent/iterations/bridge/6.png') },
-        { url: require('@/assets/scarabdescent/iterations/bridge/7.png') },
-        { url: require('@/assets/scarabdescent/iterations/bridge/8.png') },
-        { url: require('@/assets/scarabdescent/iterations/bridge/9.png') },
-        { url: require('@/assets/scarabdescent/iterations/bridge/10.png') },
-        { url: require('@/assets/scarabdescent/iterations/bridge/11.png') },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/1.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/2.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/3.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/4.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/5.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/6.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/7.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/8.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/9.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/10.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/bridge/11.png"),
+        },
       ],
       iter_canyonhub: [
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/1.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/2.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/3.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/4.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/5.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/6.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/7.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/8.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/9.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/10.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/11.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/12.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/13.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/14.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/15.png') },
-        { url: require('@/assets/scarabdescent/iterations/canyonhub/16.png') },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/1.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/2.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/3.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/4.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/5.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/6.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/7.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/8.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/9.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/10.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/11.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/12.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/13.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/14.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/15.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/canyonhub/16.png"),
+        },
       ],
       iter_centralhub: [
-        { url: require('@/assets/scarabdescent/iterations/centralhub/1.png') },
-        { url: require('@/assets/scarabdescent/iterations/centralhub/2.png') },
+        {
+          url: require("@/assets/scarabdescent/iterations/centralhub/1.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/centralhub/2.png"),
+        },
       ],
       iter_tower: [
-        { url: require('@/assets/scarabdescent/iterations/tower/1.png') },
-        { url: require('@/assets/scarabdescent/iterations/tower/2.png') },
-        { url: require('@/assets/scarabdescent/iterations/tower/3.png') },
-        { url: require('@/assets/scarabdescent/iterations/tower/4.png') },
-        { url: require('@/assets/scarabdescent/iterations/tower/5.png') },
-        { url: require('@/assets/scarabdescent/iterations/tower/6.png') },
-        { url: require('@/assets/scarabdescent/iterations/tower/7.png') },
-        { url: require('@/assets/scarabdescent/iterations/tower/8.png') },
-        { url: require('@/assets/scarabdescent/iterations/tower/9.png') },
-        { url: require('@/assets/scarabdescent/iterations/tower/10.png') },
+        {
+          url: require("@/assets/scarabdescent/iterations/tower/1.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/tower/2.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/tower/3.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/tower/4.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/tower/5.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/tower/6.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/tower/7.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/tower/8.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/tower/9.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/iterations/tower/10.png"),
+        },
       ],
-    }
+    };
   },
   mounted() {
     // console.log(this.$router.currentRoute.path);
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
@@ -712,7 +1001,7 @@ export default {
 
 .link-button {
   background-color: #5c629900;
-  border-color: #B298DC;
+  border-color: #b298dc;
 }
 
 .link-item {
@@ -727,5 +1016,79 @@ export default {
 
 .description-container {
   padding-bottom: 5%;
+}
+
+.overview {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border: 1px solid #cecece;
+  width: 80%;
+}
+
+.shaded-box {
+  background-color: rgba(44, 44, 44, 0.7);
+  /* White with 70% opacity */
+  backdrop-filter: blur(5px);
+  /* Optional: frosted glass effect */
+  border-radius: 15px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  /* width: 80%;
+  max-width: 600px; */
+  /* Additional padding is handled by Bootstrap's p-4 class */
+}
+
+
+
+.section-container {
+  border-bottom: 4px solid #dee2e6;
+  /* Thick divider line */
+  padding-bottom: 3rem;
+  /* Space above the divider */
+  margin-bottom: 3rem;
+  /* Space below the divider */
+}
+
+.section-header {
+  font-size: 2.5rem;
+  /* Large header text */
+  font-weight: 700;
+  letter-spacing: 1px;
+  /* Spaced out letters */
+  text-transform: uppercase;
+  /* All caps */
+  /* color: #333; Dark gray color */
+}
+
+.section-content {
+  padding: 0 2rem;
+  /* Horizontal padding for content */
+}
+
+/* Remove bottom border from last section */
+.section-container:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.fluid-weight {
+  font-weight: 550;
+  /* Between medium and semibold */
+  font-variation-settings: "wght" 550;
+}
+
+.strong-content {
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.strong-content b,
+.strong-content strong {
+  font-weight: 800;
 }
 </style>

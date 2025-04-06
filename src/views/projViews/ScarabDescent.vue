@@ -12,7 +12,7 @@ export default {
     return {
       projectDetails: {
         title: "Scarab Descent",
-        subtitle: "A FPS Metroidvania inspired by Hollow Knight and Metroid Prime, in collaboration with Fabian Fröding",
+        subtitle: "",
         // mainImage: { name: "", index: 0 },
         images: [],
         links: [
