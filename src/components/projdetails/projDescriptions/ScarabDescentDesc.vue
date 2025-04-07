@@ -142,15 +142,15 @@
             <ol class="strong-content">
               <li>Research</li>
               <li>Design Document</li>
-              <li>Prototype</li>
-              <li>Blockout</li>
+              <li>Layout</li>
+              <li>Prototype / Blockout</li>
             </ol>
           </div>
         </section>
 
-        <section class="section-container mb-5 pb-5 border-light">
+        <section class="subsection-container mb-5 pb-5 border-light">
           <header class="text-center mb-4">
-            <h2 class="section-header display-4">Research</h2>
+            <h2 class="subsection-header display-4">1. Research</h2>
           </header>
 
           <p class="strong-content lh-lg">
@@ -255,27 +255,47 @@
             </li>
             <li> Hollow Knight is slightly different, but also emphasizes dodging despite parrying being possible.
             </li>
+            <li> Distinct areas:
+              <ul>
+                <li>Provide the player with a mental map of where they are</li>
+                <li>Creates interesting themes</li>
+                <li>Encourages different playstyles & mechanics</li>
+                <li>Gives a more believable narrative experience.</li>
+              </ul>
+            </li>
 
           </ul>
           <p class="strong-content"> While many of these are self explanatory, they helped me distill what we needed for
             an experience to be "metroidvania-esque".</p>
         </section>
 
-        <section class="section-container mb-5 pb-5 border-light">
+        <section class="subsection-container mb-5 pb-5 border-light">
           <header class="text-center mb-4">
-            <h2 class="section-header display-4">Design Document</h2>
+            <h2 class="subsection-header display-4">2. Design Document</h2>
           </header>
 
           <div class="px-lg-5">
-            <p class="strong-content">
-              With the general goals set and a general understanding of what kind of metroidvania experience I wanted
-              clarified, I created a level design document to organize my thoughts.In the document, I establish the the
-              main objectives, the core gameplay, the main pillars, player
+            <p class="">
+              With the goals set more clearly, I created a level design document to organize my thoughts. In the
+              document, I establish the the
+              main objectives, the core gameplay, the main design pillars, player
               mechanics, pacing and various metrics.
             </p>
-            <p class="strong-content">
-              Main project goal: A MVP, self contained area encompassing all the pillars of this Metroidvania project.
-            </p>
+
+            <h2>Main Project Goal</h2>
+            <p>A MVP, self contained area encompassing all the pillars of this Metroidvania.</p>
+
+            <h2>Game Objective</h2>
+            <p>Defeat the Final Boss.</p>
+
+            <div>
+              <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" fade controls indicators :interval="3000">
+                <b-carousel-slide v-for="image in this.brief" :key="image.url" caption=""
+                  :img-src="image.url"></b-carousel-slide>
+              </b-carousel>
+            </div>
+
+            <div class="my-4"></div> <!-- Spacer with margin -->
 
             <header class="text-center mb-4">
               <h2 class="fw-bold mb-3 display-5">Design Pillars</h2>
@@ -326,16 +346,92 @@
                 </div>
               </div>
             </div>
-
-            <div>
-              <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" fade controls indicators :interval="3000">
-                <b-carousel-slide v-for="image in this.brief" :key="image.url" caption=""
-                  :img-src="image.url"></b-carousel-slide>
-              </b-carousel>
-            </div>
-
           </div>
         </section>
+
+        <section class="subsection-container mb-5 pb-5 border-light">
+          <header class="text-center mb-4">
+            <h2 class="subsection-header display-4">3. Layout</h2>
+          </header>
+
+          <p class="lh-lg">
+            The layouts were made using Figma. This allowed me to collaborate and discuss with others, as well as make
+            efficient changes.
+          </p>
+
+          <p>
+            When creating the 2D map, I kept fundamental considerations from the requirements, observations, genre, and
+            narrative in mind:
+          </p>
+          <ul>
+            <li> Have distinct areas to encourage exploration.</li>
+            <li> Have more than 2 paths/playthrough methods to reach the final boss and different areas.
+              The usage of a hub room is a common technique to do this. </li>
+            <li> There should be a way to prevent prevent the player from going everywhere. Ability gating areas is a
+              proven method.
+            </li>
+            <li> New abilities should be usable in both exploration and combat.</li>
+          </ul>
+
+
+          <header class="text-center mb-4">
+            <h2 class="fw-bold mb-3 display-5">World Map Layout</h2>
+          </header>
+
+          <b-row>
+            <b-col lg="6">
+              <h5>1. Draft Layout</h5>
+              <p>I began by drafting the entire world map, settling on a hub-and-spoke topology, with a distinct area
+                for each "node".
+                The world map encompasses the entire playable space and mainly influenced the paths the player could
+                take.</p>
+              <b-img :src="this.draftlayout" fluid alt="Draft"></b-img>
+            </b-col>
+
+            <b-col lg="6">
+              <h5>2. Initial Layout</h5>
+              <p>I then filled each area with rooms, reaching the initial layout.
+                Note that the rooms are not drawn to scale, as the mechanic metrics at this point were not well defined
+                yet.
+                Scale issues would later be a constant battle I would fight.
+              </p>
+              <b-img :src="this.initiallayout" fluid alt="Initial"></b-img>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col lg="12">
+              <h5>3. Final Layout</h5>
+              <p>After many iterations, I greatly reduced the scope, and settled on this:
+              </p>
+              <ul>
+                <li> 7 areas reduced to 2.</li>
+                <li> Only 2 ability gates exist, following the initial brief's flow.</li>
+                <li> Each boss rewards the player with a new ability.</li>
+                <li> Each boss has a "theme", shown by the titles underneath each one. I wanted each boss to
+                  challenge the player differently.</li>
+                <li>
+                  Since the player could go anywhere at any time, I instead went for a more atomic approach.
+                  I wanted a low intensity beat before every boss fight. To show this pacing, I removed enemies in each
+                  corridor
+                  before each boss.</li>
+              </ul>
+              <p>Changes continued to happen as I continued iterating and playtesting. 
+                Enemy placements, scale (especially the canyon hub), playable areas, boss areas, and many more were affected.
+                However, room placement were roughly the same, and a lot of the changes aimed to accentuate/support the decisions shown here.
+              </p>
+              <b-img :src="this.finallayout" fluid alt="Final"></b-img>
+            </b-col>
+          </b-row>
+
+        </section>
+        <section class="subsection-container mb-5 pb-5 border-light">
+          <header class="text-center mb-4">
+            <h2 class="subsection-header display-4">4. Blockout / Prototype</h2>
+          </header>
+        </section>
+
+
+
 
       </main>
 
@@ -355,9 +451,6 @@
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
-    <h2>Objective</h2>
-    <p>Defeat the Final Boss.</p>
-
     <h2>Layout</h2>
     <p>Here is the final layout and the sections.</p>
     <b-col lg="6">
@@ -366,45 +459,14 @@
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
-    <h2>Process</h2>
-
 
 
     <div class="my-4"></div> <!-- Spacer with margin -->
     <h3>Step 4: 2D Map</h3>
-    <p>
-      When creating the 2D map, I kept fundamental considerations from the requirements, observations, genre, and
-      narrative in mind:
-    </p>
-
-    <ul>
-      <li> There should be at least 2 distinct areas, following the research I did for metroidvanias.
-        Distinct areas provide the player with a mental map of where they generally are, creates interesting themes,
-        encourages different playstyles,
-        and gives a more believable narrative experience depending on the theme.</li>
-      <li> Exploration needs to be non-linear. This means that there should be more than 2 paths to reach the final boss
-        and different areas.
-        The usage of a hub room is a common technique to do this, and thus promote backtracking. </li>
-      <li> There should be ability gating to maintain player agency, but still prevent the player from going everywhere.
-      </li>
-      <li> New abilities should be usable in both exploration and combat.</li>
-    </ul>
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
-    <b-row>
-      <b-col lg="6">
-        <h5>Draft Layout</h5>
-        <p>I began with a draft, settling on a hub-and-spoke topology, with a distinct area for each "spoke".</p>
-        <b-img :src="this.draftlayout" fluid alt="Draft"></b-img>
-      </b-col>
 
-      <b-col lg="6">
-        <h5>Initial Layout</h5>
-        <p>I then began populating each area with rooms, reaching the initial layout.</p>
-        <b-img :src="this.initiallayout" fluid alt="Initial"></b-img>
-      </b-col>
-    </b-row>
 
     <h5>Final Layout</h5>
     <p>
@@ -765,7 +827,8 @@ export default {
       ],
       draftlayout: require("@/assets/scarabdescent/layouts/draft.png"),
       initiallayout: require("@/assets/scarabdescent/layouts/v1.png"),
-      finallayout: require("@/assets/scarabdescent/layouts/v7.png"),
+      middlelayout: require("@/assets/scarabdescent/layouts/v4.png"),
+      finallayout: require("@/assets/scarabdescent/layouts/v8.png"),
       annotatedlayout: require("@/assets/scarabdescent/layouts/annotatedlayout.png"),
       brief: [
         {
@@ -1043,11 +1106,12 @@ export default {
 
 
 .section-container {
-  border-bottom: 4px solid #dee2e6;
+  border-top: 4px solid #dee2e6;
+  /* border-bottom: 4px solid #dee2e6; */
   /* Thick divider line */
-  padding-bottom: 3rem;
+  padding-top: 2rem;
   /* Space above the divider */
-  margin-bottom: 3rem;
+  margin-top: 2rem;
   /* Space below the divider */
 }
 
@@ -1062,16 +1126,35 @@ export default {
   /* color: #333; Dark gray color */
 }
 
+.subsection-container {
+  border-top: 2px solid #797979;
+  /* Thick divider line */
+  padding-top: 3rem;
+  /* Space above the divider */
+  margin-top: 3rem;
+  /* Space below the divider */
+}
+
+.subsection-header {
+  font-size: 2rem;
+  /* Large header text */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  /* Spaced out letters */
+  text-transform: uppercase;
+  /* All caps */
+}
+
 .section-content {
   padding: 0 2rem;
   /* Horizontal padding for content */
 }
 
 /* Remove bottom border from last section */
-.section-container:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-bottom: 0;
+.section-container:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .fluid-weight {
