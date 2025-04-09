@@ -51,7 +51,7 @@
 
       <main class="container py-5">
         <!-- Section 1 -->
-        <section class="section-container mb-5 pb-5 border-light">
+        <section class="section-container border-light">
           <header class="text-center mb-4">
             <h2 class="section-header display-4">CONCEPT</h2>
           </header>
@@ -65,7 +65,7 @@
           </div>
         </section>
 
-        <section class="section-container mb-5 pb-5 border-light">
+        <section class="section-container border-light">
           <header class="text-center mb-4">
             <h2 class="section-header display-4">CONTRIBUTION</h2>
           </header>
@@ -130,10 +130,16 @@
               Many of my efforts to implement mechanics and gameplay was to show how the level could work.
               Eventually, both gameplay and level began influencing each other.
             </p>
+            <p><b>Teammate's responsibilities</b></p>
+            <ul>
+              <li> Initial Project Setup (Levels, Gameplay Mechanics, Architecture).</li>
+              <li> Setting the theme and setting of the game.</li>
+              <li> UI (Main menu, Game flow).</li>
+            </ul>
           </div>
         </section>
 
-        <section class="section-container mb-5 pb-5 border-light">
+        <section class="section-container border-light">
           <header class="text-center mb-4">
             <h2 class="section-header display-4">PROCESS</h2>
           </header>
@@ -141,14 +147,16 @@
           <div class="px-lg-5">
             <ol class="strong-content">
               <li>Research</li>
+              <li>Ideation</li>
               <li>Design Document</li>
               <li>Layout</li>
               <li>Prototype / Blockout</li>
+              <li>Iteration</li>
             </ol>
           </div>
         </section>
 
-        <section class="subsection-container mb-5 pb-5 border-light">
+        <section class="subsection-container border-light">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-4">1. Research</h2>
           </header>
@@ -269,9 +277,59 @@
             an experience to be "metroidvania-esque".</p>
         </section>
 
-        <section class="subsection-container mb-5 pb-5 border-light">
+        <section class="subsection-container border-light">
           <header class="text-center mb-4">
-            <h2 class="subsection-header display-4">2. Design Document</h2>
+            <h2 class="subsection-header display-4">2. Ideation</h2>
+          </header>
+
+          <p class="strong-content">
+            Moodboards were a large part of the ideation, layout, and blockout process, each with a different goal.
+          </p>
+
+
+          <header class="text-center mb-4 pt-5">
+            <h2 class="fw-bold mb-3 display-5">Project Start</h2>
+          </header>
+
+          <div class="single-image-container pb-3">
+            <b-img :src="this.settingmoodboard" class="single-image" alt="mood"></b-img>
+          </div>
+
+          <p class="strong-content">
+            When starting the project, we looked for relevant themes we wanted, relevant games, and art style we
+            envisioned the game
+            to have.
+            This influenced our direction to look towards keywords such as "ruins", "desert", and "old civilizations".
+          </p>
+
+          <header class="text-center mb-4 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Layout & Blockout</h2>
+          </header>
+
+          <b-row>
+            <b-col lg="6">
+              <b-img :src="this.v5moodboard1" fluid-grow alt="Fluid image"></b-img>
+            </b-col>
+            <b-col lg="6">
+
+              <b-img :src="this.v5moodboard2" fluid-grow alt="prime path"></b-img>
+            </b-col>
+          </b-row>
+
+          <p class="strong-content pt-3">
+            For layout and blockout, I researched architecture, relevant games and moviesthat fit the specific concept I
+            assigned to specific rooms.
+            <br> There was no clear "step" at this stage. The moodboard was iteratively used together with the layout
+            during the blockout process, which made the layouts quite messy.
+            <br> This influenced specific elements in a room. One clear example was the river in the canyon hub, which
+            was inspired by various images of, well, canyons.
+          </p>
+
+        </section>
+
+        <section class="subsection-container border-light">
+          <header class="text-center mb-4">
+            <h2 class="subsection-header display-4">3. Design Document</h2>
           </header>
 
           <div class="px-lg-5">
@@ -349,12 +407,12 @@
           </div>
         </section>
 
-        <section class="subsection-container mb-5 pb-5 border-light">
+        <section class="subsection-container border-light">
           <header class="text-center mb-4">
-            <h2 class="subsection-header display-4">3. Layout</h2>
+            <h2 class="subsection-header display-4">4. Layout</h2>
           </header>
 
-          <p class="lh-lg">
+          <p class="strong-content lh-lg">
             The layouts were made using Figma. This allowed me to collaborate and discuss with others, as well as make
             efficient changes.
           </p>
@@ -374,7 +432,7 @@
           </ul>
 
 
-          <header class="text-center mb-4">
+          <header class="text-center mb-4 pt-5">
             <h2 class="fw-bold mb-3 display-5">World Map Layout</h2>
           </header>
 
@@ -401,7 +459,7 @@
           <b-row>
             <b-col lg="12">
               <h5>3. Final Layout</h5>
-              <p>After many iterations, I greatly reduced the scope, and settled on this:
+              <p>After many iterations of blockout and layout, I greatly reduced the scope, and settled on this:
               </p>
               <ul>
                 <li> 7 areas reduced to 2.</li>
@@ -415,29 +473,114 @@
                   corridor
                   before each boss.</li>
               </ul>
-              <p>Changes continued to happen as I continued iterating and playtesting. 
-                Enemy placements, scale (especially the canyon hub), playable areas, boss areas, and many more were affected.
-                However, room placement were roughly the same, and a lot of the changes aimed to accentuate/support the decisions shown here.
+              <p class="strong-content">Changes continued to happen as I continued iterating and playtesting. <br>
+                Enemy placements, scale (especially the canyon hub), boss areas, and many more were
+                affected.
+                However, room placement were roughly the same, and many changes aimed to accentuate/support the
+                decisions shown here.
               </p>
               <b-img :src="this.finallayout" fluid alt="Final"></b-img>
             </b-col>
           </b-row>
 
+
         </section>
         <section class="subsection-container mb-5 pb-5 border-light">
           <header class="text-center mb-4">
-            <h2 class="subsection-header display-4">4. Blockout / Prototype</h2>
+            <h2 class="subsection-header display-4">5. Blockout / Prototype</h2>
           </header>
+
+          <p class="strong-content">The blockout was created using UE5's Cubegrid tool.
+            Initially, I created entire rooms as a single static mesh asset, only to find it extremely difficult to
+            modify later on.
+            I began modelling small, reusable assets that turned into a modular kit which I could use to
+            kitbash levels together quickly.
+          </p>
+
+          <div class="single-image-container pb-3">
+            <b-img :src="this.ldk" class="" style="width: 100%" alt="mood"></b-img>
+          </div>
+
+          <p class="text-justify text-center">The level design kit that I used.
+            Note that there are also meshes of entire rooms from early iterations.
+            Most assets were built to fit player metrics.
+            This helped keep scale in check, since I could always measure if an object could be jumped over by dragging
+            in something I knew could be jumped over.
+            Later, placing world aligned grid textures further helped me gauge scale.
+          </p>
+
+          <header class="text-center mb-4 pt-5">
+            <h2 class="fw-bold mb-3 display-5">Kitbashing</h2>
+          </header>
+
+          <p class="strong-content ">Kitbashing drastically changed how I approached blocking out rooms.
+            Instead of extruding, I began massing out areas first, only creating new assets unless necessary.
+            <br>This made blockouts more organic, allowing me to create more believable spaces by discovering them.
+            <br>Pillars could now be rotated to become planks. Removing a boulder created a cave that could hide a
+            secret.
+            <br>The Canyon Hub is an example of this, shown below:
+          </p>
+
+          <b-row class="pt-1">
+            <b-col lg="6">
+              <b-img :src="this.initialcanyonblockout1" fluid alt="Draft"></b-img>
+            </b-col>
+
+            <b-col lg="6">
+              <b-img :src="this.initialcanyonblockout3" fluid alt="Initial"></b-img>
+            </b-col>
+          </b-row>
+
+          <p class="strong-content pt-3 text-justify text-center">The first iteration of the canyon hub.
+            <br>The nature of UE5's cubegrid (along with my lack of knowledge), lack of metrics, and the lack of a
+            gridded prototyping texture caused this level to be too boxy and too large.
+          </p>
+
+          <b-row>
+            <b-col lg="6">
+              <b-img :src="this.ldkcanyonblockout1" fluid alt="Draft"></b-img>
+            </b-col>
+
+            <b-col lg="6">
+              <b-img :src="this.ldkcanyonblockout2" fluid alt="Initial"></b-img>
+            </b-col>
+          </b-row>
+
+          <p class="strong-content pt-3 text-justify text-center">
+            The first kitbashed iteration of the canyon hub, created entirely from 2 rocks, 1 box, 1 ramp, and a pillar.
+            <br> Heavy use of scaling and rotations allowed me to create variation with the same asset.
+          </p>
+
+          <b-row>
+            <b-col lg="6">
+              <b-img :src="this.finalcanyonblockout1" fluid alt="Draft"></b-img>
+            </b-col>
+
+            <b-col lg="6">
+              <b-img :src="this.finalcanyonblockout2" fluid alt="Initial"></b-img>
+            </b-col>
+          </b-row>
+
+          <p class="strong-content pt-3 text-justify ">
+            This version is a final iteration of the level, fully playable.
+            While many elements were modified, many things stayed the same due to the modular approach:
+
+          <ul>
+            <li>The general landscape of the level was kept.</li>
+            <li>The same assets have been reused even more.</li>
+          </ul>
+          </p>
+
+          <header class="text-center mb-4 pt-5">
+            <h2 class="fw-bold mb-3 display-5">Blockout Timelapses</h2>
+          </header>
+
         </section>
-
-
-
-
       </main>
 
     </b-container>
 
-    <h2>Blockout Timelapse</h2>
+    <!-- <h2>Blockout Timelapse</h2>
     <b-col lg="12">
       <div>
         <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
@@ -447,36 +590,16 @@
         </b-carousel>
       </div>
 
-    </b-col>
+    </b-col> -->
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
-    <h2>Layout</h2>
-    <p>Here is the final layout and the sections.</p>
-    <b-col lg="6">
-      <b-img :src="this.annotatedlayout" fluid-grow alt="Fluid image"></b-img>
-    </b-col>
+    <section class="subsection-container border-light">
+      <header class="text-center mb-4">
+        <h2 class="subsection-header display-4">6. Iteration and Feedback</h2>
+      </header>
+    </section>
 
-    <div class="my-4"></div> <!-- Spacer with margin -->
-
-
-
-    <div class="my-4"></div> <!-- Spacer with margin -->
-    <h3>Step 4: 2D Map</h3>
-
-    <div class="my-4"></div> <!-- Spacer with margin -->
-
-
-
-    <h5>Final Layout</h5>
-    <p>
-      After several iterations, I simplified the map to:
-    </p>
-    <b-img :src="this.finallayout" fluid alt="Final"></b-img>
-
-    <div class="my-4"></div> <!-- Spacer with margin -->
-
-    <h3>Step 5: Blockout, Iteration and Feedback</h3>
     <h4>Initial Feedback</h4>
     <p>
       While blocking out the first few rooms, namely the central and canyon hub, in my initial layout, I quickly
@@ -825,11 +948,23 @@ export default {
           caption: "Annotated Map",
         },
       ],
+      settingmoodboard: require("@/assets/scarabdescent/ideation/settingmoodboard.jpg"),
+      v5moodboard1: require("@/assets/scarabdescent/ideation/v5moodboard1.png"),
+      v5moodboard2: require("@/assets/scarabdescent/ideation/v5moodboard2.png"),
       draftlayout: require("@/assets/scarabdescent/layouts/draft.png"),
       initiallayout: require("@/assets/scarabdescent/layouts/v1.png"),
       middlelayout: require("@/assets/scarabdescent/layouts/v4.png"),
       finallayout: require("@/assets/scarabdescent/layouts/v8.png"),
       annotatedlayout: require("@/assets/scarabdescent/layouts/annotatedlayout.png"),
+      initialcanyonblockout1: require("@/assets/scarabdescent/blockout/initcanyonblockout1.png"),
+      initialcanyonblockout2: require("@/assets/scarabdescent/blockout/initcanyonblockout2.png"),
+      initialcanyonblockout3: require("@/assets/scarabdescent/blockout/initcanyonblockout3.png"),
+      ldkcanyonblockout1: require("@/assets/scarabdescent/blockout/ldkcanyonblockout1.png"),
+      ldkcanyonblockout2: require("@/assets/scarabdescent/blockout/ldkcanyonblockout2.png"),
+      ldk: require("@/assets/scarabdescent/blockout/leveldesignkit.png"),
+      finalcanyonblockout1: require("@/assets/scarabdescent/blockout/finalcanyonblockout1.png"),
+      finalcanyonblockout2: require("@/assets/scarabdescent/blockout/finalcanyonblockout2.png"),
+
       brief: [
         {
           url: require("@/assets/scarabdescent/brief/1.png"),
@@ -1172,5 +1307,15 @@ export default {
 .strong-content b,
 .strong-content strong {
   font-weight: 800;
+}
+
+.single-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-image {
+  width: 70%;
 }
 </style>
