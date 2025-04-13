@@ -10,6 +10,11 @@
         </b-col>
       </b-row>
 
+      <div class="single-image single-image-container pt-5 pb-5 ">
+        <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/0KjdHme3Cig?si=ah5_VHd13vXz4UpO"
+          allowfullscreen></b-embed>
+      </div>
+
       <div class="d-flex justify-content-center ">
         <div class="overview shaded-box">
           <b-row class="text-center">
@@ -728,6 +733,16 @@
 
     <h3> Backtracking </h3>
 
+
+    <!-- Desert Caravan by Aaron Kenny
+Music promoted on https://www.chosic.com/free-music/all/ -->
+    <!-- Waterfall Sounds by tramp963, Pixabay https://pixabay.com/sound-effects/waterfall-sounds-259625/ -->
+    <!-- https://pixabay.com/sound-effects/spacecraft-chrasing-88048/ spacecraft chrasing
+Unilyd (Freesound) -->
+    <!-- https://pixabay.com/sound-effects/highflow-river-6221/ Highflow River
+CaganCelik (Freesound)-->
+
+
     <p>Backtracking is focused on the two hubs: The central hub and the canyon hub.
       Following the progression flow in the initial brief, the player would have to revisit the central hub at least
       twice no matter which path they take.
@@ -779,20 +794,6 @@
     </b-row>
 
     <div class="my-4"></div> <!-- Spacer with margin -->
-
-    <h3> Environmental Storytelling </h3>
-    <p>
-      In order to sell the narrative of a fallen ancient civilization and the resulting theme of "ancient ruins", I
-      tried to integrate environmental storytelling in various ways.
-      When approaching environmental storytelling, the main question I wanted the players to ask was:
-    </p>
-    <p class="text-center">"What happened here?"</p>
-    <p>
-      Since I created a small blockout kit and had to be conservative with what I had to reduce iteration times,
-      <br>
-      most of these pieces are integrated into the gameplay in terms of combat, traversal, or both.
-    </p>
-
 
 
     <div class="my-4"></div> <!-- Spacer with margin -->
@@ -1313,7 +1314,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
+
 
 .single-image {
   width: 70%;
