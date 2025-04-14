@@ -10,10 +10,34 @@
         </b-col>
       </b-row>
 
-      <div class="single-image single-image-container pt-5 pb-5 ">
-        <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/0KjdHme3Cig?si=ah5_VHd13vXz4UpO"
-          allowfullscreen></b-embed>
-      </div>
+      <b-row>
+        <b-col lg="6">
+          <div class="pt-5 pb-5">
+            <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/0KjdHme3Cig?si=ah5_VHd13vXz4UpO"
+              allowfullscreen></b-embed>
+          </div>
+        </b-col>
+        <b-col lg="6">
+          <div class="pt-5 pb-5">
+            <b-embed type="iframe" aspect="16by9" src="https://www.youtube.com/embed/lseJqpHDyjU"
+              allowfullscreen></b-embed>
+          </div>
+        </b-col>
+      </b-row>
+
+      <header class="text-center mb-4 pt-3">
+        <h2 class="fw-bold mb-3 display-5">Blockout Timelapse</h2>
+      </header>
+      <!-- <h2>Blockout Timelapse</h2> -->
+      <b-col lg="12 pb-5">
+        <div>
+          <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
+            :interval="700">
+            <b-carousel-slide v-for="image in this.timelapse" :key="image.url" :caption="image.caption"
+              :img-src="image.url"></b-carousel-slide>
+          </b-carousel>
+        </div>
+      </b-col>
 
       <div class="d-flex justify-content-center ">
         <div class="overview shaded-box">
@@ -53,8 +77,7 @@
         </div>
       </div>
 
-
-      <main class="container py-5">
+      <main class="container py-3">
         <!-- Section 1 -->
         <section class="section-container border-light">
           <header class="text-center mb-4">
@@ -490,7 +513,7 @@
 
 
         </section>
-        <section class="subsection-container mb-5 pb-5 border-light">
+        <section class="subsection-container  border-light">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-4">5. Blockout / Prototype</h2>
           </header>
@@ -514,7 +537,7 @@
             Later, placing world aligned grid textures further helped me gauge scale.
           </p>
 
-          <header class="text-center mb-4 pt-5">
+          <header class="mb-4 pt-5">
             <h2 class="fw-bold mb-3 display-5">Kitbashing</h2>
           </header>
 
@@ -523,7 +546,7 @@
             <br>This made blockouts more organic, allowing me to create more believable spaces by discovering them.
             <br>Pillars could now be rotated to become planks. Removing a boulder created a cave that could hide a
             secret.
-            <br>The Canyon Hub is an example of this, shown below:
+            <br><br>The Canyon Hub is an example of this, shown below:
           </p>
 
           <b-row class="pt-1">
@@ -536,7 +559,7 @@
             </b-col>
           </b-row>
 
-          <p class="strong-content pt-3 text-justify text-center">The first iteration of the canyon hub.
+          <p class="strong-content pt-3 pb-5 text-justify text-center">The first iteration of the canyon hub.
             <br>The nature of UE5's cubegrid (along with my lack of knowledge), lack of metrics, and the lack of a
             gridded prototyping texture caused this level to be too boxy and too large.
           </p>
@@ -551,7 +574,7 @@
             </b-col>
           </b-row>
 
-          <p class="strong-content pt-3 text-justify text-center">
+          <p class="strong-content pt-3 pb-5 text-justify text-center">
             The first kitbashed iteration of the canyon hub, created entirely from 2 rocks, 1 box, 1 ramp, and a pillar.
             <br> Heavy use of scaling and rotations allowed me to create variation with the same asset.
           </p>
@@ -576,119 +599,218 @@
           </ul>
           </p>
 
-          <header class="text-center mb-4 pt-5">
-            <h2 class="fw-bold mb-3 display-5">Blockout Timelapses</h2>
+          <header class="mb-4 pt-5">
+            <h2 class="fw-bold mb-3 display-5">Effects of Prototyping</h2>
           </header>
+          <p class="text-justify">
+            Initially, I started this project without planning to implement combat or interactive mechanics such as
+            pickups, buttons, weapons,
+            damage systems, or enemy AI.
+            As I progressed, there was an increasing amount of elements that were difficult to showcase how the level
+            related to specific events and combat.
+            <br>Some of these were:
+          </p>
+          <ul>
+            <li>The turrets on the bridge firing sticky projectiles.</li>
+            <li>The rocket being able to destroy destructibles.</li>
+            <li>The rocket boss firing at the player from a far distance.</li>
+            <li>Combat encounters used to heighten intensity.</li>
+            <li>How can I show ability gating without implementing abilities?</li>
+            <li>How can I show that the player is rewarded after a high intensity area?</li>
+          </ul>
+
+          <p class="text-justify">
+            Thus began a cycle of prototyping mechanics and AI, playtesting, and iterating on the blockout.
+            Combat had a large impact on how levels looked:
+          <ul>
+            <li>Enemy AI(and EQS) affected cover, pathing, spacing. </li>
+            <li>Weapons (and metrics): rocket explosions radii, fire rate, etc.</li>
+            <li>The rocket boss firing at the player from a far distance.</li>
+            <li>Combat encounters used to heighten intensity.</li>
+            <li>Scale of levels, sightlines.</li>
+          </ul>
+
+          </p>
+          <p class="strong-content text-justify">
+            Conclusion: I should have worked on implementing combat elements like weapons and enemies before moving
+            on to block out the entire world.
+          </p>
 
         </section>
-      </main>
 
-    </b-container>
 
-    <!-- <h2>Blockout Timelapse</h2>
-    <b-col lg="12">
-      <div>
-        <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
-          :interval="700">
-          <b-carousel-slide v-for="image in this.timelapse" :key="image.url" :caption="image.caption"
-            :img-src="image.url"></b-carousel-slide>
-        </b-carousel>
-      </div>
 
-    </b-col> -->
 
-    <div class="my-4"></div> <!-- Spacer with margin -->
+        <section class="subsection-container border-light">
+          <header class="text-center mb-4">
+            <h2 class="subsection-header display-5">6. Iteration and Feedback</h2>
+          </header>
+        </section>
 
-    <section class="subsection-container border-light">
-      <header class="text-center mb-4">
-        <h2 class="subsection-header display-4">6. Iteration and Feedback</h2>
-      </header>
-    </section>
+        <p class="strong-content text-justify">
+          Many things were added, modified, or removed that wasn't considered during planning but emerged from
+          playtests. Others happened while I prototyped, blocked out, and playtested the game myself.
+        </p>
 
-    <h4>Initial Feedback</h4>
-    <p>
-      While blocking out the first few rooms, namely the central and canyon hub, in my initial layout, I quickly
-      realized several glaring issues in the initial map I would have to resolve even before completing it:
-    </p>
-    <ul>
-      <li><b>Scope was too large.</b> Blocking out 6 areas, each with 5+ corridors and rooms was simply not feasible for
-        an MVP.
-      </li>
-      <li><b>Scale was too large.</b> There was too much verticality.</li>
-      <li>Directly converting Hollow Knight’s map to 3D is not feasible. Adding
-        a new dimension naturally morphs the rooms.</li>
-      <li><b>Each room was too large.</b> It took too long to traverse from room to room, even without enemies.</li>
-      <li><b>Too many rooms</b> between major points of interest (Hub room, boss rooms).As a result, pacing was not
-        representative of the graph.</li>
-      <li>Too much jumping! Too much walking!</li>
-      <li>Puzzles were<b> difficult to implement</b> due to the scripting overhead. </li>
-      <li>It was difficult to understand their surroundings. Important elements to understand were things like entrances
-        to the rooms and where the enemies were before engaging.</li>
-      <li><b>Unclear uniqueness for each area.</b> The idea of canyon and ruins was clear, but it was not clear what
-        distinct elements differentiated “canyon” and “ruins”.</li>
-    </ul>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Project Scope</h2>
+        </header>
+        <p class="strong-content text-justify">
+          Blocking out 6 areas, each with 5+ corridors and rooms was simply not feasible for an MVP.
+        </p>
 
-    <h4>Feedback 2</h4>
-    <ul>
-      <li><b>Canyon hub is too large.</b> With the canyon connecting to 2 bosses, the main hub is dwarfed by the sheer
-        contrast in size.
-      </li>
-      <li><b>Hard to playtest without ability gating, enemies and weapons.</b></li>
-      <li><b>Boss ability gate does not exist, cannot test start to end.</b></li>
-      <li><b>Wayfinding Issues: It is too difficult to find my way around the map.</b></li>
-      <li><b>Composition issues: No landmarks, no framing, and no vantage points that let you survey your
-          surroundings.</b></li>
-      <li><b>Unclear Affordances: Since scale was too large, it was always difficult to quickly understand if a rock was
-          a wall
-          or an obstacle that could be jumped over.</b></li>
-    </ul>
 
-    <!-- In Prime, standing in the middle of a room allows you to see the common exits/entrances, allowing you to find your
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Scale</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Pacing</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Combat Difficulty, Difficulty Curve</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Cut Content</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Visual Clarity, Readability</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Technical</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Performance</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Wayfinding</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Unclear Affordances</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Exploration Encouragement</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Audiovisual Feedback</h2>
+        </header>
+        <header class="mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Combat "Feel"</h2>
+        </header>
+
+        <h4>Initial Feedback</h4>
+        <p>
+          While blocking out the first few rooms, namely the central and canyon hub, in my initial layout, I quickly
+          realized several glaring issues in the initial map I would have to resolve even before completing it:
+        </p>
+        <ul>
+          <li><b>Scope was too large.</b> Blocking out 6 areas, each with 5+ corridors and rooms was simply not feasible
+            for
+            an MVP.
+          </li>
+          <li><b>Scale was too large.</b> There was too much verticality.</li>
+          <li>Directly converting Hollow Knight’s map to 3D is not feasible. Adding
+            a new dimension naturally morphs the rooms.</li>
+          <li><b>Each room was too large.</b> It took too long to traverse from room to room, even without enemies.</li>
+          <li><b>Too many rooms</b> between major points of interest (Hub room, boss rooms).As a result, pacing was not
+            representative of the graph.</li>
+          <li>Too much jumping! Too much walking!</li>
+          <li>Puzzles were<b> difficult to implement</b> due to the scripting overhead. </li>
+          <li>It was difficult to understand their surroundings. Important elements to understand were things like
+            entrances
+            to the rooms and where the enemies were before engaging.</li>
+          <li><b>Unclear uniqueness for each area.</b> The idea of canyon and ruins was clear, but it was not clear what
+            distinct elements differentiated “canyon” and “ruins”.</li>
+        </ul>
+
+        <h4>Feedback 2</h4>
+        <ul>
+          <li><b>Canyon hub is too large.</b> With the canyon connecting to 2 bosses, the main hub is dwarfed by the
+            sheer
+            contrast in size.
+          </li>
+          <li><b>Hard to playtest without ability gating, enemies and weapons.</b></li>
+          <li><b>Boss ability gate does not exist, cannot test start to end.</b></li>
+          <li><b>Wayfinding Issues: It is too difficult to find my way around the map.</b></li>
+          <li><b>Composition issues: No landmarks, no framing, and no vantage points that let you survey your
+              surroundings.</b></li>
+          <li><b>Unclear Affordances: Since scale was too large, it was always difficult to quickly understand if a rock
+              was
+              a wall
+              or an obstacle that could be jumped over.</b></li>
+        </ul>
+
+        <!-- In Prime, standing in the middle of a room allows you to see the common exits/entrances, allowing you to find your
         way towards it (or find it blocked) -->
 
-    <!-- I was not too worried about this, however, because I liked the idea that acquiring new abilities made the player
+        <!-- I was not too worried about this, however, because I liked the idea that acquiring new abilities made the player
         realize what was previously impossible is now affordable. -->
-    <h4>Solutions:</h4>
-    <ul>
-      <li><b>Removed puzzle to acquire Dash Ability, replaced with The Bridge.</b></li>
-      <li><b>Fewer mechanics: Removed secondary abilities for each gun, ability gates are part of the level.</b></li>
-      <li><b>Reduced distinct areas to 2: “Canyon” and “Ruins”. The elements I aimed each to have were:</b></li>
-      <ul>
-        <li>Canyon: Larger scale, more nature, rocky, rooms are more functioning machinery from the old civilization
-          because
-          of it being more protected.</li>
-        <li>Ruins: Center of ancient ruins. Higher density of decay and rubble, more man-made rooms(which are smaller).
-        </li>
-      </ul>
-      <li>
-        Revisited scale and verticality: I tried to limit verticality and scale by placing specific rules and using some
-        techniques:
-      </li>
-      <ul>
-        <li>World aligned Prototyping textures: This helped greatly in making sure obstacles could be jumped (or double
-          jumped) over. It made playtesting more comfortable.</li>
-        <li>Modular kit: I began using the same doorway module for all entrances, and that made sure that doorways
-          weren’t too
-          large or small.</li>
-        <li>Define what 1 "floor" is: Using staircases as measurements to roughly measure and standardize how tall
-          things are.
-        </li>
-        <li>Roughly limit how long it takes to get from 1 floor to another: Generally, 2-3 jumps, and it shouldn't take
-          more
-          than a minute of walking.
-        </li>
-      </ul>
-    </ul>
+        <h4>Solutions:</h4>
+        <ul>
+          <li><b>Removed puzzle to acquire Dash Ability, replaced with The Bridge.</b></li>
+          <li><b>Fewer mechanics: Removed secondary abilities for each gun, ability gates are part of the level.</b>
+          </li>
+          <li><b>Reduced distinct areas to 2: “Canyon” and “Ruins”. The elements I aimed each to have were:</b></li>
+          <ul>
+            <li>Canyon: Larger scale, more nature, rocky, rooms are more functioning machinery from the old civilization
+              because
+              of it being more protected.</li>
+            <li>Ruins: Center of ancient ruins. Higher density of decay and rubble, more man-made rooms(which are
+              smaller).
+            </li>
+          </ul>
+          <li>
+            Revisited scale and verticality: I tried to limit verticality and scale by placing specific rules and using
+            some
+            techniques:
+          </li>
+          <ul>
+            <li>World aligned Prototyping textures: This helped greatly in making sure obstacles could be jumped (or
+              double
+              jumped) over. It made playtesting more comfortable.</li>
+            <li>Modular kit: I began using the same doorway module for all entrances, and that made sure that doorways
+              weren’t too
+              large or small.</li>
+            <li>Define what 1 "floor" is: Using staircases as measurements to roughly measure and standardize how tall
+              things are.
+            </li>
+            <li>Roughly limit how long it takes to get from 1 floor to another: Generally, 2-3 jumps, and it shouldn't
+              take
+              more
+              than a minute of walking.
+            </li>
+          </ul>
+        </ul>
 
-    <div class="my-4"></div> <!-- Spacer with margin -->
+        <section class="subsection-container border-light">
+          <header class="text-center mb-4">
+            <h2 class="subsection-header display-5">Combat</h2>
+          </header>
+        </section>
+        <section class="subsection-container border-light">
+          <header class="text-center mb-4">
+            <h2 class="subsection-header display-5">Boss Fights</h2>
+          </header>
+        </section>
+        <section class="subsection-container border-light">
+          <header class="text-center mb-4">
+            <h2 class="subsection-header display-5">Evaluation</h2>
+          </header>
+        </section>
+        <section class="subsection-container border-light">
+          <header class="text-center mb-4">
+            <h2 class="subsection-header display-5">Credits</h2>
+          </header>
+        </section>
 
-    <!-- <h4>Rooms</h4>
+        <div class="my-4"></div> <!-- Spacer with margin -->
+
+        <!-- <h4>Rooms</h4>
     <p>Each room went through a number of iterations themselves (and will continue having more iterations), most if not
       all suffering from the issues mentioned above.
       <br>
       Note that this is still a work in progress.
     </p> -->
-    <!-- <b-row>
+        <!-- <b-row>
     <b-col lg="6">
       <div>
         <b-carousel id="carousel" style="text-shadow: 0px 0px 2px #000" no-animation controls indicators
@@ -727,78 +849,79 @@
     </b-col>
   </b-row> -->
 
-    <div class="my-4"></div> <!-- Spacer with margin -->
+        <div class="my-4"></div> <!-- Spacer with margin -->
 
-    <h2>Thought Processes & Design Decisions</h2>
+        <h2>Thought Processes & Design Decisions</h2>
 
-    <h3> Backtracking </h3>
+        <h3> Backtracking </h3>
 
 
-    <!-- Desert Caravan by Aaron Kenny
+        <!-- Desert Caravan by Aaron Kenny
 Music promoted on https://www.chosic.com/free-music/all/ -->
-    <!-- Waterfall Sounds by tramp963, Pixabay https://pixabay.com/sound-effects/waterfall-sounds-259625/ -->
-    <!-- https://pixabay.com/sound-effects/spacecraft-chrasing-88048/ spacecraft chrasing
+        <!-- Waterfall Sounds by tramp963, Pixabay https://pixabay.com/sound-effects/waterfall-sounds-259625/ -->
+        <!-- https://pixabay.com/sound-effects/spacecraft-chrasing-88048/ spacecraft chrasing
 Unilyd (Freesound) -->
-    <!-- https://pixabay.com/sound-effects/highflow-river-6221/ Highflow River
+        <!-- https://pixabay.com/sound-effects/highflow-river-6221/ Highflow River
 CaganCelik (Freesound)-->
 
 
-    <p>Backtracking is focused on the two hubs: The central hub and the canyon hub.
-      Following the progression flow in the initial brief, the player would have to revisit the central hub at least
-      twice no matter which path they take.
-      One future addition I would want to add is to add an ability gate to the central hub so that the player has a
-      larger progression reason to revisit it.
-    </p>
-    <b-img :src="this.backtrackroutes" fluid alt=""></b-img>
-    <p class="text-center">Main backtracking routes</p>
-
-    <h3>Ability Gates</h3>
-    <p>
-      Although the map was created with ability gates in mind, they were not implemented early on as it was not high on
-      the priority list.
-      <br>
-      Initially, it was decided that ability gates would be similar to metroid prime, where a door would only open by
-      shooting it with the correct type of gun.
-      <br>
-      However, since the vertical slice only had 1 new gun (rocket), there wasn’t enough abilities to “fire” at the
-      gate.
-      <br>
-      I thus decided to integrate the ability gating into the room itself.
-      <br>
-      Following the initial brief flow, I created 2 ability gates: The one to The Bridge (Dash Ability) and the other
-      one to the Boss.
-    </p>
-    <b-row>
-      <b-col lg="6">
-        <h5>Dash Ability Gate</h5>
-        <b-img :src="this.dashabilitygate" fluid alt=""></b-img>
-        <p>This ability gate can be passed with either a double jump OR the rocket.
-          The yellow pillar illustrates what happens when the player fires a rocket at the gray pillar.
-          <br>
-          I also wanted to add a little environmental storytelling to why the pillar is almost falling.
-          To do so, I added a large ring that has crashed onto the left side, as if an old building fell onto the
-          hallway, emphasizing the theme of "ruins".
+        <p>Backtracking is focused on the two hubs: The central hub and the canyon hub.
+          Following the progression flow in the initial brief, the player would have to revisit the central hub at least
+          twice no matter which path they take.
+          One future addition I would want to add is to add an ability gate to the central hub so that the player has a
+          larger progression reason to revisit it.
         </p>
-      </b-col>
-      <b-col lg="6">
-        <h5>Boss Ability Gate</h5>
-        <b-img :src="this.bossabilitygate" fluid alt=""></b-img>
-        <p>This ability gate can be passed with either a double jump OR rocket AND the dash.
+        <b-img :src="this.backtrackroutes" fluid alt=""></b-img>
+        <p class="text-center">Main backtracking routes</p>
+
+        <h3>Ability Gates</h3>
+        <p>
+          Although the map was created with ability gates in mind, they were not implemented early on as it was not high
+          on
+          the priority list.
           <br>
-          I reuse the pillar topple mechanic for the rocket.
+          Initially, it was decided that ability gates would be similar to metroid prime, where a door would only open
+          by
+          shooting it with the correct type of gun.
           <br>
-          Since this is the final room before the final boss, I added much denser debris to hint that something
-          important was up ahead.
+          However, since the vertical slice only had 1 new gun (rocket), there wasn’t enough abilities to “fire” at the
+          gate.
+          <br>
+          I thus decided to integrate the ability gating into the room itself.
+          <br>
+          Following the initial brief flow, I created 2 ability gates: The one to The Bridge (Dash Ability) and the
+          other
+          one to the Boss.
         </p>
-      </b-col>
-    </b-row>
+        <b-row>
+          <b-col lg="6">
+            <h5>Dash Ability Gate</h5>
+            <b-img :src="this.dashabilitygate" fluid alt=""></b-img>
+            <p>This ability gate can be passed with either a double jump OR the rocket.
+              The yellow pillar illustrates what happens when the player fires a rocket at the gray pillar.
+              <br>
+              I also wanted to add a little environmental storytelling to why the pillar is almost falling.
+              To do so, I added a large ring that has crashed onto the left side, as if an old building fell onto the
+              hallway, emphasizing the theme of "ruins".
+            </p>
+          </b-col>
+          <b-col lg="6">
+            <h5>Boss Ability Gate</h5>
+            <b-img :src="this.bossabilitygate" fluid alt=""></b-img>
+            <p>This ability gate can be passed with either a double jump OR rocket AND the dash.
+              <br>
+              I reuse the pillar topple mechanic for the rocket.
+              <br>
+              Since this is the final room before the final boss, I added much denser debris to hint that something
+              important was up ahead.
+            </p>
+          </b-col>
+        </b-row>
+      </main>
 
-    <div class="my-4"></div> <!-- Spacer with margin -->
+    </b-container>
 
 
-    <div class="my-4"></div> <!-- Spacer with margin -->
-
-    <h3> Distinct Areas </h3>
 
     <div class="my-4"></div> <!-- Spacer with margin -->
 
@@ -871,43 +994,46 @@ export default {
       ],
       timelapse: [
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t1.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/1.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t2.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/2.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t3.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/3.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t4.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/4.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t5.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/5.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t6.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/6.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t7.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/7.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t8.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/8.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t9.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/9.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t10.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/10.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t11.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/11.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t12.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/12.png"),
         },
         {
-          url: require("@/assets/scarabdescent/screenshots/timelapse/t13.png"),
+          url: require("@/assets/scarabdescent/screenshots/timelapse/13.png"),
+        },
+        {
+          url: require("@/assets/scarabdescent/screenshots/timelapse/14.png"),
         },
       ],
       processimages: [],
