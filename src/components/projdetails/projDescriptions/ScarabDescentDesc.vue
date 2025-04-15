@@ -1,6 +1,24 @@
 <template>
   <b-container>
 
+    <b-card no-body>
+      <b-card-header header-tag="header">
+        <h5 class="mb-0">Accordion Example</h5>
+      </b-card-header>
+
+      <b-card-body>
+        <b-accordion v-model="openIndex">
+          <b-accordion-item v-for="(item, index) in items" :key="index">
+            <template #title>
+              <strong>{{ item.title }}</strong>
+            </template>
+            <b-card-text>{{ item.content }}</b-card-text>
+          </b-accordion-item>
+        </b-accordion>
+      </b-card-body>
+    </b-card>
+
+
     <b-container class="description-container">
       <b-row>
         <b-col lg="12">
@@ -638,9 +656,6 @@
 
         </section>
 
-
-
-
         <section class="subsection-container border-light">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">6. Iteration and Feedback</h2>
@@ -650,136 +665,378 @@
         <p class="strong-content text-justify">
           Many things were added, modified, or removed that wasn't considered during planning but emerged from
           playtests. Others happened while I prototyped, blocked out, and playtested the game myself.
+          Below is a compiled list of problems and solutions across all playtests and feedback at different points in
+          time.
         </p>
 
-        <header class="mb-4 pt-5">
+        <header class="text-center mb-4 pt-3">
+          <h2 class="fw-bold mb-3 display-5">Problems</h2>
+        </header>
+
+        <header class="mb-4 pt-3">
           <h2 class="fw-bold mb-3 display-5">Project Scope</h2>
         </header>
         <p class="strong-content text-justify">
-          Blocking out 6 areas, each with 5+ corridors and rooms was simply not feasible for an MVP.
+          Levels, combat mechanics, and player abilities were all constantly reduced.
+          <br>Below are issues found:
         </p>
-
+        <ul>
+          <li>
+            Blocking out 7 areas each with 5+ corridors was too much, and not an MVP.
+          </li>
+          <li><b>Weapon systems took too long to implement.</b></li>
+          <li><b>Puzzles needed additional scripting that took too long.</b></li>
+          <li><b>Doors were problematic:</b>
+            <ul>
+              <li>
+                Sliding doors were whole new world of problems. States, animations, dynamic sub level
+                loading, players getting crushed, Do enemies follow you to the next room? What about obstacles blocking
+                the
+                way?
+              </li>
+              <li>
+                Ability gating in the style of Metroid Prime, where each door only opened by being shot by a specific
+                weapon, was removed. Ability gating these doors added more bugs.
+              </li>
+            </ul>
+          </li>
+          <li><b>Rest areas healed the player, saved the game and assigned the player checkpoint.</b>
+            All of which meant more time.
+          </li>
+        </ul>
 
         <header class="mb-4 pt-5">
           <h2 class="fw-bold mb-3 display-5">Scale</h2>
         </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Pacing</h2>
-        </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Combat Difficulty, Difficulty Curve</h2>
-        </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Cut Content</h2>
-        </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Visual Clarity, Readability</h2>
-        </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Technical</h2>
-        </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Performance</h2>
-        </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Wayfinding</h2>
-        </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Unclear Affordances</h2>
-        </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Exploration Encouragement</h2>
-        </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Audiovisual Feedback</h2>
-        </header>
-        <header class="mb-4 pt-5">
-          <h2 class="fw-bold mb-3 display-5">Combat "Feel"</h2>
-        </header>
 
-        <h4>Initial Feedback</h4>
-        <p>
-          While blocking out the first few rooms, namely the central and canyon hub, in my initial layout, I quickly
-          realized several glaring issues in the initial map I would have to resolve even before completing it:
-        </p>
         <ul>
-          <li><b>Scope was too large.</b> Blocking out 6 areas, each with 5+ corridors and rooms was simply not feasible
-            for
-            an MVP.
-          </li>
-          <li><b>Scale was too large.</b> There was too much verticality.</li>
+          <li>Too much walking, too much jumping!</li>
+          <li>Too much verticality.</li>
           <li>Directly converting Hollow Knight’s map to 3D is not feasible. Adding
             a new dimension naturally morphs the rooms.</li>
-          <li><b>Each room was too large.</b> It took too long to traverse from room to room, even without enemies.</li>
-          <li><b>Too many rooms</b> between major points of interest (Hub room, boss rooms).As a result, pacing was not
-            representative of the graph.</li>
-          <li>Too much jumping! Too much walking!</li>
-          <li>Puzzles were<b> difficult to implement</b> due to the scripting overhead. </li>
-          <li>It was difficult to understand their surroundings. Important elements to understand were things like
-            entrances
-            to the rooms and where the enemies were before engaging.</li>
-          <li><b>Unclear uniqueness for each area.</b> The idea of canyon and ruins was clear, but it was not clear what
-            distinct elements differentiated “canyon” and “ruins”.</li>
-        </ul>
-
-        <h4>Feedback 2</h4>
-        <ul>
-          <li><b>Canyon hub is too large.</b> With the canyon connecting to 2 bosses, the main hub is dwarfed by the
-            sheer
-            contrast in size.
+          <li><b>Each room was too large.</b> It took too long to traverse from room to room, even without enemies.
+            I later learned that placing enemies and cover made the room feel smaller instead.</li>
+          <li><b>Pacing was not representative of the design.</b>
+            Too many rooms between major points of interest (Hub room,boss rooms).</li>
+          <li><b>Canyon hub is too large.</b> the ruins hub is dwarfed by the sheer contrast in size.
+            Additional problem: Moving rooms around was increasingly annoying.
           </li>
-          <li><b>Hard to playtest without ability gating, enemies and weapons.</b></li>
-          <li><b>Boss ability gate does not exist, cannot test start to end.</b></li>
-          <li><b>Wayfinding Issues: It is too difficult to find my way around the map.</b></li>
-          <li><b>Composition issues: No landmarks, no framing, and no vantage points that let you survey your
-              surroundings.</b></li>
           <li><b>Unclear Affordances: Since scale was too large, it was always difficult to quickly understand if a rock
-              was
-              a wall
-              or an obstacle that could be jumped over.</b></li>
+              was a wall or an obstacle that could be jumped over.</b></li>
+          <li>It was difficult to understand the player's surroundings.
+            Important elements to understand were things like entrances, enemy location, events, beginning of
+            bossfights.
+          </li>
         </ul>
 
-        <!-- In Prime, standing in the middle of a room allows you to see the common exits/entrances, allowing you to find your
+        <header class="mb-2 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Pacing</h2>
+        </header>
+        <ul>
+          <li>Many were related to scale and combat, mentioned above.</li>
+          <li>"Too much dead time" in between places, where time is just spent walking from place to place.
+            Although related to scale, the larger problem was that players felt bored in between points of interest.
+          </li>
+          <li>Moving around the blockout was boring - no moving or interactive objects made it difficult for players to
+            feel "high intensity".</li>
+        </ul>
+
+        <header class="mb-2 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Combat, Difficulty Curve, Balance</h2>
+        </header>
+        <ul>
+          <li>Rocket boss was too difficult. It would fire a volley of 8-9 rockets in 1 second.</li>
+          <li>Players wanted to try out the new abilities they obtained.
+            On my side, I wanted to make sure players understood what each ability did right after they obtained it.
+          </li>
+          <li>Seeing health bars above all enemies overwhelmed the player, giving them a sense of "impossible to kill
+            them
+            all".</li>
+          <li>The difficulty contrast between a single enemy in the tutorial,
+            then suddenly bombarded by a group of 4 melee + 4 ranged in the Ruins Hub was too much.</li>
+          <li>The rocket ability could fire every 0.1 seconds. Players heavily abused this, effectively turning on easy
+            mode
+            for each combat encounter.</li>
+          <li>The bridge was confusing. When entering, many turrets already fire at the player, they did not understand
+            the
+            mechanics of the turret.</li>
+          <li>Cover was not reliable. When players thought they would be safe, they would get hit.
+            <br>This was even worse for the rocket boss, whose rockets had an explosion radius.
+          </li>
+          <li>Due to the unique AI for each boss, 3 out of 4 bosses had large changes in the level (and in their
+            behaviour)
+            as their behaviour and weapons were added and fleshed out. This will be discussed further in the Boss Fights
+            section.</li>
+        </ul>
+        <header class="mb-2 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Visual Clarity, Readability</h2>
+        </header>
+        <li><b>Unclear uniqueness for each area.</b> The idea of canyon and ruins was clear, but it was not clear what
+          distinct elements differentiated “canyon” and “ruins”.</li>
+        <li><b>"Is this destructible?"</b></li>
+        <li><b>"Why is this destructible yellow, but this yellow door is not destructible?"</b></li>
+        <li><b>"Did I come from this door? Is this the same door?"</b></li>
+        <li><b>"What am I supposed to do after killing the boss?"</b></li>
+        <header class="mb-2 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Technical</h2>
+        </header>
+        <ul>
+          <li>Adding, modifying, and removing sections of a level was difficult in cubegrid.</li>
+          <li>Assigning different textures to different parts of the level was difficult when the entire level was 1
+            asset/model.
+          </li>
+          <li>Creating curved/circular sections was difficult in UE's cubegrid tool.</li>
+          <li><b>Hard to playtest without ability gating, enemies and weapons. Cannot test from start to end.</b></li>
+          <li><b>Boss ability gate does not exist, cannot test start to end.</b></li>
+          <li>Stepping on chaos destruction debris spun the player around, creating a glitching, nauseating effect.
+            (never
+            fixed)</li>
+        </ul>
+
+
+        <header class="mb-2 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Performance</h2>
+        </header>
+        <p>These were things that dropped FPS. Not all were the root problem, but contributed in some shape or form.</p>
+        <ul>
+          <li>The entire world is loaded on startup.</li>
+          <li>Meshes were not distance culled.</li>
+          <li>Overlapping dynamic lighting everywhere.</li>
+          <li>Chaos destruction debris did not sleep</li>
+        </ul>
+
+        <header class="mb-2 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Wayfinding</h2>
+        </header>
+        <li><b>"It is too difficult to find my way around the map."</b></li>
+        <li><b>Composition issues: No landmarks, no framing, and no vantage points that let you survey your
+            surroundings.</b></li>
+        <li><b>The larger the area was, the less inclined players wanted to explore, especially if they asked "what am I
+            supposed to do now".</b></li>
+        <li><b>Some were confused and stopped when they could first reached the final boss ability gate and couldn't
+            pass
+            it.</b></li>
+
+        <header class="mb-2 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Exploration</h2>
+        </header>
+        <li><b>"Not finding any treasure after fighting a large group of enemies made me not want to explore"</b></li>
+        <li><b>Being a blockout, players did not feel the mood of an alien planet, heavily reducing immersion.</b>The
+          lack
+          of music, ambience, visuals, all contributed to the lack of immersion.</li>
+        <li><b>Many players disliked backtracking (relatable), heavily reducing the desire to explore new areas by
+            having to
+            go through already-explored places.</b> This was exacerbated by the lack of respawning enemies, increasingly
+          long walking times in between areas, especially in hallways.</li>
+
+        <header class="mb-2 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Audiovisual Feedback</h2>
+        </header>
+        <li><b>"When did I get hit?"</b></li>
+        <li><b>"Which button do I press to pick this up?"</b></li>
+        <li><b>"Am I dead?"</b></li>
+        <li><b>Players wanted to have feedback when being damaged, damaging enemies, and when picking things up.</b>
+        </li>
+
+        <header class="text-center mb-4 pt-3">
+          <h2 class="fw-bold mb-3 display-5">Solutions</h2>
+        </header>
+        <ul>
+          <!-- scope -->
+          <li>
+            <b>Reduced distinct areas from 7 to 2</b>, with the minimal amount of corridors.
+            Each corridor had a reason to stay, whether it was to ability gate something or to balance pacing.
+          </li>
+          <li><b>No Weapon Alt Fire modes.</b></li>
+          <li><b>No weapon reloading.</b></li>
+          <li><b>Puzzle to acquire Dash removed, replaced by the Bridge.</b></li>
+          <li><b>Removed doors. Instead, placed cover to hide sightlines.</b></li>
+          <li><b>No "rest" areas</b> Instead, additional health packs were scattered around the map.
+          </li>
+          <!-- scale -->
+          <li>Roughly limit how long it takes to get from 1 point of interest to another: not more than a minute of
+            walking.
+            Combat encounters were later added to act as POIs from a pacing standpoint.
+          </li>
+          <li>Limit verticality. Reaching a different platform should take around 2-3 jumps/1 min walking.</li>
+          <li>Use canyon hub's scale as an opportunity instead to surprise the player and encourage exploration.</li>
+          <li>World aligned Prototyping textures: This helped greatly in making sure obstacles could be scaled over.
+            It made playtesting more comfortable.</li>
+          <li>Define what 1 "floor" is: Using staircases as measurements to roughly measure and standardize how tall
+            things are.
+          </li>
+          <li>Modular kit: Model reusable assets in cubegrid.
+            Example: Use the same doorway frame for all entrances. Also helped with scale.
+          </li>
+
+          <li>Largely removed corridor to mage boss</li>
+          <li>To reduce dead time, added more encounters, especially at corridors.</li>
+          <li>To reward defeating enemies, added a hidden fireball powerup at one large encounter, and more health
+            around
+            others.</li>
+          <li>Made it faster to reach the final boss ability gate. Furthermore, make the dash section of the gate much
+            clearer in the
+            beginning. Use destructible pillars player can jump over or fire rockets at. Make the dashable gap clearer.
+            The player may still take awhile to realize they cannot get to the other side, but they would not be able to
+            advance no matter what.</li>
+          <li>Added sound effects for interactions, different sounds when getting hit and shooting the ground, and
+            button
+            activations.</li>
+          <li>Reduced rockets fire rate for rocket boss, made it evade player when on cooldown</li>
+          <li>Huge hallways were dead time because they were linear. Used it with more intention - to contrast it with
+            larger, open nonlinear areas</li>
+          <li>Some indication of final objective is good - added text in the beginning, and a beam of light at the final
+            boss so players can orient themselves at certain spots from other rooms, inciting curiousity.</li>
+          <li>Tweaked canyon blockout to better show points of interest at different vantage points.</li>
+          <li>Bridge: Introducing buttons should be much simpler. Buttons should only open doors, not kill turrets as
+            well.
+            Remove all turrets in the button tutorial area.</li>
+          <li>Create suspicious pink light in front of bridge's ability gate, make it clearer that something exists
+            there.
+          </li>
+          <li>Stepping stones for river in Canyon Hub, make it more inviting/less scary to go closer and dip your feet
+            in.
+          </li>
+          <li>
+            Players didn't know what to do after killing rocket boss: Heavy handed guidance by preventing the player
+            from
+            leaving unless they pick up the ability. Furthermore, shine a spotlight on the ability pickup.</li>
+          <li>Show instructions only after you get the ability.</li>
+          <li>Rocket Boss: Show the ability when you trigger the boss fight to tell the player where to get the ability,
+            but
+            gate it.</li>
+          <li>Dash ability is shown and given at the end of the bridge instead. This softly encourages player to use it
+            when
+            returning to the entrance.</li>
+          <li>Dash turrets are reactivated only after you obtain the dash ability, letting players set the pace.</li>
+          <li>Instead of adding landmarks, give unique properties to each door in ruins hub - red/blue light, pillar
+            half
+            way fallen, etc.</li>
+          <li>Bridge has 3 checkpoints when falling into void so you can't cheat the system anymore</li>
+          <li>Rocket Boss shoots 3 rockets instead of 9, with a cooldown of 3 seconds instead of 1. While on cooldown,
+            moves
+            around to maintain line of sight.</li>
+          <li>Chaos Destruction debris sleeps after 3 seconds, disappears after sleeping.</li>
+          <li>Lights farther than 10000 units are culled.</li>
+          <li>Meshes are culled at certain distances.</li>
+          <li>Navigation meshes are static.</li>
+        </ul>
+
+        <div class="my-4">
+          <!-- Toggle Button -->
+          <b-button v-b-toggle.collapse-1 variant="primary" class="mb-2">
+            {{ collapsed ? 'Show Content' : 'Show Raw Feedback Data' }}
+          </b-button>
+
+          <!-- Collapsible Content -->
+          <b-collapse id="collapse-1" v-model="collapsed" class="mt-2">
+            <b-card>
+
+              <h4>Initial Feedback</h4>
+              <p>
+                While blocking out the first few rooms, namely the central and canyon hub, in my initial layout, I
+                quickly
+                realized several glaring issues in the initial map I would have to resolve even before completing it:
+              </p>
+              <ul>
+                <li><b>Scope was too large.</b> Blocking out 6 areas, each with 5+ corridors and rooms was simply not
+                  feasible
+                  for an MVP.
+                </li>
+                <li><b>Scale was too large.</b> There was too much verticality.</li>
+                <li>Directly converting Hollow Knight’s map to 3D is not feasible. Adding
+                  a new dimension naturally morphs the rooms.</li>
+                <li><b>Each room was too large.</b> It took too long to traverse from room to room, even without
+                  enemies.
+                </li>
+                <li><b>Too many rooms</b> between major points of interest (Hub room, boss rooms).As a result, pacing
+                  was
+                  not
+                  representative of the graph.</li>
+                <li>Too much jumping! Too much walking!</li>
+                <li>Puzzles were<b> difficult to implement</b> due to the scripting overhead. </li>
+                <li>It was difficult to understand their surroundings. Important elements to understand were things like
+                  entrances
+                  to the rooms and where the enemies were before engaging.</li>
+                <li><b>Unclear uniqueness for each area.</b> The idea of canyon and ruins was clear, but it was not
+                  clear
+                  what
+                  distinct elements differentiated “canyon” and “ruins”.</li>
+              </ul>
+
+              <h4>Feedback 2</h4>
+              <ul>
+                <li><b>Canyon hub is too large.</b> With the canyon connecting to 2 bosses, the main hub is dwarfed by
+                  the
+                  sheer
+                  contrast in size.
+                </li>
+                <li><b>Hard to playtest without ability gating, enemies and weapons.</b></li>
+                <li><b>Boss ability gate does not exist, cannot test start to end.</b></li>
+                <li><b>Wayfinding Issues: It is too difficult to find my way around the map.</b></li>
+                <li><b>Composition issues: No landmarks, no framing, and no vantage points that let you survey your
+                    surroundings.</b></li>
+                <li><b>Unclear Affordances: Since scale was too large, it was always difficult to quickly understand if
+                    a
+                    rock
+                    was
+                    a wall
+                    or an obstacle that could be jumped over.</b></li>
+              </ul>
+
+              <!-- In Prime, standing in the middle of a room allows you to see the common exits/entrances, allowing you to find your
         way towards it (or find it blocked) -->
 
-        <!-- I was not too worried about this, however, because I liked the idea that acquiring new abilities made the player
+              <!-- I was not too worried about this, however, because I liked the idea that acquiring new abilities made the player
         realize what was previously impossible is now affordable. -->
-        <h4>Solutions:</h4>
-        <ul>
-          <li><b>Removed puzzle to acquire Dash Ability, replaced with The Bridge.</b></li>
-          <li><b>Fewer mechanics: Removed secondary abilities for each gun, ability gates are part of the level.</b>
-          </li>
-          <li><b>Reduced distinct areas to 2: “Canyon” and “Ruins”. The elements I aimed each to have were:</b></li>
-          <ul>
-            <li>Canyon: Larger scale, more nature, rocky, rooms are more functioning machinery from the old civilization
-              because
-              of it being more protected.</li>
-            <li>Ruins: Center of ancient ruins. Higher density of decay and rubble, more man-made rooms(which are
-              smaller).
-            </li>
-          </ul>
-          <li>
-            Revisited scale and verticality: I tried to limit verticality and scale by placing specific rules and using
-            some
-            techniques:
-          </li>
-          <ul>
-            <li>World aligned Prototyping textures: This helped greatly in making sure obstacles could be jumped (or
-              double
-              jumped) over. It made playtesting more comfortable.</li>
-            <li>Modular kit: I began using the same doorway module for all entrances, and that made sure that doorways
-              weren’t too
-              large or small.</li>
-            <li>Define what 1 "floor" is: Using staircases as measurements to roughly measure and standardize how tall
-              things are.
-            </li>
-            <li>Roughly limit how long it takes to get from 1 floor to another: Generally, 2-3 jumps, and it shouldn't
-              take
-              more
-              than a minute of walking.
-            </li>
-          </ul>
-        </ul>
+              <h4>Solutions:</h4>
+              <ul>
+                <li><b>Removed puzzle to acquire Dash Ability, replaced with The Bridge.</b></li>
+                <li><b>Fewer mechanics: Removed secondary abilities for each gun, ability gates are part of the
+                    level.</b>
+                </li>
+                <li><b>Reduced distinct areas to 2: “Canyon” and “Ruins”. The elements I aimed each to have were:</b>
+                </li>
+                <ul>
+                  <li>Canyon: Larger scale, more nature, rocky, rooms are more functioning machinery from the old
+                    civilization
+                    because
+                    of it being more protected.</li>
+                  <li>Ruins: Center of ancient ruins. Higher density of decay and rubble, more man-made rooms(which are
+                    smaller).
+                  </li>
+                </ul>
+                <li>
+                  Revisited scale and verticality: I tried to limit verticality and scale by placing specific rules and
+                  using
+                  some
+                  techniques:
+                </li>
+                <ul>
+                  <li><b>Apply world aligned grid textures</b>:
+                    This helped greatly in making sure obstacles could be jumped (or
+                    double
+                    jumped) over. It made playtesting more comfortable.</li>
+                  <li>Modular kit: I began using the same doorway module for all entrances, and that made sure that
+                    doorways
+                    weren’t too
+                    large or small.</li>
+                  <li>Define what 1 "floor" is: Using staircases as measurements to roughly measure and standardize how
+                    tall
+                    things are.
+                  </li>
+                  <li>Roughly limit how long it takes to get from 1 floor to another: Generally, 2-3 jumps, and it
+                    shouldn't
+                    take
+                    more
+                    than a minute of walking.
+                  </li>
+                </ul>
+              </ul>
+            </b-card>
+          </b-collapse>
+        </div>
+
 
         <section class="subsection-container border-light">
           <header class="text-center mb-4">
@@ -884,8 +1141,7 @@ CaganCelik (Freesound)-->
           by
           shooting it with the correct type of gun.
           <br>
-          However, since the vertical slice only had 1 new gun (rocket), there wasn’t enough abilities to “fire” at the
-          gate.
+          However, doors proved too difficult to implement.
           <br>
           I thus decided to integrate the ability gating into the room itself.
           <br>
@@ -914,6 +1170,7 @@ CaganCelik (Freesound)-->
               <br>
               Since this is the final room before the final boss, I added much denser debris to hint that something
               important was up ahead.
+              <br> This entire setup was very confusing for players, and therefore I redesigned it, simplifying it.
             </p>
           </b-col>
         </b-row>
@@ -952,6 +1209,8 @@ CaganCelik (Freesound)-->
 </template>
 
 <script>
+import VueScrollTo from 'vue-scrollto'
+
 export default {
   components: {},
   data() {
@@ -1115,6 +1374,7 @@ export default {
           url: require("@/assets/scarabdescent/brief/8.png"),
         },
       ],
+
       backtrackroutes: require("@/assets/scarabdescent/backtracking/backtrackroutes.png"),
       dashabilitygate: require("@/assets/scarabdescent/abilitygates/dashgate.png"),
       bossabilitygate: require("@/assets/scarabdescent/abilitygates/bossgate.png"),
