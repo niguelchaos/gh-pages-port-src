@@ -1,22 +1,6 @@
 <template>
   <b-container>
 
-    <b-card no-body>
-      <b-card-header header-tag="header">
-        <h5 class="mb-0">Accordion Example</h5>
-      </b-card-header>
-
-      <b-card-body>
-        <b-accordion v-model="openIndex">
-          <b-accordion-item v-for="(item, index) in items" :key="index">
-            <template #title>
-              <strong>{{ item.title }}</strong>
-            </template>
-            <b-card-text>{{ item.content }}</b-card-text>
-          </b-accordion-item>
-        </b-accordion>
-      </b-card-body>
-    </b-card>
 
 
     <b-container class="description-container">
@@ -254,71 +238,104 @@
           </b-row>
 
           <p class="strong-content"> Findings and Observations:</p>
-          <ul>
-            <li> Speedruns clearly have much less backtracking, and the paths which do tend to be in the hub area.</li>
-            <li> The topology of both games' world maps is generally hub and spoke, with more sub-hubs the more you go.
-            </li>
-            <ul>
-              <li> There are many reasons for this. Development, world building, player frustration, and exploration are
-                a few.</li>
-            </ul>
-            <li> Ability gates are often placed in earlier areas, since it gives you a reason to backtrack.</li>
-            <li> There are generally smaller hubs which let the player backtrack less before encountering a save
-              point/resting area, especially during early game.
-            </li>
-            <li> Late game backtracking tends to become longer and longer, not just because of area, but also because
-              gated
-              areas are intentionally placed in previous areas. This is offset by stronger traversal abilities.
-            </li>
-            <li> Players are generally better rewarded for exploring more, which is correlated to more backtracking.
-              Rewards include resources obtained by killing enemies or finding secret areas.
-            </li>
-            <li> The final boss is placed near the starter area, likely to give players an objective throughout the
-              game, or for ease of access. Generally locked by a certain skill/item. This item can be retrieved close,
-              and whether you can defeat it is up to skill.
-            </li>
-            <li> Many abilities are optional.
-            </li>
-            <li> Players often need to defeat bosses or challenges to obtain new abilities.
-            </li>
-            <li> Rooms can be categorized into nodes and edges
-              Edges are often long corridors, Nodes are larger, open space used for large fights or set pieces.
-            </li>
-            <li> The player can see most of the doors upon entering the room.
-            </li>
-            <li> Large rooms generally expand in verticality too.
-            </li>
-            <li> Organic vs synthetic is also reflected in the layout.
-              Pirate Ship and constructed areas is angular, longer corridors, symmetrical
-              Organic areas like forests have more curves, jagged edges
-            </li>
-            <li> Prime uses gate shooting mechanic to hard gate players from entering areas
-              Hollow knight uses soft lock mechanics in some areas, such as the “fog of darkness”
-            </li>
-            <li> From a top down perspective, Metroid Prime is much more linear.
-            </li>
-            <li> Prime has puzzles that takes advantage of 3D, such as falling bricks, perspective puzzles, and diegetic
-              UI.
-            </li>
-            <li> Prime doesn’t feature a lot of traditional cover. It is mostly dodging.
-            </li>
-            <li> Boss areas are arenas of mostly flat spaces, some with gimmicks such as environmental hazards.
-            </li>
-            <li> Many of the enemies are faster/larger than the player, so its often a waiting game - wait for enemy to
-              attack, and then react.
-            </li>
-            <li> Hollow Knight is slightly different, but also emphasizes dodging despite parrying being possible.
-            </li>
-            <li> Distinct areas:
-              <ul>
-                <li>Provide the player with a mental map of where they are</li>
-                <li>Creates interesting themes</li>
-                <li>Encourages different playstyles & mechanics</li>
-                <li>Gives a more believable narrative experience.</li>
-              </ul>
-            </li>
+          <div class="my-4">
+            <!-- Toggle Button -->
+            <b-button v-b-toggle.collapse-1 variant="primary" class="mb-2">
+              Show Findings
+            </b-button>
 
-          </ul>
+            <!-- Collapsible Content -->
+            <b-collapse id="collapse-1" v-model="collapsed" class="mt-2">
+              <b-card class="shaded-box">
+
+                <b-row class="pt-1">
+                  <b-col lg="12">
+                    <ul>
+                      <li> Speedruns clearly have much less backtracking, and the paths which do tend to be in the hub
+                        area.</li>
+                      <li> The topology of both games' world maps is generally hub and spoke, with more sub-hubs the
+                        more you go.
+                      </li>
+                      <ul>
+                        <li> There are many reasons for this. Development, world building, player frustration, and
+                          exploration are
+                          a few.</li>
+                      </ul>
+                      <li> Ability gates are often placed in earlier areas, since it gives you a reason to backtrack.
+                      </li>
+                      <li> There are generally smaller hubs which let the player backtrack less before encountering a
+                        save
+                        point/resting area, especially during early game.
+                      </li>
+                      <li> Late game backtracking tends to become longer and longer, not just because of area, but also
+                        because
+                        gated
+                        areas are intentionally placed in previous areas. This is offset by stronger traversal
+                        abilities.
+                      </li>
+                      <li> Players are generally better rewarded for exploring more, which is correlated to more
+                        backtracking.
+                        Rewards include resources obtained by killing enemies or finding secret areas.
+                      </li>
+                      <li> The final boss is placed near the starter area, likely to give players an objective
+                        throughout the
+                        game, or for ease of access. Generally locked by a certain skill/item. This item can be
+                        retrieved close,
+                        and whether you can defeat it is up to skill.
+                      </li>
+                      <li> Many abilities are optional.
+                      </li>
+                      <li> Players often need to defeat bosses or challenges to obtain new abilities.
+                      </li>
+                      <li> Rooms can be categorized into nodes and edges
+                        Edges are often long corridors, Nodes are larger, open space used for large fights or set
+                        pieces.
+                      </li>
+                      <li> The player can see most of the doors upon entering the room.
+                      </li>
+                      <li> Large rooms generally expand in verticality too.
+                      </li>
+                      <li> Organic vs synthetic is also reflected in the layout.
+                        Pirate Ship and constructed areas is angular, longer corridors, symmetrical
+                        Organic areas like forests have more curves, jagged edges
+                      </li>
+                      <li> Prime uses gate shooting mechanic to hard gate players from entering areas
+                        Hollow knight uses soft lock mechanics in some areas, such as the “fog of darkness”
+                      </li>
+                      <li> From a top down perspective, Metroid Prime is much more linear.
+                      </li>
+                      <li> Prime has puzzles that takes advantage of 3D, such as falling bricks, perspective puzzles,
+                        and diegetic
+                        UI.
+                      </li>
+                      <li> Prime doesn’t feature a lot of traditional cover. It is mostly dodging.
+                      </li>
+                      <li> Boss areas are arenas of mostly flat spaces, some with gimmicks such as environmental
+                        hazards.
+                      </li>
+                      <li> Many of the enemies are faster/larger than the player, so its often a waiting game - wait for
+                        enemy to
+                        attack, and then react.
+                      </li>
+                      <li> Hollow Knight is slightly different, but also emphasizes dodging despite parrying being
+                        possible.
+                      </li>
+                      <li> Distinct areas:
+                        <ul>
+                          <li>Provide the player with a mental map of where they are</li>
+                          <li>Creates interesting themes</li>
+                          <li>Encourages different playstyles & mechanics</li>
+                          <li>Gives a more believable narrative experience.</li>
+                        </ul>
+                      </li>
+
+                    </ul>
+                  </b-col>
+                </b-row>
+              </b-card>
+            </b-collapse>
+          </div>
+
           <p class="strong-content"> While many of these are self explanatory, they helped me distill what we needed for
             an experience to be "metroidvania-esque".</p>
         </section>
@@ -656,6 +673,17 @@
 
         </section>
 
+
+
+
+
+
+
+
+
+
+
+
         <section class="subsection-container border-light">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">6. Iteration and Feedback</h2>
@@ -673,13 +701,26 @@
           <h2 class="fw-bold mb-3 display-5">Problems</h2>
         </header>
 
-        <header class="mb-4 pt-3">
-          <h2 class="fw-bold mb-3 display-5">Project Scope</h2>
-        </header>
         <p class="strong-content text-justify">
           Levels, combat mechanics, and player abilities were all constantly reduced.
           <br>Below are issues found:
         </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <header class="mb-2 pt-3">
+          <h2 class="fw-bold mb-3 display-5">Project Scope</h2>
+        </header>
         <ul>
           <li>
             Blocking out 7 areas each with 5+ corridors was too much, and not an MVP.
@@ -705,10 +746,9 @@
           </li>
         </ul>
 
-        <header class="mb-4 pt-5">
+        <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Scale</h2>
         </header>
-
         <ul>
           <li>Too much walking, too much jumping!</li>
           <li>Too much verticality.</li>
@@ -729,7 +769,7 @@
           </li>
         </ul>
 
-        <header class="mb-2 pt-5">
+        <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Pacing</h2>
         </header>
         <ul>
@@ -741,7 +781,7 @@
             feel "high intensity".</li>
         </ul>
 
-        <header class="mb-2 pt-5">
+        <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Combat, Difficulty Curve, Balance</h2>
         </header>
         <ul>
@@ -768,7 +808,8 @@
             as their behaviour and weapons were added and fleshed out. This will be discussed further in the Boss Fights
             section.</li>
         </ul>
-        <header class="mb-2 pt-5">
+
+        <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Visual Clarity, Readability</h2>
         </header>
         <li><b>Unclear uniqueness for each area.</b> The idea of canyon and ruins was clear, but it was not clear what
@@ -777,7 +818,8 @@
         <li><b>"Why is this destructible yellow, but this yellow door is not destructible?"</b></li>
         <li><b>"Did I come from this door? Is this the same door?"</b></li>
         <li><b>"What am I supposed to do after killing the boss?"</b></li>
-        <header class="mb-2 pt-5">
+
+        <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Technical</h2>
         </header>
         <ul>
@@ -794,7 +836,7 @@
         </ul>
 
 
-        <header class="mb-2 pt-5">
+        <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Performance</h2>
         </header>
         <p>These were things that dropped FPS. Not all were the root problem, but contributed in some shape or form.</p>
@@ -805,7 +847,7 @@
           <li>Chaos destruction debris did not sleep</li>
         </ul>
 
-        <header class="mb-2 pt-5">
+        <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Wayfinding</h2>
         </header>
         <li><b>"It is too difficult to find my way around the map."</b></li>
@@ -817,7 +859,7 @@
             pass
             it.</b></li>
 
-        <header class="mb-2 pt-5">
+        <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Exploration</h2>
         </header>
         <li><b>"Not finding any treasure after fighting a large group of enemies made me not want to explore"</b></li>
@@ -829,7 +871,7 @@
             go through already-explored places.</b> This was exacerbated by the lack of respawning enemies, increasingly
           long walking times in between areas, especially in hallways.</li>
 
-        <header class="mb-2 pt-5">
+        <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Audiovisual Feedback</h2>
         </header>
         <li><b>"When did I get hit?"</b></li>
@@ -838,7 +880,21 @@
         <li><b>Players wanted to have feedback when being damaged, damaging enemies, and when picking things up.</b>
         </li>
 
-        <header class="text-center mb-4 pt-3">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <header class="text-center mb-4 pt-5">
           <h2 class="fw-bold mb-3 display-5">Solutions</h2>
         </header>
         <ul>
@@ -868,7 +924,6 @@
           <li>Modular kit: Model reusable assets in cubegrid.
             Example: Use the same doorway frame for all entrances. Also helped with scale.
           </li>
-
           <li>Largely removed corridor to mage boss</li>
           <li>To reduce dead time, added more encounters, especially at corridors.</li>
           <li>To reward defeating enemies, added a hidden fireball powerup at one large encounter, and more health
@@ -920,119 +975,26 @@
           <li>Lights farther than 10000 units are culled.</li>
           <li>Meshes are culled at certain distances.</li>
           <li>Navigation meshes are static.</li>
+          <li>Create a combat token system to limit the amount of enemies attacking the player at the same time,
+            regardless of how many enemies are in range.</li>
         </ul>
 
         <div class="my-4">
           <!-- Toggle Button -->
           <b-button v-b-toggle.collapse-1 variant="primary" class="mb-2">
-            {{ collapsed ? 'Show Content' : 'Show Raw Feedback Data' }}
+            Show Raw Feedback
           </b-button>
 
           <!-- Collapsible Content -->
           <b-collapse id="collapse-1" v-model="collapsed" class="mt-2">
-            <b-card>
+            <b-card class="shaded-box">
 
-              <h4>Initial Feedback</h4>
-              <p>
-                While blocking out the first few rooms, namely the central and canyon hub, in my initial layout, I
-                quickly
-                realized several glaring issues in the initial map I would have to resolve even before completing it:
-              </p>
-              <ul>
-                <li><b>Scope was too large.</b> Blocking out 6 areas, each with 5+ corridors and rooms was simply not
-                  feasible
-                  for an MVP.
-                </li>
-                <li><b>Scale was too large.</b> There was too much verticality.</li>
-                <li>Directly converting Hollow Knight’s map to 3D is not feasible. Adding
-                  a new dimension naturally morphs the rooms.</li>
-                <li><b>Each room was too large.</b> It took too long to traverse from room to room, even without
-                  enemies.
-                </li>
-                <li><b>Too many rooms</b> between major points of interest (Hub room, boss rooms).As a result, pacing
-                  was
-                  not
-                  representative of the graph.</li>
-                <li>Too much jumping! Too much walking!</li>
-                <li>Puzzles were<b> difficult to implement</b> due to the scripting overhead. </li>
-                <li>It was difficult to understand their surroundings. Important elements to understand were things like
-                  entrances
-                  to the rooms and where the enemies were before engaging.</li>
-                <li><b>Unclear uniqueness for each area.</b> The idea of canyon and ruins was clear, but it was not
-                  clear
-                  what
-                  distinct elements differentiated “canyon” and “ruins”.</li>
-              </ul>
-
-              <h4>Feedback 2</h4>
-              <ul>
-                <li><b>Canyon hub is too large.</b> With the canyon connecting to 2 bosses, the main hub is dwarfed by
-                  the
-                  sheer
-                  contrast in size.
-                </li>
-                <li><b>Hard to playtest without ability gating, enemies and weapons.</b></li>
-                <li><b>Boss ability gate does not exist, cannot test start to end.</b></li>
-                <li><b>Wayfinding Issues: It is too difficult to find my way around the map.</b></li>
-                <li><b>Composition issues: No landmarks, no framing, and no vantage points that let you survey your
-                    surroundings.</b></li>
-                <li><b>Unclear Affordances: Since scale was too large, it was always difficult to quickly understand if
-                    a
-                    rock
-                    was
-                    a wall
-                    or an obstacle that could be jumped over.</b></li>
-              </ul>
-
-              <!-- In Prime, standing in the middle of a room allows you to see the common exits/entrances, allowing you to find your
-        way towards it (or find it blocked) -->
-
-              <!-- I was not too worried about this, however, because I liked the idea that acquiring new abilities made the player
-        realize what was previously impossible is now affordable. -->
-              <h4>Solutions:</h4>
-              <ul>
-                <li><b>Removed puzzle to acquire Dash Ability, replaced with The Bridge.</b></li>
-                <li><b>Fewer mechanics: Removed secondary abilities for each gun, ability gates are part of the
-                    level.</b>
-                </li>
-                <li><b>Reduced distinct areas to 2: “Canyon” and “Ruins”. The elements I aimed each to have were:</b>
-                </li>
-                <ul>
-                  <li>Canyon: Larger scale, more nature, rocky, rooms are more functioning machinery from the old
-                    civilization
-                    because
-                    of it being more protected.</li>
-                  <li>Ruins: Center of ancient ruins. Higher density of decay and rubble, more man-made rooms(which are
-                    smaller).
-                  </li>
-                </ul>
-                <li>
-                  Revisited scale and verticality: I tried to limit verticality and scale by placing specific rules and
-                  using
-                  some
-                  techniques:
-                </li>
-                <ul>
-                  <li><b>Apply world aligned grid textures</b>:
-                    This helped greatly in making sure obstacles could be jumped (or
-                    double
-                    jumped) over. It made playtesting more comfortable.</li>
-                  <li>Modular kit: I began using the same doorway module for all entrances, and that made sure that
-                    doorways
-                    weren’t too
-                    large or small.</li>
-                  <li>Define what 1 "floor" is: Using staircases as measurements to roughly measure and standardize how
-                    tall
-                    things are.
-                  </li>
-                  <li>Roughly limit how long it takes to get from 1 floor to another: Generally, 2-3 jumps, and it
-                    shouldn't
-                    take
-                    more
-                    than a minute of walking.
-                  </li>
-                </ul>
-              </ul>
+              <b-row class="pt-1">
+                <b-col lg="12" v-for="image in this.feedback" :key="image.url" :caption="image.caption"
+                  :img-src="image.url">
+                  <b-img :src="image.url" fluid alt="Draft"></b-img>
+                </b-col>
+              </b-row>
             </b-card>
           </b-collapse>
         </div>
@@ -1042,21 +1004,170 @@
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">Combat</h2>
           </header>
+          <p>
+            Weapons, Behaviour Trees, Enemy AI, and Animations were all a mix of technical and design challenges.
+            There are 2 types of normal enemies featured in the game: Melee and Ranged.
+          </p>
+
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Gameplay Ability System (GAS)</h2>
+          </header>
+          <p class="strong-content">
+            I wanted to reduce the amount of redundant code as much as possible.
+            GAS allowed me to easily use the same ability for the player and enemies.
+            All weapons were created using GAS, which allowed for quick prototyping and adding abilities for players and
+            enemies.
+            One example is the rifle, which is used by both the player and ranged enemy.
+          </p>
+          <p class="strong-content">
+            Adding an enemy use a different attack was a matter of just changing the granted abilities and changing the
+            gameplay tag.
+          </p>
+
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Miss Chance</h2>
+          </header>
+          <p class="strong-content">
+            There are no hitscan weapons in the game. All weapons fire projectiles as actual game objects.
+            To simulate miss chance, I instead gave recoil to enemies.
+            Miss chance is calculated as recoil over distance. The closer the player is, the less recoil the enemy has.
+            However, the recoil caused enemies to miss at close distance, which reduces the risk/reward aspect as well
+            as "realism" - it didn't feel good.
+            Additionally, Slow projectiles with recoil felt like they were more accurate because of player movement (as
+            if the AI was leading the shot).
+          </p>
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Flinching/Interrupted</h2>
+          </header>
+          <p class="strong-content">
+            AI play a flinching when shot, which sets them to a stun state. When flinching, enemies cannot fire or move.
+            This gave an extra dimension during combat.
+            Melee enemies can block shots, which recover faster than flinching, making them advance faster.
+            Furthermore, this gives the player time to take cover or continue attacking.
+            I used this mechanic to my advantage as well in different bosses, only letting them flinch during specific
+            periods of time (during attacking)
+          </p>
+          <p class="strong-content">
+            Adding an enemy use a different attack was a matter of just changing the granted abilities and changing the
+            gameplay tag.
+          </p>
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Stealth, Cone of Vision</h2>
+          </header>
+          <p class="strong-content">
+            Enemies could only see in front of them. This, in combination of a open world, allowed for the basic
+            mechanics of stealth.
+            I took advantage of this, and designed paths at certain areas to be able to completely stealth through an
+            enemy encounter.
+          </p>
+
+
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Damage System</h2>
+          </header>
+          <p class="strong-content">
+            The other piece of the modular puzzle was the damage system component, which was also used for both the
+            player and enemies. This helped unify basic mechanics (healing), while allowing for flexibility by
+            overriding the component's methods.
+          </p>
+
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Normal Enemies</h2>
+          </header>
+
+          <p class="strong-content">
+            As my first time working on behaviour trees and EQS, making BTs for ~6 enemy types was difficult and a
+            headache.
+            Behaviour trees (and EQS) naturally drastically changed how the player responded to combat encounters.
+            For enemies, I had 2 main goals for normal encounters:
+          </p>
+          <li>Melee enemies: Encourage the player to move around (kiting), tankier.</li>
+          <li>Ranged enemies: Encourage player to take cover, more damage.</li>
+
+          <p class="strong-content">
+            Melee enemies chased the player and had a 30% chance to block incoming projectiles other than rockets.
+            This gave players an impression of melee enemies being tankier without giving them more health.
+            More importantly, players with rockets could bypass the "tankiness", providing more risk (close range
+            explosions damaging self) and reward.
+          </p>
+          <p class="strong-content">
+            Ranged enemies moved to an ideal location (in range and clear line of fire) and fired at the player once,
+            and repeated this.
+            Balancing ranged enemies' difficulty was difficult. Feedback conflicted between different player types.
+            FPS players found it too easy, while Metroidvania players found it too difficult/overwhelming.
+            I experimented with fire rates, damage, and move speed.
+            Ranged enemies also find cover and heal if they are low on health.
+          </p>
+          <p class="strong-content">
+            With this, combining melee and ranged enemies in an encounter created a balance between cover-taking and
+            movement.
+          </p>
+
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Token System</h2>
+          </header>
+          <p class="strong-content">
+            Q: What if an encounter has 10 ranged enemies and they all fire at once?
+            <br> A: The player dies instantly and it feels unfair.
+          </p>
+          <p class="strong-content">
+            Although its natural that combat should feel and be more intense with more enemies, the open world
+            nature created several problems.
+            Players could effectively aggro multiple encounters' enemies and take them on a journey.
+            Multiple solutions could have been used. I could have broken up the nav mesh, set a time limit for enemies
+            to disengage, or set bounds in the encounter.
+            At around the same time, I learned and implemented the token system, which effectively helped break this
+            dependency of the number of aggro'ed enemies and combat intensity.
+            The token system limited the amount of enemies attacking the player at any given time.
+          </p>
+
         </section>
         <section class="subsection-container border-light">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">Boss Fights</h2>
           </header>
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Rocket Boss (Castle)</h2>
+          </header>
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Double Jump Boss (Arena)</h2>
+          </header>
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Dash Boss (Bridge)</h2>
+          </header>
+
         </section>
         <section class="subsection-container border-light">
           <header class="text-center mb-4">
-            <h2 class="subsection-header display-5">Evaluation</h2>
+            <h2 class="subsection-header display-5">Evaluation, Conclusion</h2>
           </header>
         </section>
         <section class="subsection-container border-light">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">Credits</h2>
           </header>
+          <ul>
+            <li>Desert Caravan by Aaron Kenny
+              Music promoted on https://www.chosic.com/free-music/all/</li>
+            <li>Waterfall Sounds by tramp963, Pixabay https://pixabay.com/sound-effects/waterfall-sounds-259625/</li>
+            <li>https://pixabay.com/sound-effects/spacecraft-chrasing-88048/ spacecraft chrasing
+              Unilyd (Freesound)</li>
+            <li>https://pixabay.com/sound-effects/highflow-river-6221/ Highflow River
+              CaganCelik (Freesound)</li>
+            <li>https://www.fab.com/listings/23869931-3e46-4c42-b541-9f6057f12d13 Cartoon Water Shader, Sandvector
+              Studios</li>
+            <li>https://www.fab.com/listings/9190e4a3-1f44-4715-a3a4-342846002b2c Modular Sci Fi Indoor/Outdoor
+              environment pack - Rocky Swampy Planet, JessyStorm's Assets</li>
+            <li>https://www.fab.com/listings/fc3a309a-a3eb-46de-bebe-dcb40dc31e48 Skeleton Knight Modular, buxioded</li>
+            <li>Military Silver Weapons pack</li>
+            <li>Various Mixamo models and animations</li>
+            <li>https://www.youtube.com/watch?v=-t3PbGRazKg&list=PLNwKK6OwH7eW1n49TW6-FmiZhqRn97cRy Smart Enemy AI
+              Tutorial, Ali Elzoheiry</li>
+          </ul>
+
+
+
+
         </section>
 
         <div class="my-4"></div> <!-- Spacer with margin -->
@@ -1113,13 +1224,7 @@
         <h3> Backtracking </h3>
 
 
-        <!-- Desert Caravan by Aaron Kenny
-Music promoted on https://www.chosic.com/free-music/all/ -->
-        <!-- Waterfall Sounds by tramp963, Pixabay https://pixabay.com/sound-effects/waterfall-sounds-259625/ -->
-        <!-- https://pixabay.com/sound-effects/spacecraft-chrasing-88048/ spacecraft chrasing
-Unilyd (Freesound) -->
-        <!-- https://pixabay.com/sound-effects/highflow-river-6221/ Highflow River
-CaganCelik (Freesound)-->
+
 
 
         <p>Backtracking is focused on the two hubs: The central hub and the canyon hub.
@@ -1567,6 +1672,16 @@ export default {
         {
           url: require("@/assets/scarabdescent/iterations/tower/10.png"),
         },
+      ],
+      feedback: [
+        { url: require("@/assets/scarabdescent/iterations/feedback/1.png"), },
+        { url: require("@/assets/scarabdescent/iterations/feedback/2.png"), },
+        { url: require("@/assets/scarabdescent/iterations/feedback/3.png"), },
+        { url: require("@/assets/scarabdescent/iterations/feedback/4.png"), },
+        { url: require("@/assets/scarabdescent/iterations/feedback/5.png"), },
+        { url: require("@/assets/scarabdescent/iterations/feedback/6.png"), },
+        { url: require("@/assets/scarabdescent/iterations/feedback/7.png"), },
+        { url: require("@/assets/scarabdescent/iterations/feedback/8.png"), },
       ],
     };
   },
