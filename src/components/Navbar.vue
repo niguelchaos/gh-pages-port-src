@@ -4,7 +4,10 @@
       <b-collapse id="nav-collapse" is-nav>
          <b-navbar-nav class="navbar-nav mx-auto" fill:true>
             <b-nav id="navpills" pills align="center">
-               <b-nav-item to="./home" :active="currentPage === 'home'" @click="currentPage = 'home'">Projects</b-nav-item>
+               <!-- <b-nav-item to="./home" :active="currentPage === 'home'" @click="currentPage = 'home'">Projects</b-nav-item> -->
+               <b-nav-item to="./home" :active="currentPage === 'home'" @click="currentPage = 'home'">Games</b-nav-item>
+               <b-nav-item to="./software" :active="currentPage === 'software'" @click="currentPage = 'software'">Software</b-nav-item>
+               <b-nav-item to="./misc" :active="currentPage === 'misc'" @click="currentPage = 'misc'">Misc</b-nav-item>
                <b-nav-item to="./about" :active="currentPage === 'about'" @click="currentPage = 'about'">About</b-nav-item>
                <b-nav-item to="./reports" :active="currentPage === 'reports'" @click="currentPage = 'reports'">Reports</b-nav-item>
                <b-nav-item to="./resume" :active="currentPage === 'resume'" @click="currentPage = 'resume'">Resume</b-nav-item>

@@ -59,6 +59,7 @@ export default {
   background-color: #2d3142;
   display: block;
   padding: 1rem;
+  padding-top: 2rem;
 }
 
 .contact-header {

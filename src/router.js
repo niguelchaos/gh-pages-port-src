@@ -1,14 +1,35 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Games from './views/Games.vue'
 
 Vue.use(Router)
 
 const routes = [
+  // {
+  //   path: '/',
+  //   name: 'Home',
+  //   component: () => import('./views/Home.vue')
+  // },
   {
     path: '/',
-    name: 'Home',
-    component: () => import('./views/Home.vue')
+    name: 'Games',
+    component: () => import('./views/Games.vue')
+  },
+  {
+    path: '/games',
+    name: 'Games',
+    component: () => import('./views/Games.vue')
+  },
+  {
+    path: '/software',
+    name: 'Software',
+    component: () => import('./views/Software.vue')
+  },
+  {
+    path: '/misc',
+    name: 'Misc',
+    component: () => import('./views/Misc.vue')
   },
   {
     path: '/resume',
@@ -100,12 +121,12 @@ const routes = [
   },
   {
     path: '/index.html',
-    redirect: '/'
+    redirect: '/games'
   },
   {
     path: '*',
     name: 'catchAll',
-    component: Home
+    component: Games
   }
 ]
 
