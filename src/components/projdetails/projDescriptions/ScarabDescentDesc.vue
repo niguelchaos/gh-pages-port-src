@@ -8,26 +8,10 @@
           </p>
         </b-col>
       </b-row>
-      <b-container class="single-image-container">
-        <a class="link-item float-center">
-          <b-button
-            class="link-button"
-            href="https://niguelchaos.itch.io/scarab-descent"
-            target="_blank"
-            ><strong>Download Build</strong></b-button
-          >
-          <em
-            :class="this.linkClass"
-            width="32"
-            height="32"
-            fill="currentColor"
-            viewBox="0 0 32 32"
-          ></em>
-        </a>
-      </b-container>
-      <b-row>
+
+      <b-row class="py-3">
         <b-col lg="6">
-          <div class="pt-5 pb-5">
+          <div>
             <b-embed
               type="iframe"
               aspect="16by9"
@@ -37,7 +21,7 @@
           </div>
         </b-col>
         <b-col lg="6">
-          <div class="pt-5 pb-5">
+          <div>
             <b-embed
               type="iframe"
               aspect="16by9"
@@ -47,31 +31,8 @@
           </div>
         </b-col>
       </b-row>
-      <!-- https://niguelchaos.itch.io/scarab-descent -->
-      <header class="text-center mb-4 pt-3">
-        <h2 class="fw-bold mb-3 display-5">Blockout Timelapse</h2>
-      </header>
-      <b-col lg="12 pb-5">
-        <div>
-          <b-carousel
-            id="carousel"
-            style="text-shadow: 0px 0px 2px #000"
-            no-animation
-            controls
-            indicators
-            :interval="700"
-          >
-            <b-carousel-slide
-              v-for="image in this.timelapse"
-              :key="image.url"
-              :caption="image.caption"
-              :img-src="image.url"
-            ></b-carousel-slide>
-          </b-carousel>
-        </div>
-      </b-col>
 
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center py-3">
         <div class="overview shaded-box">
           <b-row class="text-center">
             <b-col lg="4">
@@ -101,6 +62,37 @@
         </div>
       </div>
 
+      <b-container class="centered py-3">
+        <b-button
+          class="link-button button-box px-5 py-2"
+          href="https://niguelchaos.itch.io/scarab-descent"
+          target="_blank"
+          ><strong>Download on Itch.io</strong></b-button
+        >
+      </b-container>
+
+      <header class="text-center pt-5">
+        <h2 class="fw-bold mb-3 display-5">Blockout Timelapse</h2>
+      </header>
+      <b-col lg="12 pb-5">
+        <div>
+          <b-carousel
+            id="carousel"
+            style="text-shadow: 0px 0px 2px #000"
+            no-animation
+            controls
+            indicators
+            :interval="700"
+          >
+            <b-carousel-slide
+              v-for="image in this.timelapse"
+              :key="image.url"
+              :caption="image.caption"
+              :img-src="image.url"
+            ></b-carousel-slide>
+          </b-carousel>
+        </div>
+      </b-col>
       <main class="container py-3">
         <!-- Section 1 -->
         <section class="section-container border-light">
@@ -395,7 +387,7 @@
             <h2 class="fw-bold mb-3 display-5">Project Start</h2>
           </header>
 
-          <div class="single-image-container pb-3">
+          <div class="centered pb-3">
             <b-img :src="this.settingmoodboard" class="single-image" alt="mood"></b-img>
           </div>
 
@@ -642,7 +634,7 @@
             quickly.
           </p>
 
-          <div class="single-image-container pb-3">
+          <div class="centered pb-3">
             <b-img :src="this.ldk" class="" style="width: 100%" alt="mood"></b-img>
           </div>
 
@@ -1314,16 +1306,215 @@
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">Boss Fights</h2>
           </header>
-          <p class="strong-content">Boss fights</p>
+          <p class="strong-content">
+            I wanted each boss fight to challenge the player a different way. Ideally,
+            this would cause boss rooms to be different as well. This philosophy would
+            proceed to cause many headaches. Following the initial brief, I already knew
+            which ability to give to players early on.
+            <br />To this end, I assigned a theme early on to each boss:
+          </p>
+          <ul>
+            <li>
+              Rocket Boss: "The Castle". Emphasize verticality. Boss has the high ground,
+              player dodges rockets while reaching the top of the tower.
+            </li>
+            <li>
+              Double Jump Boss: "The Arena". Emphasize stealth, cover taking. Player and
+              boss should be in closer proximity.
+            </li>
+            <li>
+              Dash Boss: "The Bridge". Emphasize movement and speed. Rather than a single
+              boss, reverse tower defense instead.
+            </li>
+          </ul>
+          <!--  -->
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Rocket Boss (Castle)</h2>
           </header>
+          <div class="single-image centered py-2">
+            <!-- RocketRingTower -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/0fMZmiifTz4"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            A early iterations of the tower. I wanted to integrate some degree of clutter,
+            ruins, and route finding. Note that the boss character itself (behaviour,
+            animations, etc) has not been created yet at this point. I wanted the boss to
+            stay the the top of the tower, firing at the player.
+            <br />I also wanted special events to happen, such as the dome falling down on
+            the boss to deal massive damage, by shooting at the tethers holding the dome
+            up. <br />
+            Walking around the space, it is clear the scale is too large, there are many
+            blind spots, and its hard to look at the tower itself while going up the ring.
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- RocketSlopeTower -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/GLclD17G0oY"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            A second iteration with the boss character implemented. I liked the
+            destructible pillars in front, which showed the power of the rocket and forced
+            the player to advance. The scale was still too large; it felt like an ant
+            fighting a giant, which was cool, but was not what I was going for.
+            <br />
+            Having destructible routes was frustrating, since the player had to start from
+            the ground and find another route up again. Another issue was the boss could
+            fall down from the tower when flinching. Sightlines were another issue. With
+            so much clutter (ruins, poles etc), there was no real fear of getting hit by
+            rockets because the boss couldn't even see the player half the time.
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- RocketCrabTowerFallLowFPS -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/ZocJDRdJr_w"
+              allowfullscreen
+            ></b-embed>
+          </div>
+
+          <p class="strong-content">
+            A third iteration. Chaos Destruction and geometry collections caused many
+            performance issues as well. I ended up increasing the sleep threshhold and
+            removed debris later on. The player shouldn't have rockets by the way, just a
+            showcase of the problem here.
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- Rocket Stage Carpet Bomb -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/lPnEFZ07rRM"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            Scrapping the tower, I still wanted to emphasize verticality, at least a
+            little. Hence a stage was created, with a much lower height. To increase
+            intensity and difficulty, I also increased the fire rate and number of
+            rockets, which I thought worked well.
+            <br />
+            Until playtesters died too many times. Lowering scale helped with problems
+            such as dead time, while removing the clutter helped the boss maintain sight
+            with the player. Problems such as falling from flinching still existed, the
+            boss was hard to read at times, and the boss firing at the player before they
+            entered the room, amongst others.
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- FinalRocketBoss -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/uVtWCz9b-uc"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            A one way valve, a tutorial to leave the area, color coded destructibles, and
+            the "tower climb" as a way to have a low intensity moment between combat
+            encounters. Moving the rooms around in the world became more and more time
+            consuming. Instead of downsizing the room, I put the arena inside the room
+            itself to avoid moving sublevels around.
+            <br />The arena's destructibles also softly teach the player what is
+            destructible after they obtain the ability. <br />The boss tries to maintain
+            maximum distance helped promote player movement around the arena - whether
+            they want to get closer to the boss or farther from them. <br />Furthermore,
+            the boss tries to take cover when on cooldown. Because of this, the boss does
+            not generally move towards the center of the arena, even though they can.
+          </p>
+          <p class="strong-content">
+            In the end, it felt like I strayed away from emphasizing verticality with the
+            boss, and ended up with a rather flat, arena-like level. In that sense, I did
+            not feel like I accomplished what I set out to do in this bossfight. However,
+            I found this boss reinforced the core combat loop much better than previous
+            iterations, from entering the bossfight, obtaining the ability, and
+            understanding how to use the ability.
+          </p>
+
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Double Jump Boss (Arena)</h2>
           </header>
+          <p class="strong-content">Can't see the enemy, even when on the balcony.</p>
+
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Dash Boss (Bridge)</h2>
           </header>
+
+          <b-row>
+            <b-col lg="6">
+              <div class="">
+                <!-- incredibles scene -->
+                <b-embed
+                  type="iframe"
+                  aspect="16by9"
+                  src="https://www.youtube.com/embed/t-XbDgXvNhI"
+                  allowfullscreen
+                ></b-embed>
+              </div>
+            </b-col>
+            <b-col lg="6">
+              <div class="">
+                <!-- BridgeDeath -->
+                <b-embed
+                  type="iframe"
+                  aspect="16by9"
+                  src="https://www.youtube.com/embed/igm2IEPdyu4"
+                  allowfullscreen
+                ></b-embed>
+              </div>
+            </b-col>
+          </b-row>
+
+          <p class="strong-content">
+            Inspired by The Incredibles scene. Early iterations consisted of little cover and was easy to die.
+            However, the difficulty was not the issue. Rather, the frustrations came from the feeling of unfairness - there was no way to counter the fast moving projectiles.
+            Furthermore, the lack of feedback on damaged made it confusing. 
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- StraightBridgeSuccess  -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/tRr__3q4BYs"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            I liked the idea of the projectiles sticking to each other to create emergent platforms and cover, similar to a "goo gun" (Prey, The Finals). 
+            <br>To solve the issue of the player getting trapped, shooting the yellow projectiles would loosen them.
+            <br> The chaotic nature of the turrets grew on me - to make it less unfair, maybe I could add more cover.
+            I planned for the player to press a button at the end of the bridge, which would kill all turrets and reveal the dash ability. 
+            At this point, I had not yet implemented pick ups, buttons, or level events. 
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- BridgeWithPickup -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/DmUyMfcyzgk"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            With the button interaction and pickups prototyped, the pacing could be seen more clearly. I wanted the player to return to the 
+            <br>However, the button at the end of the bridge was confusing. What did it do? Where is the dash ability?
+            <br>Additionally, buttons had never been introduced, and players did not know what they did.
+          </p>
         </section>
         <section class="subsection-container border-light">
           <header class="text-center mb-4">
@@ -1952,9 +2143,22 @@ export default {
 }
 
 .shaded-box {
-  background-color: rgba(44, 44, 44, 0.7);
+  background-color: rgba(34, 34, 44, 0.7);
   /* White with 70% opacity */
   backdrop-filter: blur(5px);
+  /* Optional: frosted glass effect */
+  border-radius: 15px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  /* width: 80%;
+  max-width: 600px; */
+  /* Additional padding is handled by Bootstrap's p-4 class */
+}
+.button-box {
+  background-color: rgba(255, 81, 0, 0.7);
+  /* White with 70% opacity */
+  /* backdrop-filter: blur(5px); */
   /* Optional: frosted glass effect */
   border-radius: 15px;
   /* Rounded corners */
@@ -2034,7 +2238,7 @@ export default {
   font-weight: 800;
 }
 
-.single-image-container {
+.centered {
   display: flex;
   justify-content: center;
   align-items: center;
