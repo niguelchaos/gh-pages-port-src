@@ -174,9 +174,12 @@
             </p>
             <p><b>Teammate's responsibilities</b></p>
             <ul>
-              <li>Initial Project Setup (Levels, Gameplay Mechanics, Architecture).</li>
-              <li>Setting the theme and setting of the game.</li>
-              <li>UI (Main menu, Game flow).</li>
+              <li>
+                Initial Project Setup (Persistent Level setup, Gameplay Mechanics
+                Prototype, Architecture).
+              </li>
+              <li>Deciding the theme and setting of the game.</li>
+              <li>UI (Main menu, Game complete screen).</li>
             </ul>
           </div>
         </section>
@@ -1151,6 +1154,17 @@
           </li>
         </ul>
 
+        <b-row>
+          <b-col lg="6">
+            <h5>Lighting: Before</h5>
+            <b-img :src="this.lightingbefore" fluid alt=""></b-img>
+          </b-col>
+          <b-col lg="6">
+            <h5>Lighting: After</h5>
+            <b-img :src="this.lightingafter" fluid alt=""></b-img>
+          </b-col>
+        </b-row>
+
         <div class="my-4">
           <!-- Toggle Button -->
           <b-button v-b-toggle.collapse-1 variant="primary" class="mb-2">
@@ -1175,6 +1189,82 @@
           </b-collapse>
         </div>
 
+        <header class="text-center mb-4 pt-5">
+          <h2 class="fw-bold mb-3 display-5">Thought Processes & Design Decisions</h2>
+        </header>
+
+        <h3>Backtracking</h3>
+
+        <p>
+          Backtracking is focused on the two hubs: The central hub and the canyon hub.
+          Following the progression flow in the initial brief, the player would have to
+          revisit the central hub at least twice no matter which path they take. One
+          future addition I would want to add is to add an ability gate to the central hub
+          so that the player has a larger progression reason to revisit it.
+        </p>
+        <b-img :src="this.backtrackroutes" fluid alt=""></b-img>
+        <p class="text-center">Main backtracking routes</p>
+
+        <h3>Ability Gates</h3>
+        <p>
+          Although the map was created with ability gates in mind, they were not
+          implemented early on as it was not high on the priority list.
+          <br />
+          Initially, it was decided that ability gates would be similar to metroid prime,
+          where a door would only open by shooting it with the correct type of gun.
+          <br />
+          However, doors proved too difficult to implement.
+          <br />
+          I thus decided to integrate the ability gating into the room itself.
+          <br />
+          Following the initial brief flow, I created 2 ability gates: The one to The
+          Bridge (Dash Ability) and the other one to the Boss.
+        </p>
+        <b-row>
+          <b-col lg="6">
+            <h5>Dash Gate: Before</h5>
+            <b-img :src="this.dashabilitygatebefore" fluid alt=""></b-img>
+          </b-col>
+          <b-col lg="6">
+            <h5>Dash Gate: After</h5>
+            <b-img :src="this.dashabilitygateafter" fluid alt=""></b-img>
+          </b-col>
+        </b-row>
+
+        <p>
+          This ability gate can be passed with either a double jump OR the rocket. The
+          yellow pillar illustrates what happens when the player fires a rocket at the
+          gray pillar.
+          <br />
+          After iterating, I also added an ability check to force the player to dash out
+          of the room.
+        </p>
+
+        <b-row>
+          <b-col lg="6">
+            <h5>Final Boss Gate: Before</h5>
+            <b-img :src="this.bossabilitygatebefore" fluid alt=""></b-img>
+          </b-col>
+          <b-col lg="6">
+            <h5>Final Boss Gate: After</h5>
+            <b-img :src="this.bossabilitygateafter" fluid alt=""></b-img>
+          </b-col>
+        </b-row>
+
+        <p>
+          This ability gate can be passed with either a double jump OR rocket AND the
+          dash.
+          <br />
+          Since this is the final boss, I added much denser debris to hint that something
+          important was up ahead.
+          <br />
+          This setup was very confusing for players. The gap was unclear, and nobody saw
+          the double jump platforms.
+          <br />After iterating, this was simplified and changed to dash first, since
+          players with dash could already complete the game. This also let players quickly
+          know if they can enter the area or not. The sky lightbeam hints the importance
+          of the room up ahead.
+        </p>
         <section class="subsection-container border-light">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">Combat</h2>
@@ -1300,6 +1390,22 @@
             effectively helped break this dependency of the number of aggro'ed enemies and
             combat intensity. The token system limited the amount of enemies attacking the
             player at any given time.
+          </p>
+
+          <b-row>
+            <b-col lg="6">
+              <!-- <h5>Dash Gate: Before</h5> -->
+              <b-img :src="this.tokenstore" fluid alt=""></b-img>
+            </b-col>
+            <b-col lg="6">
+              <!-- <h5>Dash Gate: After</h5> -->
+              <b-img :src="this.tokenattackend" fluid alt=""></b-img>
+            </b-col>
+            <b-img :src="this.tokenattackstart" fluid alt=""></b-img>
+          </b-row>
+          <p>
+            Tokens are "taken" from the player when an enemy attacks and released when
+            attacks end.
           </p>
         </section>
         <section class="subsection-container border-light">
@@ -1447,7 +1553,70 @@
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Double Jump Boss (Arena)</h2>
           </header>
-          <p class="strong-content">Can't see the enemy, even when on the balcony.</p>
+          <div class="single-image centered py-2">
+            <!-- ArenaFirstIteration -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/XKoNuPBk3Xk"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            Too bright - how to hide anything if its so bright?
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- MageFirstIteration -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/Qh2_3Abyf-c"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            Can't see the enemy, even when on the balcony. Can shoot at the enemy even
+            before jumping down the one way valve.
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- MageHealthbarHeal -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/vTv3qPOrwHE"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            Showing healthbar made it too easy to find the mage, reducing stealth aspect.
+            Healing next to the player made it too easy to cancel their healing.
+            Spotlighting (and framing) the boss' shadow on the wall made players notice it
+            much more. Invisible wall to prevent hurting enemy before they jump down the
+            arena.
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- FinalArena -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/H_Hr9A7pV1A"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            Hid the healthbar for the mage boss completely. This made it more difficult
+            for the player to find the boss, which was good. A more controversial effect
+            was the lack of progression feedback. Is the boss nearly dying? How much did
+            they heal? In the end, I decided that it was a good tradeoff. The uncertainty
+            coupled with the "slippery" feeling of the boss helped emphasize the theme of
+            this boss. When the boss goes to heal, it finds a location that is farthest
+            away from the player. This forces the player to play hide and seek with it. It
+            was a bit too easy for players to find the boss when it was healing due to the
+            bright VFX, but I believe the core gameplay is achieved.
+          </p>
 
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Dash Boss (Bridge)</h2>
@@ -1479,9 +1648,11 @@
           </b-row>
 
           <p class="strong-content">
-            Inspired by The Incredibles scene. Early iterations consisted of little cover and was easy to die.
-            However, the difficulty was not the issue. Rather, the frustrations came from the feeling of unfairness - there was no way to counter the fast moving projectiles.
-            Furthermore, the lack of feedback on damaged made it confusing. 
+            Inspired by The Incredibles scene. Early iterations consisted of little cover
+            and was easy to die. However, the difficulty was not the issue. Rather, the
+            frustrations came from the feeling of unfairness - there was no way to counter
+            the fast moving projectiles. Furthermore, the lack of feedback on damaged made
+            it confusing.
           </p>
 
           <div class="single-image centered py-2">
@@ -1494,11 +1665,14 @@
             ></b-embed>
           </div>
           <p class="strong-content">
-            I liked the idea of the projectiles sticking to each other to create emergent platforms and cover, similar to a "goo gun" (Prey, The Finals). 
-            <br>To solve the issue of the player getting trapped, shooting the yellow projectiles would loosen them.
-            <br> The chaotic nature of the turrets grew on me - to make it less unfair, maybe I could add more cover.
-            I planned for the player to press a button at the end of the bridge, which would kill all turrets and reveal the dash ability. 
-            At this point, I had not yet implemented pick ups, buttons, or level events. 
+            I liked the idea of the projectiles sticking to each other to create emergent
+            platforms and cover, similar to a "goo gun" (Prey, The Finals).
+            <br />To solve the issue of the player getting trapped, shooting the yellow
+            projectiles would loosen them. <br />
+            The chaotic nature of the turrets grew on me - to make it less unfair, maybe I
+            could add more cover. I planned for the player to press a button at the end of
+            the bridge, which would kill all turrets and reveal the dash ability. At this
+            point, I had not yet implemented pick ups, buttons, or level events.
           </p>
 
           <div class="single-image centered py-2">
@@ -1511,15 +1685,183 @@
             ></b-embed>
           </div>
           <p class="strong-content">
-            With the button interaction and pickups prototyped, the pacing could be seen more clearly. I wanted the player to return to the 
-            <br>However, the button at the end of the bridge was confusing. What did it do? Where is the dash ability?
-            <br>Additionally, buttons had never been introduced, and players did not know what they did.
+            With the button interaction and pickups prototyped, the pacing could be seen
+            more clearly. I wanted the player to return to the
+            <br />However, the button at the end of the bridge was confusing. What did it
+            do? Where is the dash ability? <br />Playtesters felt extremely confused when
+            going through this section of the game. The goal was unclear, the enemy was
+            new and has never been introduced, the concept of buttons was new, and the
+            player was bombarded by projectiles before they even entered the room.
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- BridgeTutorial -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/YzZI3Uv3nYw"
+              allowfullscreen
+            ></b-embed>
+          </div>
+          <p class="strong-content">
+            Players quickly understood how turrets worked by the time they reached the
+            middle of the bridge. Introducing one turret first allowed them to experiment
+            what new mechanics there were in a safe space. The first button was confusing,
+            as players didnt expect it would kill the turrets. The button at the end of
+            the bridge was still confusing - "why did the lights turn off?" "What am I
+            supposed to do now?"
+          </p>
+
+          <div class="single-image centered py-2">
+            <!-- FinalBridge -->
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/Dr3JdxeB9bk"
+              allowfullscreen
+            ></b-embed>
+          </div>
+
+          <p class="strong-content">
+            Removed button killing turrets entirely. Dash is given when player reaches the
+            end of the bridge. This does 2 things: Returning to the entrance is much
+            faster, enhancing the power of the new ability, the theme of speed, and softly
+            teaching them the ability. Added a wall to hide behind at the end of the
+            bridge for confused players to rest and plan their next move. Added ability
+            gate to force them to use the ability to leave the room. Eventually, they will
+            have to realize they need to turn back because there is no other way. Turrets
+            only reactivate when the player acquires the ability.
           </p>
         </section>
         <section class="subsection-container border-light">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">Evaluation, Conclusion</h2>
           </header>
+
+          <p class="strong-content">
+            How on earth do people document projects? This was way too much lol. Thank the
+            heavens for version control because all the videos and timelapse screenshots
+            came from going back in time.
+          </p>
+
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Did I achieve my original goals?</h2>
+          </header>
+          <p class="strong-content">
+            The goals of this project was to create a "FPS Metroidvania vertical slice
+            with a sci-fi desert theme". I believe this game achieved this in terms of
+            gameplay design, but the lack of an art pass and unrefined audio hurt
+            immersion, the design pillar of exploration, and the idea of a vertical slice.
+            I believe I learned a lot from this as well. As my first time doing level and
+            combat design on this scale, there were many unforeseen challenges.
+          </p>
+
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">The Successful</h2>
+          </header>
+          <li>
+            From a design standpoint I think the metroidvania flow was executed well,
+            albeit basic. The playtime and pacing early on (before all the enemies are
+            killed) was also good.
+          </li>
+          <li>
+            Boss Fights: One of the most work I put in, each boss fight presented unique
+            problems I had never encountered before. Each boss battle challenged the
+            player in a different, engaging way.
+          </li>
+          <li>
+            Difficulty: Balancing between FPS players and Metroidvania players was
+            difficult. I leaned towards the easier side, but some FPS players still found
+            some encounters to be difficult.
+          </li>
+          <li>
+            There were many technical challenges. I had to learn many unreal related
+            things to accomplish this. Ranging from AI, Cubegrid, Chaos Destruction,
+            animation montages, Level Management, Optimization, and GAS.
+          </li>
+
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">The Failures</h2>
+          </header>
+          <li>
+            Pacing was still an issue in the end. The lack of respawning enemies in
+            encounters meant more dead time when players had to return to the final boss.
+          </li>
+          <li>
+            The lack of progression systems when defeating enemies is also an issue.
+            Health is only for survival, but it doesn't make players stronger or easier to
+            defeat enemies.
+          </li>
+          <li>
+            Combat in general was also quite barebones. Implementing weak points, for
+            example, would have helped engagement. Reloading, animations, different gun
+            models would all have been good additions for better combat flow and feedback.
+          </li>
+          <li>
+            Performing and art pass was too difficult. Replacing blockmeshes, adding
+            shaders/materials and blending them together was beyond my skill.
+          </li>
+          <li>
+            AI was one of the most problematic challenge. EQS, Behaviour trees, and enemy
+            abilities were all interconnected problems that took much time to debug. More
+            responsive behaviour and animations for different states and different models
+            would also have increased immersion.
+          </li>
+          <li>
+            Destructibles was also underused. I originally wanted every pillar in the
+            Arena to be destructible, but debris (the player would spin when standing on
+            debris) and performance made it difficult.
+          </li>
+
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">
+              What would I do differently if I started this again?
+            </h2>
+          </header>
+          <p>This is actually a disguised learnings section.</p>
+          <li>
+            I believe genre would be one key thing I would change. The nature of a
+            metroidvania made me create a whole world, rather than an "encounter". While
+            interesting, this high level thinking initially defined the scope. In the end,
+            I still believe 3 bosses, 2 areas, and creating surrounding mechanics from
+            scratch is still too large as a piece. It would have perhaps been better to
+            only work on a polished room, and 1-2 bosses. The gameplay flow worked well as
+            a metroidvania with ability gates, non linear gameplay, and backtracking, but
+            it left a lot to be desired in terms of the feeling of exploring an alien
+            planet. I think a more linear, Call of Duty style level would have made for a
+            better exercise.
+          </li>
+          <li>
+            Use off the shelf assets as much as possible! Rather than creating
+            interaction, combat, and ui systems myself, I believe it could have looked a
+            lot better in the same amount of time if I didnt create everything from
+            scratch. One important thing was that I had to rework a lot of levels and
+            rooms only when the combat system and AI was nearly finalized. Off the shelf
+            combat systems could have let me prototype things earlier. On that note...
+          </li>
+          <li>
+            Make / prototype the combat and AI systems before blocking out the entire
+            world! Stupid. It's difficult to imagine a combat space with only combat
+            mechanics without enemies, and enemy behaviour can really affect pacing. I
+            could have saved a lot of rework time if combat systems were made first.
+          </li>
+          <li>
+            Define and lock down basic player metrics early! Movement speed, jump height,
+            dash distance, crouch (i.e. traversal) all caused reworking large parts of
+            levels.
+          </li>
+
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Future Work</h2>
+          </header>
+
+          <p class="strong-content">
+            A architecture/art pass would be improve immersion. It would help distinguish
+            the two different areas a lot better, and bring it up a level. Polishing the
+            UI, weapon feel(recoil, animations) and audio would contribute to more less
+            player confusion and greater immersion. Implementing enemy encounter
+            respawning would help with pacing.
+          </p>
         </section>
         <section class="subsection-container border-light">
           <header class="text-center mb-4">
@@ -1614,68 +1956,6 @@
 
         <div class="my-4"></div>
         <!-- Spacer with margin -->
-
-        <h2>Thought Processes & Design Decisions</h2>
-
-        <h3>Backtracking</h3>
-
-        <p>
-          Backtracking is focused on the two hubs: The central hub and the canyon hub.
-          Following the progression flow in the initial brief, the player would have to
-          revisit the central hub at least twice no matter which path they take. One
-          future addition I would want to add is to add an ability gate to the central hub
-          so that the player has a larger progression reason to revisit it.
-        </p>
-        <b-img :src="this.backtrackroutes" fluid alt=""></b-img>
-        <p class="text-center">Main backtracking routes</p>
-
-        <h3>Ability Gates</h3>
-        <p>
-          Although the map was created with ability gates in mind, they were not
-          implemented early on as it was not high on the priority list.
-          <br />
-          Initially, it was decided that ability gates would be similar to metroid prime,
-          where a door would only open by shooting it with the correct type of gun.
-          <br />
-          However, doors proved too difficult to implement.
-          <br />
-          I thus decided to integrate the ability gating into the room itself.
-          <br />
-          Following the initial brief flow, I created 2 ability gates: The one to The
-          Bridge (Dash Ability) and the other one to the Boss.
-        </p>
-        <b-row>
-          <b-col lg="6">
-            <h5>Dash Ability Gate</h5>
-            <b-img :src="this.dashabilitygate" fluid alt=""></b-img>
-            <p>
-              This ability gate can be passed with either a double jump OR the rocket. The
-              yellow pillar illustrates what happens when the player fires a rocket at the
-              gray pillar.
-              <br />
-              I also wanted to add a little environmental storytelling to why the pillar
-              is almost falling. To do so, I added a large ring that has crashed onto the
-              left side, as if an old building fell onto the hallway, emphasizing the
-              theme of "ruins".
-            </p>
-          </b-col>
-          <b-col lg="6">
-            <h5>Boss Ability Gate</h5>
-            <b-img :src="this.bossabilitygate" fluid alt=""></b-img>
-            <p>
-              This ability gate can be passed with either a double jump OR rocket AND the
-              dash.
-              <br />
-              I reuse the pillar topple mechanic for the rocket.
-              <br />
-              Since this is the final room before the final boss, I added much denser
-              debris to hint that something important was up ahead.
-              <br />
-              This entire setup was very confusing for players, and therefore I redesigned
-              it, simplifying it.
-            </p>
-          </b-col>
-        </b-row>
       </main>
     </b-container>
 
@@ -1897,8 +2177,17 @@ export default {
       ],
 
       backtrackroutes: require("@/assets/scarabdescent/backtracking/backtrackroutes.png"),
-      dashabilitygate: require("@/assets/scarabdescent/abilitygates/dashgate.png"),
-      bossabilitygate: require("@/assets/scarabdescent/abilitygates/bossgate.png"),
+      dashabilitygatebefore: require("@/assets/scarabdescent/iterations/abilitygates/dashgatebefore.png"),
+      dashabilitygateafter: require("@/assets/scarabdescent/iterations/abilitygates/dashgateafter.png"),
+      bossabilitygatebefore: require("@/assets/scarabdescent/iterations/abilitygates/bossgatebefore.png"),
+      bossabilitygateafter: require("@/assets/scarabdescent/iterations/abilitygates/bossgateafter.png"),
+
+      lightingbefore: require("@/assets/scarabdescent/iterations/lighting/lightingbefore.png"),
+      lightingafter: require("@/assets/scarabdescent/iterations/lighting/lightingafter.png"),
+
+      tokenattackstart: require("@/assets/scarabdescent/combat/token/attackstart.png"),
+      tokenattackend: require("@/assets/scarabdescent/combat/token/attackend.png"),
+      tokenstore: require("@/assets/scarabdescent/combat/token/store.png"),
 
       crashedring: require("@/assets/scarabdescent/envstory/crashedring.png"),
       fallentowerring: require("@/assets/scarabdescent/envstory/tower.png"),
