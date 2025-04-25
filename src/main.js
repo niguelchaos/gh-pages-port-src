@@ -21,6 +21,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 // import 'vue-image-lightbox/dist/vue-image-lightbox.min.css'
 
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 Vue.use(VueGtag, {
   config: { id: 'UA-224744140-1' },
   appName: 'Portfolio',

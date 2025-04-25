@@ -1,6 +1,6 @@
 <template>
-  <b-container fluid id="top" class="fullwidth">
-    <b-row>
+  <b-container class="fullwidth">
+    <!-- <b-row> -->
       <!-- <b-col id="content-col" class="content-col" no-gutters> -->
         <name-header></name-header>
 
@@ -12,7 +12,7 @@
         <!-- Contact-->
         <contact-section></contact-section>
       <!-- </b-col> -->
-    </b-row>
+    <!-- </b-row> -->
   </b-container>
 </template>
 
@@ -63,7 +63,7 @@ html {
 .name-section {
   min-height: 35vh;
 }
-.home-section {
+/* .home-section {
   display: flex;
   min-height: 30vh;
   background-color: #d8dcff;
@@ -71,7 +71,7 @@ html {
   flex-direction: column;
   text-align: center;
   align-items: center;
-}
+} */
 
 #home-jumbo {
   background: transparent;

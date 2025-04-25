@@ -1,14 +1,33 @@
 <template>
+  <!-- <b-container class="full-width-section"> -->
   <b-container>
-    <b-container class="description-container">
-      <b-row>
-        <b-col lg="12">
-          <p class="font-italic text-center">
-            This page is a work in progress. It will be updated in due time.
-          </p>
-        </b-col>
-      </b-row>
+    <b-container fluid class="nav-column">
+      <b-list-group v-b-scrollspy class="sidebar-nav">
+        <!-- <b-list-group v-b-scrollspy:listgroup-ex> -->
+        <b-list-group-item href="#list-overview">Overview</b-list-group-item>
+        <b-list-group-item href="#list-concept">Concept</b-list-group-item>
+        <b-list-group-item href="#list-contribution">Contribution</b-list-group-item>
+        <b-list-group-item href="#list-process">Process</b-list-group-item>
+        <b-list-group-item href="#list-research">Process: Research</b-list-group-item>
+        <b-list-group-item href="#list-ideation">Process: Ideation</b-list-group-item>
+        <b-list-group-item href="#list-designdoc"
+          >Process: Design Document</b-list-group-item
+        >
+        <b-list-group-item href="#list-layout">Process: Layout</b-list-group-item>
+        <b-list-group-item href="#list-blockout">Process: Blockout</b-list-group-item>
+        <b-list-group-item href="#list-iteration">Iteration</b-list-group-item>
+        <b-list-group-item href="#list-combat">Combat</b-list-group-item>
+        <b-list-group-item href="#list-bossfights">Boss Fights</b-list-group-item>
+        <b-list-group-item href="#list-conclusion">Conclusion</b-list-group-item>
+        <b-list-group-item href="#list-credits">Credits</b-list-group-item>
+      </b-list-group>
+    </b-container>
 
+    <b-container
+      class="description-container"
+      id="list-overview"
+      style="position: relative; height: 100%"
+    >
       <b-row class="py-3">
         <b-col lg="6">
           <div>
@@ -95,7 +114,7 @@
       </b-col>
       <main class="container py-3">
         <!-- Section 1 -->
-        <section class="section-container border-light">
+        <section class="section-container border-light" id="list-concept">
           <header class="text-center mb-4">
             <h2 class="section-header display-4">CONCEPT</h2>
           </header>
@@ -110,7 +129,7 @@
           </div>
         </section>
 
-        <section class="section-container border-light">
+        <section class="section-container border-light" id="list-contribution">
           <header class="text-center mb-4">
             <h2 class="section-header display-4">CONTRIBUTION</h2>
           </header>
@@ -167,7 +186,7 @@
               <li>Practice iterating and refining the level design pipeline.</li>
               <li>Focus on the creation of whiteboxing environments.</li>
             </ul>
-            <p class="strong-content lh-lg">
+            <p class="lh-lg">
               Many of my efforts to implement mechanics and gameplay was to show how the
               level could work. Eventually, both gameplay and level began influencing each
               other.
@@ -184,7 +203,7 @@
           </div>
         </section>
 
-        <section class="section-container border-light">
+        <section class="section-container border-light" id="list-process">
           <header class="text-center mb-4">
             <h2 class="section-header display-4">PROCESS</h2>
           </header>
@@ -201,12 +220,12 @@
           </div>
         </section>
 
-        <section class="subsection-container border-light">
+        <section class="subsection-container border-light" id="list-research">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-4">1. Research</h2>
           </header>
 
-          <p class="strong-content lh-lg">
+          <p class="">
             Since our game was inspired by Hollow Knight, I decided to study what common
             elements modern metroidvanias have. I chose to examine:
           </p>
@@ -232,7 +251,7 @@
             </li>
           </ul>
 
-          <p class="strong-content lh-lg">I analyzed:</p>
+          <p class="">I analyzed:</p>
           <ul class="strong-content">
             <li>A Hollow Knight speedrun.</li>
             <li>The path IGN walkthrough of Metroid Prime took to 100% the game.</li>
@@ -247,10 +266,20 @@
 
           <b-row>
             <b-col lg="6">
-              <b-img :src="this.hkpathing" fluid-grow alt="Fluid image"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.hkpathing"
+                fluid-grow
+                alt="Fluid image"
+              ></b-img>
             </b-col>
             <b-col lg="6">
-              <b-img :src="this.primepathing" fluid-grow alt="prime path"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.primepathing"
+                fluid-grow
+                alt="prime path"
+              ></b-img>
             </b-col>
           </b-row>
 
@@ -367,16 +396,15 @@
                   </b-col>
                 </b-row>
               </b-card>
+              <p class="strong-content">
+                While many of these are self explanatory, they helped me distill what we
+                needed for an experience to be "metroidvania-esque".
+              </p>
             </b-collapse>
           </div>
-
-          <p class="strong-content">
-            While many of these are self explanatory, they helped me distill what we
-            needed for an experience to be "metroidvania-esque".
-          </p>
         </section>
 
-        <section class="subsection-container border-light">
+        <section class="subsection-container border-light" id="list-ideation">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-4">2. Ideation</h2>
           </header>
@@ -391,7 +419,11 @@
           </header>
 
           <div class="centered pb-3">
-            <b-img :src="this.settingmoodboard" class="single-image" alt="mood"></b-img>
+            <b-img
+              :src="this.settingmoodboard"
+              class="single-image img-border"
+              alt="mood"
+            ></b-img>
           </div>
 
           <p class="strong-content">
@@ -407,10 +439,20 @@
 
           <b-row>
             <b-col lg="6">
-              <b-img :src="this.v5moodboard1" fluid-grow alt="Fluid image"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.v5moodboard1"
+                fluid-grow
+                alt="Fluid image"
+              ></b-img>
             </b-col>
             <b-col lg="6">
-              <b-img :src="this.v5moodboard2" fluid-grow alt="prime path"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.v5moodboard2"
+                fluid-grow
+                alt="prime path"
+              ></b-img>
             </b-col>
           </b-row>
 
@@ -426,7 +468,7 @@
           </p>
         </section>
 
-        <section class="subsection-container border-light">
+        <section class="subsection-container border-light" id="list-designdoc">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-4">3. Design Document</h2>
           </header>
@@ -537,7 +579,7 @@
           </div>
         </section>
 
-        <section class="subsection-container border-light">
+        <section class="subsection-container border-light" id="list-layout">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-4">4. Layout</h2>
           </header>
@@ -577,7 +619,7 @@
                 the entire playable space and mainly influenced the paths the player could
                 take.
               </p>
-              <b-img :src="this.draftlayout" fluid alt="Draft"></b-img>
+              <b-img class="img-border" :src="this.draftlayout" fluid alt="Draft"></b-img>
             </b-col>
 
             <b-col lg="6">
@@ -588,7 +630,12 @@
                 were not well defined yet. Scale issues would later be a constant battle I
                 would fight.
               </p>
-              <b-img :src="this.initiallayout" fluid alt="Initial"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.initiallayout"
+                fluid
+                alt="Initial"
+              ></b-img>
             </b-col>
           </b-row>
           <b-row>
@@ -620,13 +667,13 @@
                 more were affected. However, room placement were roughly the same, and
                 many changes aimed to accentuate/support the decisions shown here.
               </p>
-              <b-img :src="this.finallayout" fluid alt="Final"></b-img>
+              <b-img class="img-border" :src="this.finallayout" fluid alt="Final"></b-img>
             </b-col>
           </b-row>
         </section>
-        <section class="subsection-container border-light">
+        <section class="subsection-container border-light" id="list-blockout">
           <header class="text-center mb-4">
-            <h2 class="subsection-header display-4">5. Blockout / Prototype</h2>
+            <h2 class="subsection-header display-4">5. Prototype / Blockout</h2>
           </header>
 
           <p class="strong-content">
@@ -638,7 +685,12 @@
           </p>
 
           <div class="centered pb-3">
-            <b-img :src="this.ldk" class="" style="width: 100%" alt="mood"></b-img>
+            <b-img
+              class="img-border"
+              :src="this.ldk"
+              style="width: 100%"
+              alt="mood"
+            ></b-img>
           </div>
 
           <p class="text-justify text-center">
@@ -664,11 +716,21 @@
 
           <b-row class="pt-1">
             <b-col lg="6">
-              <b-img :src="this.initialcanyonblockout1" fluid alt="Draft"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.initialcanyonblockout1"
+                fluid
+                alt="Draft"
+              ></b-img>
             </b-col>
 
             <b-col lg="6">
-              <b-img :src="this.initialcanyonblockout3" fluid alt="Initial"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.initialcanyonblockout3"
+                fluid
+                alt="Initial"
+              ></b-img>
             </b-col>
           </b-row>
 
@@ -680,11 +742,21 @@
 
           <b-row>
             <b-col lg="6">
-              <b-img :src="this.ldkcanyonblockout1" fluid alt="Draft"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.ldkcanyonblockout1"
+                fluid
+                alt="Draft"
+              ></b-img>
             </b-col>
 
             <b-col lg="6">
-              <b-img :src="this.ldkcanyonblockout2" fluid alt="Initial"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.ldkcanyonblockout2"
+                fluid
+                alt="Initial"
+              ></b-img>
             </b-col>
           </b-row>
 
@@ -698,11 +770,21 @@
 
           <b-row>
             <b-col lg="6">
-              <b-img :src="this.finalcanyonblockout1" fluid alt="Draft"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.finalcanyonblockout1"
+                fluid
+                alt="Draft"
+              ></b-img>
             </b-col>
 
             <b-col lg="6">
-              <b-img :src="this.finalcanyonblockout2" fluid alt="Initial"></b-img>
+              <b-img
+                class="img-border"
+                :src="this.finalcanyonblockout2"
+                fluid
+                alt="Initial"
+              ></b-img>
             </b-col>
           </b-row>
 
@@ -756,7 +838,7 @@
           </p>
         </section>
 
-        <section class="subsection-container border-light">
+        <section id="list-iteration" class="subsection-container border-light">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">6. Iteration and Feedback</h2>
           </header>
@@ -777,391 +859,454 @@
           Levels, combat mechanics, and player abilities were all constantly reduced.
           <br />Below are issues found:
         </p>
+        <!-- <div> -->
+        <!-- Using modifiers -->
+        <!-- <b-button v-b-toggle.citprobs class="m-1">Toggle Show Problems</b-button> -->
+        <!-- Via multiple directive modifiers -->
+        <!-- <b-button v-b-toggle.citp1.citp2>Toggle Collapse A and B</b-button> -->
+        <!-- Using value -->
+        <!-- <b-button v-b-toggle="'collapse-2'" class="m-1">Toggle Collapse</b-button> -->
+        <!-- </div> -->
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Project Scope</h2>
         </header>
-        <ul>
-          <li>
-            Blocking out 7 areas each with 5+ corridors was too much, and not an MVP.
-          </li>
-          <li><b>Weapon systems took too long to implement.</b></li>
-          <li><b>Puzzles needed additional scripting that took too long.</b></li>
-          <li>
-            <b>Doors were problematic:</b>
-            <ul>
-              <li>
-                Sliding doors were whole new world of problems. States, animations,
-                dynamic sub level loading, players getting crushed, Do enemies follow you
-                to the next room? What about obstacles blocking the way?
-              </li>
-              <li>
-                Ability gating in the style of Metroid Prime, where each door only opened
-                by being shot by a specific weapon, was removed. Ability gating these
-                doors added more bugs.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <b
-              >Rest areas healed the player, saved the game and assigned the player
-              checkpoint.</b
-            >
-            All of which meant more time.
-          </li>
-        </ul>
+        <!-- Element to collapse -->
+        <!-- <b-collapse id="citprobs"> -->
+        <b-card class="shaded-box">
+          <ul>
+            <li>
+              Blocking out 7 areas each with 5+ corridors was too much, and not an MVP.
+            </li>
+            <li><b>Weapon systems took too long to implement.</b></li>
+            <li><b>Puzzles needed additional scripting that took too long.</b></li>
+            <li>
+              <b>Doors were problematic:</b>
+              <ul>
+                <li>
+                  Sliding doors were whole new world of problems. States, animations,
+                  dynamic sub level loading, players getting crushed, Do enemies follow
+                  you to the next room? What about obstacles blocking the way?
+                </li>
+                <li>
+                  Ability gating in the style of Metroid Prime, where each door only
+                  opened by being shot by a specific weapon, was removed. Ability gating
+                  these doors added more bugs.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Rest areas: supposed to heal the player, save the game and assign the player
+              checkpoint.
+            </li>
+          </ul>
+        </b-card>
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Scale</h2>
         </header>
-        <ul>
-          <li>Too much walking, too much jumping!</li>
-          <li>Too much verticality.</li>
-          <li>
-            Directly converting Hollow Knight’s map to 3D is not feasible. Adding a new
-            dimension naturally morphs the rooms.
-          </li>
-          <li>
-            <b>Each room was too large.</b> It took too long to traverse from room to
-            room, even without enemies. I later learned that placing enemies and cover
-            made the room feel smaller instead.
-          </li>
-          <li>
-            <b>Pacing was not representative of the design.</b> Too many rooms between
-            major points of interest (Hub room,boss rooms).
-          </li>
-          <li>
-            <b>Canyon hub is too large.</b> the ruins hub is dwarfed by the sheer contrast
-            in size. Additional problem: Moving rooms around was increasingly annoying.
-          </li>
-          <li>
-            <b
-              >Unclear Affordances: Since scale was too large, it was always difficult to
-              quickly understand if a rock was a wall or an obstacle that could be jumped
-              over.</b
-            >
-          </li>
-          <li>
-            It was difficult to understand the player's surroundings. Important elements
-            to understand were things like entrances, enemy location, events, beginning of
-            bossfights.
-          </li>
-        </ul>
+        <b-card class="shaded-box">
+          <ul>
+            <li>Too much walking, too much jumping!</li>
+            <li>Too much verticality.</li>
+            <li>
+              Directly converting Hollow Knight’s map to 3D is not feasible. Adding a new
+              dimension naturally morphs the rooms.
+            </li>
+            <li>
+              <b>Each room was too large.</b> It took too long to traverse from room to
+              room, even without enemies. I later learned that placing enemies and cover
+              made the room feel smaller instead.
+            </li>
+            <li>
+              <b>Pacing was not representative of the design.</b> Too many rooms between
+              major points of interest (Hub room,boss rooms).
+            </li>
+            <li>
+              <b>Canyon hub is too large.</b> the ruins hub is dwarfed by the sheer
+              contrast in size. Additional problem: Moving rooms around was increasingly
+              annoying.
+            </li>
+            <li>
+              <b
+                >Unclear Affordances: Since scale was too large, it was always difficult
+                to quickly understand if a rock was a wall or an obstacle that could be
+                jumped over.</b
+              >
+            </li>
+            <li>
+              It was difficult to understand the player's surroundings. Important elements
+              to understand were things like entrances, enemy location, events, beginning
+              of bossfights.
+            </li>
+          </ul>
+        </b-card>
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Pacing</h2>
         </header>
-        <ul>
-          <li>Many were related to scale and combat, mentioned above.</li>
-          <li>
-            "Too much dead time" in between places, where time is just spent walking from
-            place to place. Although related to scale, the larger problem was that players
-            felt bored in between points of interest.
-          </li>
-          <li>
-            Moving around the blockout was boring - no moving or interactive objects made
-            it difficult for players to feel "high intensity".
-          </li>
-        </ul>
+        <!-- Element to collapse -->
+        <!-- <b-collapse id="citprobs"> -->
+        <b-card class="shaded-box">
+          <ul>
+            <li>Many were related to scale and combat, mentioned above.</li>
+            <li>
+              "Too much dead time" in between places, where time is just spent walking
+              from place to place. Although related to scale, the larger problem was that
+              players felt bored in between points of interest.
+            </li>
+            <li>
+              Moving around the blockout was boring - no moving or interactive objects
+              made it difficult for players to feel "high intensity".
+            </li>
+          </ul>
+        </b-card>
+        <!-- </b-collapse> -->
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Combat, Difficulty Curve, Balance</h2>
         </header>
-        <ul>
-          <li>
-            Rocket boss was too difficult. It would fire a volley of 8-9 rockets in 1
-            second.
-          </li>
-          <li>
-            Players wanted to try out the new abilities they obtained. On my side, I
-            wanted to make sure players understood what each ability did right after they
-            obtained it.
-          </li>
-          <li>
-            Seeing health bars above all enemies overwhelmed the player, giving them a
-            sense of "impossible to kill them all".
-          </li>
-          <li>
-            The difficulty contrast between a single enemy in the tutorial, then suddenly
-            bombarded by a group of 4 melee + 4 ranged in the Ruins Hub was too much.
-          </li>
-          <li>
-            The rocket ability could fire every 0.1 seconds. Players heavily abused this,
-            effectively turning on easy mode for each combat encounter.
-          </li>
-          <li>
-            The bridge was confusing. When entering, many turrets already fire at the
-            player, they did not understand the mechanics of the turret.
-          </li>
-          <li>
-            Cover was not reliable. When players thought they would be safe, they would
-            get hit. <br />This was even worse for the rocket boss, whose rockets had an
-            explosion radius.
-          </li>
-          <li>
-            Due to the unique AI for each boss, 3 out of 4 bosses had large changes in the
-            level (and in their behaviour) as their behaviour and weapons were added and
-            fleshed out. This will be discussed further in the Boss Fights section.
-          </li>
-        </ul>
+        <!-- Element to collapse -->
+        <!-- <b-collapse id="citprobs"> -->
+        <b-card class="shaded-box">
+          <ul>
+            <li>
+              Rocket boss was too difficult. It would fire a volley of 8-9 rockets in 1
+              second.
+            </li>
+            <li>
+              Players wanted to try out the new abilities they obtained. On my side, I
+              wanted to make sure players understood what each ability did right after
+              they obtained it.
+            </li>
+            <li>
+              Seeing health bars above all enemies overwhelmed the player, giving them a
+              sense of "impossible to kill them all".
+            </li>
+            <li>
+              The difficulty contrast between a single enemy in the tutorial, then
+              suddenly bombarded by a group of 4 melee + 4 ranged in the Ruins Hub was too
+              much.
+            </li>
+            <li>
+              The rocket ability could fire every 0.1 seconds. Players heavily abused
+              this, effectively turning on easy mode for each combat encounter.
+            </li>
+            <li>
+              The bridge was confusing. When entering, many turrets already fire at the
+              player, they did not understand the mechanics of the turret.
+            </li>
+            <li>
+              Cover was not reliable. When players thought they would be safe, they would
+              get hit. <br />This was even worse for the rocket boss, whose rockets had an
+              explosion radius.
+            </li>
+            <li>
+              Due to the unique AI for each boss, 3 out of 4 bosses had large changes in
+              the level (and in their behaviour) as their behaviour and weapons were added
+              and fleshed out. This will be discussed further in the Boss Fights section.
+            </li>
+          </ul>
+        </b-card>
+        <!-- </b-collapse> -->
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Visual Clarity, Readability</h2>
         </header>
-        <li>
-          <b>Unclear uniqueness for each area.</b> The idea of canyon and ruins was clear,
-          but it was not clear what distinct elements differentiated “canyon” and “ruins”.
-        </li>
-        <li><b>"Is this destructible?"</b></li>
-        <li>
-          <b
-            >"Why is this destructible yellow, but this yellow door is not
-            destructible?"</b
-          >
-        </li>
-        <li><b>"Did I come from this door? Is this the same door?"</b></li>
-        <li><b>"What am I supposed to do after killing the boss?"</b></li>
+        <!-- Element to collapse -->
+        <!-- <b-collapse id="citprobs"> -->
+        <b-card class="shaded-box">
+          <li>
+            <b>Unclear uniqueness for each area.</b> The idea of canyon and ruins was
+            clear, but it was not clear what distinct elements differentiated “canyon” and
+            “ruins”.
+          </li>
+          <li><b>"Is this destructible?"</b></li>
+          <li>
+            <b
+              >"Why is this destructible yellow, but this yellow door is not
+              destructible?"</b
+            >
+          </li>
+          <li><b>"Did I come from this door? Is this the same door?"</b></li>
+          <li><b>"What am I supposed to do after killing the boss?"</b></li>
+        </b-card>
+        <!-- </b-collapse> -->
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Technical</h2>
         </header>
-        <ul>
-          <li>
-            Adding, modifying, and removing sections of a level was difficult in cubegrid.
-          </li>
-          <li>
-            Assigning different textures to different parts of the level was difficult
-            when the entire level was 1 asset/model.
-          </li>
-          <li>Creating curved/circular sections was difficult in UE's cubegrid tool.</li>
-          <li>
-            <b
-              >Hard to playtest without ability gating, enemies and weapons. Cannot test
-              from start to end.</b
-            >
-          </li>
-          <li><b>Boss ability gate does not exist, cannot test start to end.</b></li>
-          <li>
-            Stepping on chaos destruction debris spun the player around, creating a
-            glitching, nauseating effect. (never fixed)
-          </li>
-        </ul>
+        <!-- Element to collapse -->
+        <!-- <b-collapse id="citprobs"> -->
+        <b-card class="shaded-box">
+          <ul>
+            <li>
+              Adding, modifying, and removing sections of a level was difficult in
+              cubegrid.
+            </li>
+            <li>
+              Assigning different textures to different parts of the level was difficult
+              when the entire level was 1 asset/model.
+            </li>
+            <li>
+              Creating curved/circular sections was difficult in UE's cubegrid tool.
+            </li>
+            <li>
+              <b
+                >Hard to playtest without ability gating, enemies and weapons. Cannot test
+                from start to end.</b
+              >
+            </li>
+            <li>
+              <b>Boss ability gate does not exist, cannot test start to end.</b>
+            </li>
+            <li>
+              Stepping on chaos destruction debris spun the player around, creating a
+              glitching, nauseating effect. (never fixed)
+            </li>
+          </ul>
+        </b-card>
+        <!-- </b-collapse> -->
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Performance</h2>
         </header>
-        <p>
-          These were things that dropped FPS. Not all were the root problem, but
-          contributed in some shape or form.
-        </p>
-        <ul>
-          <li>The entire world is loaded on startup.</li>
-          <li>Meshes were not distance culled.</li>
-          <li>Overlapping dynamic lighting everywhere.</li>
-          <li>Chaos destruction debris did not sleep</li>
-        </ul>
+        <!-- Element to collapse -->
+        <!-- <b-collapse id="citprobs"> -->
+        <b-card class="shaded-box">
+          <p>
+            These were things that dropped FPS. Not all were the root problem, but
+            contributed in some shape or form.
+          </p>
+          <ul>
+            <li>The entire world is loaded on startup.</li>
+            <li>Meshes were not distance culled.</li>
+            <li>Overlapping dynamic lighting everywhere.</li>
+            <li>Chaos destruction debris did not sleep</li>
+          </ul>
 
-        <header class="mb-2 pt-3">
-          <h2 class="fw-bold mb-3 display-5">Wayfinding</h2>
-        </header>
-        <li><b>"It is too difficult to find my way around the map."</b></li>
-        <li>
-          <b
-            >Composition issues: No landmarks, no framing, and no vantage points that let
-            you survey your surroundings.</b
-          >
-        </li>
-        <li>
-          <b
-            >The larger the area was, the less inclined players wanted to explore,
-            especially if they asked "what am I supposed to do now".</b
-          >
-        </li>
-        <li>
-          <b
-            >Some were confused and stopped when they could first reached the final boss
-            ability gate and couldn't pass it.</b
-          >
-        </li>
+          <header class="mb-2 pt-3">
+            <h2 class="fw-bold mb-3 display-5">Wayfinding</h2>
+          </header>
+          <li><b>"It is too difficult to find my way around the map."</b></li>
+          <li>
+            <b
+              >Composition issues: No landmarks, no framing, and no vantage points that
+              let you survey your surroundings.</b
+            >
+          </li>
+          <li>
+            <b
+              >The larger the area was, the less inclined players wanted to explore,
+              especially if they asked "what am I supposed to do now".</b
+            >
+          </li>
+          <li>
+            <b
+              >Some were confused and stopped when they could first reached the final boss
+              ability gate and couldn't pass it.</b
+            >
+          </li>
+        </b-card>
+        <!-- </b-collapse> -->
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Exploration</h2>
         </header>
-        <li>
-          <b
-            >"Not finding any treasure after fighting a large group of enemies made me not
-            want to explore"</b
-          >
-        </li>
-        <li>
-          <b
-            >Being a blockout, players did not feel the mood of an alien planet, heavily
-            reducing immersion.</b
-          >The lack of music, ambience, visuals, all contributed to the lack of immersion.
-        </li>
-        <li>
-          <b
-            >Many players disliked backtracking (relatable), heavily reducing the desire
-            to explore new areas by having to go through already-explored places.</b
-          >
-          This was exacerbated by the lack of respawning enemies, increasingly long
-          walking times in between areas, especially in hallways.
-        </li>
+        <!-- Element to collapse -->
+        <!-- <b-collapse id="citprobs"> -->
+        <b-card class="shaded-box">
+          <li>
+            <b
+              >"Not finding any treasure after fighting a large group of enemies made me
+              not want to explore"</b
+            >
+          </li>
+          <li>
+            <b
+              >Being a blockout, players did not feel the mood of an alien planet, heavily
+              reducing immersion.</b
+            >The lack of music, ambience, visuals, all contributed to the lack of
+            immersion.
+          </li>
+          <li>
+            <b
+              >Many players disliked backtracking (relatable), heavily reducing the desire
+              to explore new areas by having to go through already-explored places.</b
+            >
+            This was exacerbated by the lack of respawning enemies, increasingly long
+            walking times in between areas, especially in hallways.
+          </li>
+        </b-card>
+        <!-- </b-collapse> -->
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Audiovisual Feedback</h2>
         </header>
-        <li><b>"When did I get hit?"</b></li>
-        <li><b>"Which button do I press to pick this up?"</b></li>
-        <li><b>"Am I dead?"</b></li>
-        <li>
-          <b
-            >Players wanted to have feedback when being damaged, damaging enemies, and
-            when picking things up.</b
-          >
-        </li>
+        <!-- Element to collapse -->
+        <!-- <b-collapse id="citprobs"> -->
+        <b-card class="shaded-box">
+          <li><b>"When did I get hit?"</b></li>
+          <li><b>"Which button do I press to pick this up?"</b></li>
+          <li><b>"Am I dead?"</b></li>
+          <li>
+            <b
+              >Players wanted to have feedback when being damaged, damaging enemies, and
+              when picking things up.</b
+            >
+          </li>
+        </b-card>
+        <!-- <b-button v-b-toggle.citprobs class="m-1">Toggle Show Problems</b-button> -->
+        <!-- </b-collapse> -->
 
         <header class="text-center mb-4 pt-5">
           <h2 class="fw-bold mb-3 display-5">Solutions</h2>
         </header>
-        <ul>
-          <!-- scope -->
-          <li>
-            <b>Reduced distinct areas from 7 to 2</b>, with the minimal amount of
-            corridors. Each corridor had a reason to stay, whether it was to ability gate
-            something or to balance pacing.
-          </li>
-          <li><b>No Weapon Alt Fire modes.</b></li>
-          <li><b>No weapon reloading.</b></li>
-          <li><b>Puzzle to acquire Dash removed, replaced by the Bridge.</b></li>
-          <li><b>Removed doors. Instead, placed cover to hide sightlines.</b></li>
-          <li>
-            <b>No "rest" areas</b> Instead, additional health packs were scattered around
-            the map.
-          </li>
-          <!-- scale -->
-          <li>
-            Roughly limit how long it takes to get from 1 point of interest to another:
-            not more than a minute of walking. Combat encounters were later added to act
-            as POIs from a pacing standpoint.
-          </li>
-          <li>
-            Limit verticality. Reaching a different platform should take around 2-3
-            jumps/1 min walking.
-          </li>
-          <li>
-            Use canyon hub's scale as an opportunity instead to surprise the player and
-            encourage exploration.
-          </li>
-          <li>
-            World aligned Prototyping textures: This helped greatly in making sure
-            obstacles could be scaled over. It made playtesting more comfortable.
-          </li>
-          <li>
-            Define what 1 "floor" is: Using staircases as measurements to roughly measure
-            and standardize how tall things are.
-          </li>
-          <li>
-            Modular kit: Model reusable assets in cubegrid. Example: Use the same doorway
-            frame for all entrances. Also helped with scale.
-          </li>
-          <li>Largely removed corridor to mage boss</li>
-          <li>To reduce dead time, added more encounters, especially at corridors.</li>
-          <li>
-            To reward defeating enemies, added a hidden fireball powerup at one large
-            encounter, and more health around others.
-          </li>
-          <li>
-            Made it faster to reach the final boss ability gate. Furthermore, make the
-            dash section of the gate much clearer in the beginning. Use destructible
-            pillars player can jump over or fire rockets at. Make the dashable gap
-            clearer. The player may still take awhile to realize they cannot get to the
-            other side, but they would not be able to advance no matter what.
-          </li>
-          <li>
-            Added sound effects for interactions, different sounds when getting hit and
-            shooting the ground, and button activations.
-          </li>
-          <li>
-            Reduced rockets fire rate for rocket boss, made it evade player when on
-            cooldown
-          </li>
-          <li>
-            Huge hallways were dead time because they were linear. Used it with more
-            intention - to contrast it with larger, open nonlinear areas
-          </li>
-          <li>
-            Some indication of final objective is good - added text in the beginning, and
-            a beam of light at the final boss so players can orient themselves at certain
-            spots from other rooms, inciting curiousity.
-          </li>
-          <li>
-            Tweaked canyon blockout to better show points of interest at different vantage
-            points.
-          </li>
-          <li>
-            Bridge: Introducing buttons should be much simpler. Buttons should only open
-            doors, not kill turrets as well. Remove all turrets in the button tutorial
-            area.
-          </li>
-          <li>
-            Create suspicious pink light in front of bridge's ability gate, make it
-            clearer that something exists there.
-          </li>
-          <li>
-            Stepping stones for river in Canyon Hub, make it more inviting/less scary to
-            go closer and dip your feet in.
-          </li>
-          <li>
-            Players didn't know what to do after killing rocket boss: Heavy handed
-            guidance by preventing the player from leaving unless they pick up the
-            ability. Furthermore, shine a spotlight on the ability pickup.
-          </li>
-          <li>Show instructions only after you get the ability.</li>
-          <li>
-            Rocket Boss: Show the ability when you trigger the boss fight to tell the
-            player where to get the ability, but gate it.
-          </li>
-          <li>
-            Dash ability is shown and given at the end of the bridge instead. This softly
-            encourages player to use it when returning to the entrance.
-          </li>
-          <li>
-            Dash turrets are reactivated only after you obtain the dash ability, letting
-            players set the pace.
-          </li>
-          <li>
-            Instead of adding landmarks, give unique properties to each door in ruins hub
-            - red/blue light, pillar half way fallen, etc.
-          </li>
-          <li>
-            Bridge has 3 checkpoints when falling into void so you can't cheat the system
-            anymore
-          </li>
-          <li>
-            Rocket Boss shoots 3 rockets instead of 9, with a cooldown of 3 seconds
-            instead of 1. While on cooldown, moves around to maintain line of sight.
-          </li>
-          <li>
-            Chaos Destruction debris sleeps after 3 seconds, disappears after sleeping.
-          </li>
-          <li>Lights farther than 10000 units are culled.</li>
-          <li>Meshes are culled at certain distances.</li>
-          <li>Navigation meshes are static.</li>
-          <li>
-            Create a combat token system to limit the amount of enemies attacking the
-            player at the same time, regardless of how many enemies are in range.
-          </li>
-        </ul>
+        <!-- <b-button v-b-toggle.citsolutions class="m-1">Toggle Show Problems</b-button> -->
+
+        <!-- Element to collapse -->
+        <!-- <b-collapse id="citsolutions"> -->
+        <b-card class="shaded-box">
+          <ul>
+            <!-- scope -->
+            <li>
+              <b>Reduced distinct areas from 7 to 2</b>, with the minimal amount of
+              corridors. Each corridor had a reason to stay, whether it was to ability
+              gate something or to balance pacing.
+            </li>
+            <li><b>No Weapon Alt Fire modes.</b></li>
+            <li><b>No weapon reloading.</b></li>
+            <li><b>Puzzle to acquire Dash removed, replaced by the Bridge.</b></li>
+            <li><b>Removed doors. Instead, placed cover to hide sightlines.</b></li>
+            <li>
+              <b>No "rest" areas</b> Instead, additional health packs were scattered
+              around the map.
+            </li>
+            <!-- scale -->
+            <li>
+              Roughly limit how long it takes to get from 1 point of interest to another:
+              not more than a minute of walking. Combat encounters were later added to act
+              as POIs from a pacing standpoint.
+            </li>
+            <li>
+              Limit verticality. Reaching a different platform should take around 2-3
+              jumps/1 min walking.
+            </li>
+            <li>
+              Use canyon hub's scale as an opportunity instead to surprise the player and
+              encourage exploration.
+            </li>
+            <li>
+              World aligned Prototyping textures: This helped greatly in making sure
+              obstacles could be scaled over. It made playtesting more comfortable.
+            </li>
+            <li>
+              Define what 1 "floor" is: Using staircases as measurements to roughly
+              measure and standardize how tall things are.
+            </li>
+            <li>
+              Modular kit: Model reusable assets in cubegrid. Example: Use the same
+              doorway frame for all entrances. Also helped with scale.
+            </li>
+            <li>Largely removed corridor to mage boss</li>
+            <li>To reduce dead time, added more encounters, especially at corridors.</li>
+            <li>
+              To reward defeating enemies, added a hidden fireball powerup at one large
+              encounter, and more health around others.
+            </li>
+            <li>
+              Made it faster to reach the final boss ability gate. Furthermore, make the
+              dash section of the gate much clearer in the beginning. Use destructible
+              pillars player can jump over or fire rockets at. Make the dashable gap
+              clearer. The player may still take awhile to realize they cannot get to the
+              other side, but they would not be able to advance no matter what.
+            </li>
+            <li>
+              Added sound effects for interactions, different sounds when getting hit and
+              shooting the ground, and button activations.
+            </li>
+            <li>
+              Reduced rockets fire rate for rocket boss, made it evade player when on
+              cooldown
+            </li>
+            <li>
+              Huge hallways were dead time because they were linear. Used it with more
+              intention - to contrast it with larger, open nonlinear areas
+            </li>
+            <li>
+              Some indication of final objective is good - added text in the beginning,
+              and a beam of light at the final boss so players can orient themselves at
+              certain spots from other rooms, inciting curiousity.
+            </li>
+            <li>
+              Tweaked canyon blockout to better show points of interest at different
+              vantage points.
+            </li>
+            <li>
+              Bridge: Introducing buttons should be much simpler. Buttons should only open
+              doors, not kill turrets as well. Remove all turrets in the button tutorial
+              area.
+            </li>
+            <li>
+              Create suspicious pink light in front of bridge's ability gate, make it
+              clearer that something exists there.
+            </li>
+            <li>
+              Stepping stones for river in Canyon Hub, make it more inviting/less scary to
+              go closer and dip your feet in.
+            </li>
+            <li>
+              Players didn't know what to do after killing rocket boss: Heavy handed
+              guidance by preventing the player from leaving unless they pick up the
+              ability. Furthermore, shine a spotlight on the ability pickup.
+            </li>
+            <li>Show instructions only after you get the ability.</li>
+            <li>
+              Rocket Boss: Show the ability when you trigger the boss fight to tell the
+              player where to get the ability, but gate it.
+            </li>
+            <li>
+              Dash ability is shown and given at the end of the bridge instead. This
+              softly encourages player to use it when returning to the entrance.
+            </li>
+            <li>
+              Dash turrets are reactivated only after you obtain the dash ability, letting
+              players set the pace.
+            </li>
+            <li>
+              Instead of adding landmarks, give unique properties to each door in ruins
+              hub - red/blue light, pillar half way fallen, etc.
+            </li>
+            <li>
+              Bridge has 3 checkpoints when falling into void so you can't cheat the
+              system anymore
+            </li>
+            <li>
+              Rocket Boss shoots 3 rockets instead of 9, with a cooldown of 3 seconds
+              instead of 1. While on cooldown, moves around to maintain line of sight.
+            </li>
+            <li>
+              Chaos Destruction debris sleeps after 3 seconds, disappears after sleeping.
+            </li>
+            <li>Lights farther than 10000 units are culled.</li>
+            <li>Meshes are culled at certain distances.</li>
+            <li>Navigation meshes are static.</li>
+            <li>
+              Create a combat token system to limit the amount of enemies attacking the
+              player at the same time, regardless of how many enemies are in range.
+            </li>
+          </ul>
+        </b-card>
+        <!-- </b-collapse> -->
 
         <b-row>
           <b-col lg="6">
             <h5>Lighting: Before</h5>
-            <b-img :src="this.lightingbefore" fluid alt=""></b-img>
+            <b-img class="img-border" :src="this.lightingbefore" fluid alt=""></b-img>
           </b-col>
           <b-col lg="6">
             <h5>Lighting: After</h5>
-            <b-img :src="this.lightingafter" fluid alt=""></b-img>
+            <b-img class="img-border" :src="this.lightingafter" fluid alt=""></b-img>
           </b-col>
         </b-row>
 
@@ -1202,7 +1347,7 @@
           future addition I would want to add is to add an ability gate to the central hub
           so that the player has a larger progression reason to revisit it.
         </p>
-        <b-img :src="this.backtrackroutes" fluid alt=""></b-img>
+        <b-img class="img-border" :src="this.backtrackroutes" fluid alt=""></b-img>
         <p class="text-center">Main backtracking routes</p>
 
         <h3>Ability Gates</h3>
@@ -1223,11 +1368,21 @@
         <b-row>
           <b-col lg="6">
             <h5>Dash Gate: Before</h5>
-            <b-img :src="this.dashabilitygatebefore" fluid alt=""></b-img>
+            <b-img
+              class="img-border"
+              :src="this.dashabilitygatebefore"
+              fluid
+              alt=""
+            ></b-img>
           </b-col>
           <b-col lg="6">
             <h5>Dash Gate: After</h5>
-            <b-img :src="this.dashabilitygateafter" fluid alt=""></b-img>
+            <b-img
+              class="img-border"
+              :src="this.dashabilitygateafter"
+              fluid
+              alt=""
+            ></b-img>
           </b-col>
         </b-row>
 
@@ -1243,11 +1398,21 @@
         <b-row>
           <b-col lg="6">
             <h5>Final Boss Gate: Before</h5>
-            <b-img :src="this.bossabilitygatebefore" fluid alt=""></b-img>
+            <b-img
+              class="img-border"
+              :src="this.bossabilitygatebefore"
+              fluid
+              alt=""
+            ></b-img>
           </b-col>
           <b-col lg="6">
             <h5>Final Boss Gate: After</h5>
-            <b-img :src="this.bossabilitygateafter" fluid alt=""></b-img>
+            <b-img
+              class="img-border"
+              :src="this.bossabilitygateafter"
+              fluid
+              alt=""
+            ></b-img>
           </b-col>
         </b-row>
 
@@ -1265,7 +1430,7 @@
           know if they can enter the area or not. The sky lightbeam hints the importance
           of the room up ahead.
         </p>
-        <section class="subsection-container border-light">
+        <section class="subsection-container border-light" id="list-combat">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">Combat</h2>
           </header>
@@ -1395,20 +1560,20 @@
           <b-row>
             <b-col lg="6">
               <!-- <h5>Dash Gate: Before</h5> -->
-              <b-img :src="this.tokenstore" fluid alt=""></b-img>
+              <b-img class="img-border" :src="this.tokenstore" fluid alt=""></b-img>
             </b-col>
             <b-col lg="6">
               <!-- <h5>Dash Gate: After</h5> -->
-              <b-img :src="this.tokenattackend" fluid alt=""></b-img>
+              <b-img class="img-border" :src="this.tokenattackend" fluid alt=""></b-img>
             </b-col>
-            <b-img :src="this.tokenattackstart" fluid alt=""></b-img>
+            <b-img class="img-border" :src="this.tokenattackstart" fluid alt=""></b-img>
           </b-row>
           <p>
             Tokens are "taken" from the player when an enemy attacks and released when
             attacks end.
           </p>
         </section>
-        <section class="subsection-container border-light">
+        <section class="subsection-container border-light" id="list-bossfights">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">Boss Fights</h2>
           </header>
@@ -1437,6 +1602,8 @@
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Rocket Boss (Castle)</h2>
           </header>
+          <!-- <b-button v-b-toggle.crocketboss class="m-1">Toggle Show Problems</b-button> -->
+
           <div class="single-image centered py-2">
             <!-- RocketRingTower -->
             <b-embed
@@ -1733,7 +1900,8 @@
             only reactivate when the player acquires the ability.
           </p>
         </section>
-        <section class="subsection-container border-light">
+
+        <section class="subsection-container border-light" id="list-conclusion">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">Evaluation, Conclusion</h2>
           </header>
@@ -1841,9 +2009,11 @@
           </li>
           <li>
             Make / prototype the combat and AI systems before blocking out the entire
-            world! Stupid. It's difficult to imagine a combat space with only combat
-            mechanics without enemies, and enemy behaviour can really affect pacing. I
-            could have saved a lot of rework time if combat systems were made first.
+            world (maybe a few rooms only)! Combat systems solidify 2 things: Player
+            metrics and the type of area a space is. It's difficult to imagine a combat
+            space with only combat mechanics without enemies, and enemy behaviour can
+            really affect pacing. I could have saved a lot of iteration time if combat
+            systems were made first.
           </li>
           <li>
             Define and lock down basic player metrics early! Movement speed, jump height,
@@ -1860,10 +2030,12 @@
             the two different areas a lot better, and bring it up a level. Polishing the
             UI, weapon feel(recoil, animations) and audio would contribute to more less
             player confusion and greater immersion. Implementing enemy encounter
-            respawning would help with pacing.
+            respawning would help with pacing. Finally, improving the AI (better
+            perception, more attacks/types/variation) and respawning enemies after rooms
+            would regulate pacing.
           </p>
         </section>
-        <section class="subsection-container border-light">
+        <section class="subsection-container border-light" id="list-credits">
           <header class="text-center mb-4">
             <h2 class="subsection-header display-5">Credits</h2>
           </header>
@@ -2003,15 +2175,10 @@
         </b-carousel>
       </div>
     </b-col>
-
-    <div class="my-4"></div>
-    <!-- Spacer with margin -->
   </b-container>
 </template>
 
 <script>
-import VueScrollTo from "vue-scrollto";
-
 export default {
   components: {},
   data() {
@@ -2536,5 +2703,43 @@ export default {
 
 .single-image {
   width: 70%;
+}
+.img-border {
+  border: 3px solid #f5f5f5; /* Thickness + color */
+  border-radius: 4px; /* Optional rounded corners */
+}
+.nav-column {
+  position: fixed;
+  left: 0;
+  top: 15%;
+  /* height: 100vh; */
+  /* Controlled by :style binding */
+  width: 17%;
+  z-index: 1000;
+}
+.sidebar-nav {
+  --active-bg: #4e73df;
+  --active-text: white;
+  --hover-bg: #f8f9fa;
+  --inactive-bg: white;
+  --inactive-text: #495057;
+}
+.sidebar-nav .list-group-item:not(.active):hover {
+  background-color: var(--hover-bg);
+  transform: translateX(3px);
+}
+.sidebar-nav .list-group-item.active {
+  /* background-color: var(--active-bg); */
+  /* color: var(--active-text); */
+  /* font-weight: 600; */
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.sidebar-nav .list-group-item i {
+  transition: transform 0.2s ease;
+}
+
+.sidebar-nav .list-group-item.active i {
+  transform: scale(1.1);
 }
 </style>

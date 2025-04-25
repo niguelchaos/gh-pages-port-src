@@ -21,7 +21,9 @@ export default {
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 .app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* font-family: 'Inter', system-ui, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  /* font-family: Helvetica, 'Avenir',  Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -34,8 +36,6 @@ export default {
   overflow: hidden;
   min-height: 100vh;
   scroll-behavior: auto;
-  /* background-color: #f3e0ff; */
-  /* background-color: #5C6299; */
   background-color: #2d3142;
 
 }

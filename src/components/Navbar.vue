@@ -12,11 +12,6 @@
                <b-nav-item to="./reports" :active="currentPage === 'reports'" @click="currentPage = 'reports'">Reports</b-nav-item>
                <b-nav-item to="./resume" :active="currentPage === 'resume'" @click="currentPage = 'resume'">Resume</b-nav-item>
                <b-nav-item to="./contact" :active="currentPage === 'contact'" @click="currentPage = 'contact'">Contact</b-nav-item>
-               <!-- <b-nav-item id="navtext" href="./#projects">Projects</b-nav-item> -->
-               <!-- <b-nav-item id="navtext" to="./about">About</b-nav-item>
-               <b-nav-item id="navtext" to="./reports">Research</b-nav-item>
-               <b-nav-item id="navtext" to="/resume">Resume</b-nav-item>
-               <b-nav-item id="navtext" href="./#contact">Contact</b-nav-item> -->
             </b-nav>
          </b-navbar-nav>
       </b-collapse>
