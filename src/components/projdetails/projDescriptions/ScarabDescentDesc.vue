@@ -4,8 +4,7 @@
     <b-container fluid class="nav-column">
       <b-list-group v-b-scrollspy class="sidebar-nav">
         <!-- <b-list-group v-b-scrollspy:listgroup-ex> -->
-        <b-list-group-item href="#list-overview">Overview</b-list-group-item>
-        <b-list-group-item href="#list-concept">Concept</b-list-group-item>
+        <b-list-group-item href="#list-concept">Overview</b-list-group-item>
         <b-list-group-item href="#list-contribution">Contribution</b-list-group-item>
         <b-list-group-item href="#list-process">Process</b-list-group-item>
         <b-list-group-item href="#list-research">Process: Research</b-list-group-item>
@@ -22,6 +21,21 @@
         <b-list-group-item href="#list-credits">Credits</b-list-group-item>
       </b-list-group>
     </b-container>
+
+    <section class="section-container border-light" id="list-concept">
+      <header class="text-center mb-4">
+        <h2 class="section-header display-4">CONCEPT</h2>
+      </header>
+      <div class="px-lg-5">
+        <!-- Content -->
+        <p class="strong-content">
+          Scarab Descent is a Metroidvania FPS set in a vast desert ruin with a touch of
+          sci-fi. The game merges FPS mechanics with Metroidvania-style exploration
+          inspired by Metroid Prime and Hollow Knight, where players must find their
+          spaceship to leave an alien world.
+        </p>
+      </div>
+    </section>
 
     <b-container
       class="description-container"
@@ -113,22 +127,6 @@
         </div>
       </b-col>
       <main class="container py-3">
-        <!-- Section 1 -->
-        <section class="section-container border-light" id="list-concept">
-          <header class="text-center mb-4">
-            <h2 class="section-header display-4">CONCEPT</h2>
-          </header>
-          <div class="px-lg-5">
-            <!-- Content -->
-            <p class="strong-content">
-              Scarab Descent is a Metroidvania FPS set in a vast desert ruin with a touch
-              of sci-fi. The game merges FPS mechanics with Metroidvania-style exploration
-              inspired by Metroid Prime and Hollow Knight, where players must find their
-              spaceship to leave an alien world.
-            </p>
-          </div>
-        </section>
-
         <section class="section-container border-light" id="list-contribution">
           <header class="text-center mb-4">
             <h2 class="section-header display-4">CONTRIBUTION</h2>
@@ -801,6 +799,10 @@
           <header class="mb-4 pt-5">
             <h2 class="fw-bold mb-3 display-5">Effects of Prototyping</h2>
           </header>
+          <p class="strong-content">
+            Combat, AI behaviour, metrics, and unknown technical limitations heavily
+            prolonged iteration times.
+          </p>
           <p class="text-justify">
             Initially, I started this project without planning to implement combat or
             interactive mechanics such as pickups, buttons, weapons, damage systems, or
@@ -833,8 +835,8 @@
           </ul>
 
           <p class="strong-content text-justify">
-            Conclusion: I should have worked on implementing combat elements like weapons
-            and enemies before moving on to block out the entire world.
+            I should have worked on implementing combat elements like weapons and enemies
+            before moving on to block out the entire world.
           </p>
         </section>
 
@@ -856,23 +858,15 @@
         </header>
 
         <p class="strong-content text-justify">
-          Levels, combat mechanics, and player abilities were all constantly reduced.
+          The scope of levels, combat mechanics, and player abilities were all constantly
+          reduced.
           <br />Below are issues found:
         </p>
-        <!-- <div> -->
-        <!-- Using modifiers -->
-        <!-- <b-button v-b-toggle.citprobs class="m-1">Toggle Show Problems</b-button> -->
-        <!-- Via multiple directive modifiers -->
-        <!-- <b-button v-b-toggle.citp1.citp2>Toggle Collapse A and B</b-button> -->
-        <!-- Using value -->
-        <!-- <b-button v-b-toggle="'collapse-2'" class="m-1">Toggle Collapse</b-button> -->
-        <!-- </div> -->
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Project Scope</h2>
         </header>
-        <!-- Element to collapse -->
-        <!-- <b-collapse id="citprobs"> -->
+
         <b-card class="shaded-box">
           <ul>
             <li>
@@ -1084,10 +1078,12 @@
             <li>Overlapping dynamic lighting everywhere.</li>
             <li>Chaos destruction debris did not sleep</li>
           </ul>
+        </b-card>
 
-          <header class="mb-2 pt-3">
-            <h2 class="fw-bold mb-3 display-5">Wayfinding</h2>
-          </header>
+        <header class="mb-2 pt-3">
+          <h2 class="fw-bold mb-3 display-5">Wayfinding</h2>
+        </header>
+        <b-card class="shaded-box">
           <li><b>"It is too difficult to find my way around the map."</b></li>
           <li>
             <b
@@ -1108,7 +1104,6 @@
             >
           </li>
         </b-card>
-        <!-- </b-collapse> -->
 
         <header class="mb-2 pt-3">
           <h2 class="fw-bold mb-3 display-5">Exploration</h2>
@@ -1299,7 +1294,7 @@
         </b-card>
         <!-- </b-collapse> -->
 
-        <b-row>
+        <b-row class="py-3">
           <b-col lg="6">
             <h5>Lighting: Before</h5>
             <b-img class="img-border" :src="this.lightingbefore" fluid alt=""></b-img>
@@ -1307,6 +1302,38 @@
           <b-col lg="6">
             <h5>Lighting: After</h5>
             <b-img class="img-border" :src="this.lightingafter" fluid alt=""></b-img>
+          </b-col>
+        </b-row>
+
+        <b-row class="py-3">
+          <b-col lg="6">
+            <h5>River: Before</h5>
+            <b-img class="img-border" :src="this.riverbefore" fluid alt=""></b-img>
+          </b-col>
+          <b-col lg="6">
+            <h5>River: After</h5>
+            <b-img class="img-border" :src="this.riverafter" fluid alt=""></b-img>
+          </b-col>
+        </b-row>
+
+        <b-row class="py-3">
+          <b-col lg="6">
+            <h5>Mage Corridor: Before</h5>
+            <b-img class="img-border" :src="this.magecorridorbefore" fluid alt=""></b-img>
+          </b-col>
+          <b-col lg="6">
+            <h5>Mage Corridor: After</h5>
+            <b-img class="img-border" :src="this.magecorridorafter" fluid alt=""></b-img>
+          </b-col>
+        </b-row>
+        <b-row class="py-3">
+          <b-col lg="6">
+            <h5>Dash Gate: Before</h5>
+            <b-img class="img-border" :src="this.dashgatebefore" fluid alt=""></b-img>
+          </b-col>
+          <b-col lg="6">
+            <h5>Dash Gate: After</h5>
+            <b-img class="img-border" :src="this.dashgateafter" fluid alt=""></b-img>
           </b-col>
         </b-row>
 
@@ -1339,13 +1366,23 @@
         </header>
 
         <h3>Backtracking</h3>
-
+        <p class="strong-content">Do we actually need backtracking?</p>
         <p>
           Backtracking is focused on the two hubs: The central hub and the canyon hub.
           Following the progression flow in the initial brief, the player would have to
-          revisit the central hub at least twice no matter which path they take. One
-          future addition I would want to add is to add an ability gate to the central hub
-          so that the player has a larger progression reason to revisit it.
+          visit the central hub at least twice no matter which path they take. One future
+          addition I would want to add is to add an ability gate to the central hub so
+          that the player has a larger progression reason to revisit it.
+        </p>
+        <p>
+          Backtracking felt like a side effect from a hub and spoke layout. Playtesters
+          quickly mentioned the unwillingness to revisit areas and backtrack since it was
+          boring.
+          <br />To maintain pacing and intensity, other games use respawning enemies,
+          world events, and fast travel to keep intensity high or to reduce backtracking.
+          Since I did not have have these mechanics, I could only hope the player obtained
+          the dash ability early. As such, a lot of work was done to reduce backtracking
+          by reducing distance between areas instead.
         </p>
         <b-img class="img-border" :src="this.backtrackroutes" fluid alt=""></b-img>
         <p class="text-center">Main backtracking routes</p>
@@ -1443,12 +1480,12 @@
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Gameplay Ability System (GAS)</h2>
           </header>
-          <p class="strong-content">
+          <p class="">
             I wanted to reduce the amount of redundant code as much as possible. GAS
             allowed me to easily use the same ability for the player and enemies. All
-            weapons were created using GAS, which allowed for quick prototyping and adding
-            abilities for players and enemies. One example is the rifle, which is used by
-            both the player and ranged enemy.
+            weapon abilities were created using GAS, which allowed for quick prototyping
+            and adding abilities for players and enemies. One example is the rifle, which
+            is used by both the player and ranged enemy.
           </p>
           <p class="strong-content">
             Adding an enemy use a different attack was a matter of just changing the
@@ -1468,6 +1505,8 @@
             felt like they were more accurate because of player movement (as if the AI was
             leading the shot).
           </p>
+          <b-img class="img-border" :src="this.distancerecoil" fluid alt=""></b-img>
+
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Flinching/Interrupted</h2>
           </header>
@@ -1480,10 +1519,12 @@
             different bosses, only letting them flinch during specific periods of time
             (during attacking)
           </p>
-          <p class="strong-content">
-            Adding an enemy use a different attack was a matter of just changing the
-            granted abilities and changing the gameplay tag.
+          <b-img class="img-border" :src="this.rocketinterrupt" fluid alt=""></b-img>
+          <p class="strong-content text-center">
+            The player risks eating a rocket, but is rewarded by cancelling the boss'
+            attack, giving a window of opportunity to deal more damage.
           </p>
+
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Stealth, Cone of Vision</h2>
           </header>
@@ -1502,6 +1543,11 @@
             was also used for both the player and enemies. This helped unify basic
             mechanics (healing), while allowing for flexibility by overriding the
             component's methods.
+          </p>
+          <b-img class="img-border" :src="this.dmgsystem" fluid alt=""></b-img>
+          <p class="strong-content text-center">
+            This system allowed me to add specific logic to damage functions (by
+            overriding) without needing to change the core function.
           </p>
 
           <header class="mb-2 pt-3">
@@ -1602,7 +1648,6 @@
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Rocket Boss (Castle)</h2>
           </header>
-          <!-- <b-button v-b-toggle.crocketboss class="m-1">Toggle Show Problems</b-button> -->
 
           <div class="single-image centered py-2">
             <!-- RocketRingTower -->
@@ -1716,6 +1761,16 @@
             iterations, from entering the bossfight, obtaining the ability, and
             understanding how to use the ability.
           </p>
+          <b-img class="img-border" :src="this.rocketbt" fluid alt=""></b-img>
+          <p class="strong-content text-center">
+            The behaviour tree was deceptively simple. By making the boss constantly
+            moving to an ideal distance and preferring a greater distance from the player,
+            players thought the boss was evading the player and being aggressive at the
+            same time, forcing players to move around the arena as well. Furthermore, it
+            adapted to different playstyles well too. Players who wanted to get closer to
+            the boss and players who wanted to evade the boss both had a sense of push and
+            pull. I really liked this.
+          </p>
 
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Double Jump Boss (Arena)</h2>
@@ -1773,6 +1828,7 @@
               allowfullscreen
             ></b-embed>
           </div>
+
           <p class="strong-content">
             Hid the healthbar for the mage boss completely. This made it more difficult
             for the player to find the boss, which was good. A more controversial effect
@@ -1784,6 +1840,8 @@
             was a bit too easy for players to find the boss when it was healing due to the
             bright VFX, but I believe the core gameplay is achieved.
           </p>
+
+          <b-img class="img-border" :src="this.magebt" fluid alt=""></b-img>
 
           <header class="mb-2 pt-3">
             <h2 class="fw-bold mb-3 display-5">Dash Boss (Bridge)</h2>
@@ -2078,9 +2136,6 @@
           </ul>
         </section>
 
-        <div class="my-4"></div>
-        <!-- Spacer with margin -->
-
         <!-- <h4>Rooms</h4>
     <p>Each room went through a number of iterations themselves (and will continue having more iterations), most if not
       all suffering from the issues mentioned above.
@@ -2352,6 +2407,18 @@ export default {
       lightingbefore: require("@/assets/scarabdescent/iterations/lighting/lightingbefore.png"),
       lightingafter: require("@/assets/scarabdescent/iterations/lighting/lightingafter.png"),
 
+      // vantagemagelandmark: require("@/assets/scarabdescent/iterations/solutions/mage/vantagemagelandmark.png"),
+      // magebreadcrumbs: require("@/assets/scarabdescent/iterations/solutions/mage/magebreadcrumbs.png"),
+
+      magecorridorbefore: require("@/assets/scarabdescent/iterations/solutions/mage/framedmagecorridorbefore.png"),
+      magecorridorafter: require("@/assets/scarabdescent/iterations/solutions/mage/framedmagecorridorafter.png"),
+
+      dashgatebefore: require("@/assets/scarabdescent/iterations/solutions/DashGateBefore.png"),
+      dashgateafter: require("@/assets/scarabdescent/iterations/solutions/DashGateAfter.png"),
+
+      riverbefore: require("@/assets/scarabdescent/iterations/solutions/RiverBefore.png"),
+      riverafter: require("@/assets/scarabdescent/iterations/solutions/RiverAfter.png"),
+
       tokenattackstart: require("@/assets/scarabdescent/combat/token/attackstart.png"),
       tokenattackend: require("@/assets/scarabdescent/combat/token/attackend.png"),
       tokenstore: require("@/assets/scarabdescent/combat/token/store.png"),
@@ -2365,6 +2432,14 @@ export default {
       hkpathing: require("@/assets/scarabdescent/research/hkpathing.png"),
       primepathing: require("@/assets/scarabdescent/research/primepathing.png"),
       observations: require("@/assets/scarabdescent/reference/observations.png"),
+
+      magebt: require("@/assets/scarabdescent/bosses/magebt.png"),
+      teleporthealbt: require("@/assets/scarabdescent/combat/TeleportToHeal.png"),
+      rocketbt: require("@/assets/scarabdescent/bosses/RocketBossBT.png"),
+
+      dmgsystem: require("@/assets/scarabdescent/combat/DamageSystem.png"),
+      distancerecoil: require("@/assets/scarabdescent/combat/DistanceBasedRecoil.png"),
+      rocketinterrupt: require("@/assets/scarabdescent/combat/RocketBossInterrupt.png"),
 
       iter_arena: [
         {
@@ -2557,9 +2632,7 @@ export default {
       ],
     };
   },
-  mounted() {
-    // console.log(this.$router.currentRoute.path);
-  },
+  mounted() {},
 };
 </script>
 

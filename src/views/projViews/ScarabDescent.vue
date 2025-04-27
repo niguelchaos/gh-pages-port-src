@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ProjectDetails from '@/components/projdetails/ProjectDetails.vue';
+import ProjectDetails from "@/components/projdetails/ProjectDetails.vue";
 export default {
   components: { ProjectDetails },
   data: () => {
@@ -15,20 +15,18 @@ export default {
         subtitle: "",
         // mainImage: { name: "", index: 0 },
         images: [],
-        links: [
-          // {title:"WorldGenerator Product Details", url: 'https://repli5.com/worldgenerator/'},
-        ],
-        descriptionComponent: "scarab-descent-desc"
-      }
-    }
+        links: [{ title: "Download on Itch.io", url: "https://niguelchaos.itch.io/scarab-descent" }],
+        descriptionComponent: "scarab-descent-desc",
+      },
+    };
   },
   mounted() {
-    this.scrollToTop()
+    this.scrollToTop();
   },
   methods: {
     scrollToTop() {
-      window.scrollTo(0, 0)
-    }
-  }
-}
+      window.scrollTo(0, 0);
+    },
+  },
+};
 </script>
