@@ -2084,7 +2084,7 @@
           </header>
 
           <p class="strong-content">
-            A architecture/art pass would be improve immersion. It would help distinguish
+            An architecture/art pass would be improve immersion. It would help distinguish
             the two different areas a lot better, and bring it up a level. Polishing the
             UI, weapon feel(recoil, animations) and audio would contribute to more less
             player confusion and greater immersion. Implementing enemy encounter
@@ -2180,31 +2180,30 @@
       </div>
     </b-col>
   </b-row> -->
-
-        <div class="my-4"></div>
-        <!-- Spacer with margin -->
       </main>
     </b-container>
 
-    <div class="my-4"></div>
-    <!-- Spacer with margin -->
-
-    <h2>Gallery</h2>
+    <section class="subsection-container border-light" id="list-credits">
+      <header class="text-center mb-4">
+        <h2 class="subsection-header display-5">Gallery (WIP screenshots)</h2>
+      </header>
+    </section>
     <b-col lg="12">
       <div>
         <b-carousel
           id="carousel"
+          :aspect="'16:9'"
           style="text-shadow: 0px 0px 2px #000"
           no-animation
           controls
           indicators
-          :interval="5000"
+          :interval="500"
         >
           <b-carousel-slide
-            v-for="image in this.blockouts"
-            :key="image.url"
+            v-for="(image, index) in this.galleryList"
+            :key="index"
+            :img-src="image"
             caption=""
-            :img-src="image.url"
           ></b-carousel-slide>
         </b-carousel>
       </div>
@@ -2212,7 +2211,7 @@
     <br />
     <b-col lg="12">
       <h5>Map</h5>
-      <div>
+      <div class="ratio ratio-16x9">
         <b-carousel
           id="carousel"
           style="text-shadow: 0px 0px 2px #000"
@@ -2238,42 +2237,6 @@ export default {
   components: {},
   data() {
     return {
-      images: [],
-      blockouts: [
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00005.png"),
-        },
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00011.png"),
-        },
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00012.png"),
-        },
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00016.png"),
-        },
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00019.png"),
-        },
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00024.png"),
-        },
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00028.png"),
-        },
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00030.png"),
-        },
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00034.png"),
-        },
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00036.png"),
-        },
-        {
-          url: require("@/assets/scarabdescent/screenshots/HighresScreenshot00064.png"),
-        },
-      ],
       timelapse: [
         {
           url: require("@/assets/scarabdescent/screenshots/timelapse/1.png"),
@@ -2406,9 +2369,6 @@ export default {
 
       lightingbefore: require("@/assets/scarabdescent/iterations/lighting/lightingbefore.png"),
       lightingafter: require("@/assets/scarabdescent/iterations/lighting/lightingafter.png"),
-
-      // vantagemagelandmark: require("@/assets/scarabdescent/iterations/solutions/mage/vantagemagelandmark.png"),
-      // magebreadcrumbs: require("@/assets/scarabdescent/iterations/solutions/mage/magebreadcrumbs.png"),
 
       magecorridorbefore: require("@/assets/scarabdescent/iterations/solutions/mage/framedmagecorridorbefore.png"),
       magecorridorafter: require("@/assets/scarabdescent/iterations/solutions/mage/framedmagecorridorafter.png"),
@@ -2630,9 +2590,40 @@ export default {
         { url: require("@/assets/scarabdescent/iterations/feedback/7.png") },
         { url: require("@/assets/scarabdescent/iterations/feedback/8.png") },
       ],
+      galleryList: [],
     };
   },
-  mounted() {},
+  mounted() {
+    this.loadGalleryImages();
+    // this.importAll(require.context('@/assets/scarabdescent/screenshots/', true, /\.png$/));
+  },
+  methods: {
+    async loadGalleryImages() {
+      // 1. For development (webpack context)
+      const context = require.context(
+        "@/assets/scarabdescent/screenshots/", // Your folder path
+        true,
+        /\.png$/ // Pattern to match
+      );
+
+      // Get all matching file paths
+      this.galleryList = context.keys().map((key) => context(key));
+
+      /* 
+      // 2. For production (API endpoint alternative)
+      try {
+        const response = await axios.get('/api/carousel-images');
+        this.imageList = response.data;
+      } catch (error) {
+        console.error("Error loading images:", error);
+      }
+      */
+    },
+    importAll(r) {
+      r.keys().forEach(key => (this.galleryList.push({ pathLong: r(key), pathShort: key })));
+    },
+
+  },
 };
 </script>
 

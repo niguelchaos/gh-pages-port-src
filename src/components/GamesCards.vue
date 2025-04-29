@@ -48,13 +48,14 @@ export default {
           num: 8,
           course: "Personal Project",
           title: "Scarab Descent",
-          text: "",
+          text:
+            "A Metroidvania FPS set in a vast desert ruin with a touch of sci-fi. A vertical slice blockout featuring 4 unique bosses, upgrades, and non-linear exploration.",
           highlightTitle: "Roles & Responsibilities",
           tech:
-            "Concept, Blockout, Pacing, Lighting, Player Abilities Implementation, Chaos Destruction",
-          roles: "Level Design, Mechanics Implementation",
+            "Blockout, Pacing, Lighting, Enemy AI, Player Abilities, Level Design Techniques, Chaos Destruction, GAS",
+          roles: "Game & Level Design, Vertical Slice Blockout",
           link: "",
-          imgsrc: "scarabdescent/screenshots/HighresScreenshot00064.png",
+          imgsrc: "scarabdescent/covers/NoFogCover.png",
           detailslink: "/scarabdescent",
         },
         {

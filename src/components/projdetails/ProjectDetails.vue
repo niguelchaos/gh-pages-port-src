@@ -117,8 +117,6 @@ export default {
   padding-bottom: 1rem;
 
 }
-.link-item {
-}
 .link-button {
   background-color: #5c629900;
   border-color: #B298DC;
